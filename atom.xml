@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-05T15:20:38.472Z</updated>
+  <updated>2020-08-06T16:34:43.167Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,39 +17,549 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2020/08/05/test/"/>
-    <id>http://yoursite.com/2020/08/05/test/</id>
-    <published>2020-08-05T15:20:38.000Z</published>
-    <updated>2020-08-05T15:20:38.472Z</updated>
+    <title>Sublime Text 3 Package Control报错OSError: The specified item could not be found in the keychain解决</title>
+    <link href="http://yoursite.com/2020/07/11/sublime-text-3-package-control%E6%8A%A5%E9%94%99oserror-the-specified-item-could-not-be-found-in-the-keychain%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2020/07/11/sublime-text-3-package-control%E6%8A%A5%E9%94%99oserror-the-specified-item-could-not-be-found-in-the-keychain%E8%A7%A3%E5%86%B3/</id>
+    <published>2020-07-11T07:23:35.000Z</published>
+    <updated>2020-08-06T16:34:43.167Z</updated>
+    
+    <content type="html"><![CDATA[<p>Sublime Text 3 Package Control 报错 OSError: The specified item could not be found in the keychain解决了，喜大普奔。</p><p>他妈的，这是什么天坑。花了我一整天，好多根头发，最后的解决方法是：在<code>钥匙串</code>中把<code>Apple Worldwide Developer Relations Certification Authority</code>这个证书的信任权限从<code>系统默认</code>改为<code>始终信任</code>。</p><p>我迄今也不太清楚这个证书是干嘛用的，也来不及去搞清楚了。我猜测肯定是系统咋的一更新，出于安全考虑，这个证书的权限被降低了；一般的程序不管是用curl还是用urllib来访问url的时候，一旦遇上https类型的，就需要跟OS沟通来签相关证书，但在这个时候被OS给拒绝了。</p><p>网上搜来搜去也没有直接提到这个问题的解决方案的。记录一下我的debug思路吧，多机智啊：</p><ol><li>解锁新技能，把<code>Package Control.sublime-package</code>后缀改成<code>.zip</code>（网上说.sublime-package本质上就是.zip压缩文件，只是改了个后缀，好的吧…），解压看了源码，然后发现不管是通过curl还是通过urllib来使用package control，都会出现同样的错，排除了sublime text源码的问题，确认问题出在OS上。</li><li>另一方面我看源码的时候发现好像得是https类型的url才会触发这个证书签发的机制，灵机一动把channels手动改成http类型的，发现果然成功了。</li><li>所以我定位到了问题，搜了一下“urllib https 报错The specified item could not be found in the keychain”，终于找到<a href="https://github.com/electron-userland/electron-builder/issues/820">github一个issue里</a>有人提到了这个证书Apple Worldwide Developer Relations Certification Authority。</li><li>打开钥匙串，找到这个证书，随便改了一下权限，发现ok了。</li></ol>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;Sublime Text 3 Package Control 报错 OSError: The specified item could not be found in the keychain解决了，喜大普奔。&lt;/p&gt;
+&lt;p&gt;他妈的，这是什么天坑。花了我一整天，好多根头发，
+      
+    
     </summary>
     
+    
+      <category term="Computer Notes" scheme="http://yoursite.com/categories/Computer-Notes/"/>
+    
+    
+      <category term="https" scheme="http://yoursite.com/tags/https/"/>
+    
+      <category term="MacOS" scheme="http://yoursite.com/tags/MacOS/"/>
+    
+      <category term="Sublime Text 3" scheme="http://yoursite.com/tags/Sublime-Text-3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的状态：伸手接过空无一物</title>
+    <link href="http://yoursite.com/2020/07/02/%E6%88%91%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9A%E4%BC%B8%E6%89%8B%E6%8E%A5%E8%BF%87%E7%A9%BA%E6%97%A0%E4%B8%80%E7%89%A9/"/>
+    <id>http://yoursite.com/2020/07/02/%E6%88%91%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9A%E4%BC%B8%E6%89%8B%E6%8E%A5%E8%BF%87%E7%A9%BA%E6%97%A0%E4%B8%80%E7%89%A9/</id>
+    <published>2020-07-01T18:14:50.000Z</published>
+    <updated>2020-08-06T16:27:53.554Z</updated>
+    
+    <content type="html"><![CDATA[<p>网络空间安全成立<br>世上人心不齐<br>一把横放的吉他<br>会受损吗<br>我不在意<br>窗外的小区楼<br>晚饭后变得嘈杂<br>那好 无人听见我的琴声<br>电子书落了尘埃<br>当天的考试沉甸甸<br>吉他心律不齐<br>我的状态：<br>伸手接过空无一物</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;网络空间安全成立&lt;br&gt;世上人心不齐&lt;br&gt;一把横放的吉他&lt;br&gt;会受损吗&lt;br&gt;我不在意&lt;br&gt;窗外的小区楼&lt;br&gt;晚饭后变得嘈杂&lt;br&gt;那好 无人听见我的琴声&lt;br&gt;电子书落了尘埃&lt;br&gt;当天的考试沉甸甸&lt;br&gt;吉他心律不齐&lt;br&gt;我的状态：&lt;br&gt;伸手接过空无一物&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="poems" scheme="http://yoursite.com/categories/poems/"/>
     
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/08/05/hello-world/"/>
-    <id>http://yoursite.com/2020/08/05/hello-world/</id>
-    <published>2020-08-05T15:19:32.827Z</published>
-    <updated>2020-08-05T15:19:32.827Z</updated>
+    <title>说起享乐观</title>
+    <link href="http://yoursite.com/2020/07/02/%E8%AF%B4%E8%B5%B7%E4%BA%AB%E4%B9%90%E8%A7%82/"/>
+    <id>http://yoursite.com/2020/07/02/%E8%AF%B4%E8%B5%B7%E4%BA%AB%E4%B9%90%E8%A7%82/</id>
+    <published>2020-07-01T18:14:01.000Z</published>
+    <updated>2020-08-06T16:23:50.301Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>说起享乐观，享乐大抵是我的生活追求，只是设有一个底线，有一类享乐不会去接触：极致的，一旦体验过一次，生活再回不了头的。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for
+        &lt;p&gt;说起享乐观，享乐大抵是我的生活追求，只是设有一个底线，有一类享乐不会去接触：极致的，一旦体验过一次，生活再回不了头的。&lt;/p&gt;
+
       
     
     </summary>
     
     
+      <category term="thoughts" scheme="http://yoursite.com/categories/thoughts/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>三年前的今天高考出分</title>
+    <link href="http://yoursite.com/2020/07/02/%E4%B8%89%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E9%AB%98%E8%80%83%E5%87%BA%E5%88%86/"/>
+    <id>http://yoursite.com/2020/07/02/%E4%B8%89%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E9%AB%98%E8%80%83%E5%87%BA%E5%88%86/</id>
+    <published>2020-07-01T18:13:26.000Z</published>
+    <updated>2020-08-06T16:30:29.820Z</updated>
+    
+    <content type="html"><![CDATA[<p>三年前的今天高考出分，北京难得的大雨夜，魏公村常年疏水不畅的下水道，积水没过鞋面。十一二点我跟朋友从ktv出来，几个人各怀心事，没人说很深的话。人生中第一次喝酒是在这次，四瓶忘了是啥的啤酒，喝完清醒得不得了。知道考砸了，栽跟头了，一下子所有都已经不一样了。</p><p>却不知道命运那头是什么样。这头是一股脑走下去了，懂承担选择的责任了，也多了股反叛味儿在骨子里。问起后悔我是不承认的，只是一丁点儿也不愿再回忆高中时期了，一切都蒙着灰，带着愊忆。三年里路过高中校门很多次，一次也没去看望过老师，暂时是无所谓了。</p><p>情绪一直没我妈担忧的差，糟糕的高考分，糟糕的选校，糟糕的专业，竟然就自然地度过了。说来有点玩味，支撑我的可能是那晚一句偏颇的领悟，被我奉为圭臬了：人生还是痛苦多。</p><p>后来发挥这种精神，痛苦的晚上喝点酒，什么也不想，就过去了，我觉得这是我的成年。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;三年前的今天高考出分，北京难得的大雨夜，魏公村常年疏水不畅的下水道，积水没过鞋面。十一二点我跟朋友从ktv出来，几个人各怀心事，没人说很深的话。人生中第一次喝酒是在这次，四瓶忘了是啥的啤酒，喝完清醒得不得了。知道考砸了，栽跟头了，一下子所有都已经不一样了。&lt;/p&gt;
+&lt;p&gt;却
+      
+    
+    </summary>
+    
+    
+      <category term="thoughts" scheme="http://yoursite.com/categories/thoughts/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>无题</title>
+    <link href="http://yoursite.com/2020/07/02/%E6%97%A0%E9%A2%98-trashed/"/>
+    <id>http://yoursite.com/2020/07/02/%E6%97%A0%E9%A2%98-trashed/</id>
+    <published>2020-07-01T18:10:59.000Z</published>
+    <updated>2020-08-06T16:26:13.753Z</updated>
+    
+    <content type="html"><![CDATA[<p>想念过去的你 </p><p>我从未见过她 </p><p>却如此熟悉她 </p><p>命运使我们永不能相见 </p><p>我却是深爱着她 </p><p>是怎样的不幸 </p><p>使我没有从一出生就遇见你 </p><p>陪伴你 经历你 </p><p>把更多的我献给你</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;想念过去的你 &lt;/p&gt;
+&lt;p&gt;我从未见过她 &lt;/p&gt;
+&lt;p&gt;却如此熟悉她 &lt;/p&gt;
+&lt;p&gt;命运使我们永不能相见 &lt;/p&gt;
+&lt;p&gt;我却是深爱着她 &lt;/p&gt;
+&lt;p&gt;是怎样的不幸 &lt;/p&gt;
+&lt;p&gt;使我没有从一出生就遇见你 &lt;/p&gt;
+&lt;p&gt;陪伴你 经历你 &lt;/p&gt;
+&lt;p&gt;把更多的我
+      
+    
+    </summary>
+    
+    
+      <category term="poems" scheme="http://yoursite.com/categories/poems/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>荒诞笔记</title>
+    <link href="http://yoursite.com/2020/07/02/%E8%8D%92%E8%AF%9E%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/07/02/%E8%8D%92%E8%AF%9E%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-07-01T18:10:37.000Z</published>
+    <updated>2020-08-06T16:24:36.522Z</updated>
+    
+    <content type="html"><![CDATA[<p>荒诞是什么： 1. 人对永恒的追求与横亘在人面前的不得不面对的死亡之间的矛盾 2. 死囚在临死之前什么也看不到，独独看到近在眼前的他的鞋带，荒诞就是死囚的鞋带 3. 人对透明的追求与世界的混沌之间的矛盾 4. 人意识到活着的无意义、无价值，一种脱离生活规则的感受 5. 人一下子把握住时间，即感受到时间对自己的扼杀，将自己与永恒撇开关系 6. 人同时从介入者和旁观者的视角观看生活而产生的差距（齐泽克） 三种人： 1. 自杀者：肉体上逃避荒诞 2. 精神自杀者：选择信仰或希望，这是精神上自杀，同样是逃避荒诞 3. 反抗者（荒诞英雄）：意识到荒诞，意识到荒诞的永恒性，而尽可能丰富地活着，增加生命体验的量（即活着的时长，而无质的差别）。这是真正的勇敢。（对生命最大的反抗即是尽可能活着，对荒诞真正的反抗即是延续荒诞（因为已知荒诞是永恒的）。） 荒诞英雄举例： 1. 西西弗：因贪恋人世而受到诸神的惩罚，终其生命重复推巨石上山，巨石到达山顶后滑落，重新推之。西西弗接受其荒诞的命运，破除对永恒的希冀而完全掌握巨石，掌握命运。西西弗将推巨石视作命运，与自己此前所做相联系，因而不被视作惩罚，本无惩罚。西西弗每次从山顶下山时，是完成了一次反抗之后重新走入命运的空隙，是直视荒诞的时刻，是勇敢。另一视角，西西弗通过不断地推巨石，不断坚持这一选择，使之存在，进而影响其他的人做出的选择，这是他对自己的选择所负的责任（我这么理解）。不可以推测西西弗不幸福。 2. 唐璜：爱过一个又一个女人，重复地深情，重复地离开；接受此后惩罚一般的命运；从未体会失望与忧伤。唐璜是追求生命体验的量，是荒诞人的典范。他有知识，也有意识，通过自己的选择做出对荒诞的反抗。专于一人的爱情本质上是对永恒的信仰，是精神自杀；唐璜跳出这样的藩篱，清楚自己想要的是什么。唐璜是否自私，加缪留给读者解读，我以为是。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;荒诞是什么： 1. 人对永恒的追求与横亘在人面前的不得不面对的死亡之间的矛盾 2. 死囚在临死之前什么也看不到，独独看到近在眼前的他的鞋带，荒诞就是死囚的鞋带 3. 人对透明的追求与世界的混沌之间的矛盾 4. 人意识到活着的无意义、无价值，一种脱离生活规则的感受 5. 人一
+      
+    
+    </summary>
+    
+    
+      <category term="thoughts" scheme="http://yoursite.com/categories/thoughts/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>逃吧</title>
+    <link href="http://yoursite.com/2020/07/02/%E9%80%83%E5%90%A7/"/>
+    <id>http://yoursite.com/2020/07/02/%E9%80%83%E5%90%A7/</id>
+    <published>2020-07-01T18:09:30.000Z</published>
+    <updated>2020-08-06T16:23:43.251Z</updated>
+    
+    <content type="html"><![CDATA[<p>加速吧下坠吧 </p><p>不要放弃希望 </p><p>希望在下一代 </p><p>逃吧快逃吧 </p><p>逃去荒芜的赛博空间里 </p><p>逃去原始的阅读欲望里 </p><p>逃到他乡 </p><p>没有枷锁一样的联结 </p><p>没有大爱只有私情</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;加速吧下坠吧 &lt;/p&gt;
+&lt;p&gt;不要放弃希望 &lt;/p&gt;
+&lt;p&gt;希望在下一代 &lt;/p&gt;
+&lt;p&gt;逃吧快逃吧 &lt;/p&gt;
+&lt;p&gt;逃去荒芜的赛博空间里 &lt;/p&gt;
+&lt;p&gt;逃去原始的阅读欲望里 &lt;/p&gt;
+&lt;p&gt;逃到他乡 &lt;/p&gt;
+&lt;p&gt;没有枷锁一样的联结 &lt;/p&gt;
+&lt;p&gt;没有大爱只有私情&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="poems" scheme="http://yoursite.com/categories/poems/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>世间的野火</title>
+    <link href="http://yoursite.com/2020/05/27/%E4%B8%96%E9%97%B4%E7%9A%84%E9%87%8E%E7%81%AB/"/>
+    <id>http://yoursite.com/2020/05/27/%E4%B8%96%E9%97%B4%E7%9A%84%E9%87%8E%E7%81%AB/</id>
+    <published>2020-05-26T18:20:44.000Z</published>
+    <updated>2020-08-06T16:30:14.867Z</updated>
+    
+    <content type="html"><![CDATA[<p>你成全我 世间的野火 一种年轻的沉迷 我们一起浪费生活 从一句重复的话到另一句 数到第五百二十句爱你 小写的牧歌正是循环 不再怕梦中的寂寞 没有等待的戈多</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;你成全我 世间的野火 一种年轻的沉迷 我们一起浪费生活 从一句重复的话到另一句 数到第五百二十句爱你 小写的牧歌正是循环 不再怕梦中的寂寞 没有等待的戈多&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="poems" scheme="http://yoursite.com/categories/poems/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>狭窄的人生</title>
+    <link href="http://yoursite.com/2020/05/18/%E7%8B%AD%E7%AA%84%E7%9A%84%E4%BA%BA%E7%94%9F/"/>
+    <id>http://yoursite.com/2020/05/18/%E7%8B%AD%E7%AA%84%E7%9A%84%E4%BA%BA%E7%94%9F/</id>
+    <published>2020-05-18T08:26:04.000Z</published>
+    <updated>2020-08-06T16:25:34.162Z</updated>
+    
+    <content type="html"><![CDATA[<p>狭窄的人生里 </p><p>如果重逢 </p><p>是拾起所有偏见 </p><p>旧日之情是死结 </p><p>那么孤独 </p><p>不是傲慢 </p><p>是与黄昏的和解 </p><p>狭窄的人生里 </p><p>如果酒后除了呓语 </p><p>还剩见不得人的诗 </p><p>那么告别是在最早一次 </p><p>或是趁早这次</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;狭窄的人生里 &lt;/p&gt;
+&lt;p&gt;如果重逢 &lt;/p&gt;
+&lt;p&gt;是拾起所有偏见 &lt;/p&gt;
+&lt;p&gt;旧日之情是死结 &lt;/p&gt;
+&lt;p&gt;那么孤独 &lt;/p&gt;
+&lt;p&gt;不是傲慢 &lt;/p&gt;
+&lt;p&gt;是与黄昏的和解 &lt;/p&gt;
+&lt;p&gt;狭窄的人生里 &lt;/p&gt;
+&lt;p&gt;如果酒后除了呓语 &lt;/p&gt;
+&lt;p&gt;还剩见
+      
+    
+    </summary>
+    
+    
+      <category term="poems" scheme="http://yoursite.com/categories/poems/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>xp</title>
+    <link href="http://yoursite.com/2020/05/05/xp/"/>
+    <id>http://yoursite.com/2020/05/05/xp/</id>
+    <published>2020-05-04T19:41:18.000Z</published>
+    <updated>2020-08-06T16:31:28.690Z</updated>
+    
+    <content type="html"><![CDATA[<p>她远远地站在卧室<br>我却喊出了性癖之句：<br>我远远望着的时候你在凝视</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;她远远地站在卧室&lt;br&gt;我却喊出了性癖之句：&lt;br&gt;我远远望着的时候你在凝视&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="poems" scheme="http://yoursite.com/categories/poems/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>geek</title>
+    <link href="http://yoursite.com/2020/05/05/geek/"/>
+    <id>http://yoursite.com/2020/05/05/geek/</id>
+    <published>2020-05-04T19:39:14.000Z</published>
+    <updated>2020-08-06T16:41:35.998Z</updated>
+    
+    <content type="html"><![CDATA[<p>遥远的<br>宇宙中央<br>那里有极客吗 </p><p>遥远的<br>宇宙中央<br>那里有嫖客吗</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;遥远的&lt;br&gt;宇宙中央&lt;br&gt;那里有极客吗 &lt;/p&gt;
+&lt;p&gt;遥远的&lt;br&gt;宇宙中央&lt;br&gt;那里有嫖客吗&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="poems" scheme="http://yoursite.com/categories/poems/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>病骨</title>
+    <link href="http://yoursite.com/2020/05/05/%E7%97%85%E9%AA%A8/"/>
+    <id>http://yoursite.com/2020/05/05/%E7%97%85%E9%AA%A8/</id>
+    <published>2020-05-04T19:36:57.000Z</published>
+    <updated>2020-08-06T16:25:04.359Z</updated>
+    
+    <content type="html"><![CDATA[<p>悲观是我的一根病骨，在凛冽的一生中不胜侵扰。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;悲观是我的一根病骨，在凛冽的一生中不胜侵扰。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="thoughts" scheme="http://yoursite.com/categories/thoughts/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>盆栽</title>
+    <link href="http://yoursite.com/2020/04/30/%E7%9B%86%E6%A0%BD/"/>
+    <id>http://yoursite.com/2020/04/30/%E7%9B%86%E6%A0%BD/</id>
+    <published>2020-04-30T11:40:38.000Z</published>
+    <updated>2020-08-06T16:25:00.165Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天妈妈新买的五盆盆栽到家了，我有一种感觉，家庭成员新添了好几个小家伙，家里变得热闹起来。可是总的来说，我跟植物相处的经验还比较欠缺，互相还处于小心翼翼、斯抬斯敬的阶段，慢慢熟悉吧。 ​​​</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天妈妈新买的五盆盆栽到家了，我有一种感觉，家庭成员新添了好几个小家伙，家里变得热闹起来。可是总的来说，我跟植物相处的经验还比较欠缺，互相还处于小心翼翼、斯抬斯敬的阶段，慢慢熟悉吧。 ​​​&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="thoughts" scheme="http://yoursite.com/categories/thoughts/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ITerm2-必须让Mac终端花里胡哨一点</title>
+    <link href="http://yoursite.com/2020/04/21/iterm2-mac/"/>
+    <id>http://yoursite.com/2020/04/21/iterm2-mac/</id>
+    <published>2020-04-21T15:38:15.000Z</published>
+    <updated>2020-08-06T16:40:23.038Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个重度Mac用户不好好魔改一下终端怎么能行……今天终于上道了。</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/04/image-1-1024x654.png"></p><p>暂且这样，功能有了，美观度还没</p><h2 id="1-使用"><a href="#1-使用" class="headerlink" title="1. 使用"></a>1. 使用</h2><h3 id="巧用-Command-键"><a href="#巧用-Command-键" class="headerlink" title="巧用 Command 键"></a>巧用 Command 键</h3><p>按住⌘键:</p><ul><li>可以拖拽选中的字符串；</li><li>点击 url：调用默认浏览器访问该网址；</li><li>点击文件：调用默认程序打开文件；</li><li>如果文件名是filename:42，且默认文本编辑器是 Macvim、Textmate或BBEdit，将会直接打开到这一行；</li><li>点击文件夹：在 finder 中打开该文件夹；</li><li>同时按住option键，可以以矩形选中，类似于vim中的ctrl v操作。</li></ul><h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><ul><li>切换 tab：⌘+←, ⌘+→, ⌘+{, ⌘+}。⌘+数字直接定位到该 tab；</li><li>新建 tab：⌘+t；</li><li>顺序切换 pane：⌘+[, ⌘+]；</li><li>按方向切换 pane：⌘+Option+方向键；</li><li>切分屏幕：⌘+d 水平切分，⌘+Shift+d 垂直切分；</li><li>智能查找，支持正则查找：⌘+f。</li></ul><h3 id="自动完成"><a href="#自动完成" class="headerlink" title="自动完成"></a>自动完成</h3><p>iTerm2 可以自动补齐命令，输入若干字符，按⌘+;弹出自动补齐窗口，列出曾经使用过的命令。</p><p>iTerm2 也可以使用历史记录，按⌘+Shift+h弹出历史粘贴记录窗口，⌘+Shift+;弹出历史命令记录窗口。</p><h3 id="高亮当前鼠标的位置"><a href="#高亮当前鼠标的位置" class="headerlink" title="高亮当前鼠标的位置"></a>高亮当前鼠标的位置</h3><p>一个标签页中开的窗口太多，有时候会找不到当前的鼠标，⌘+/找到它。</p><h2 id="2-配置主题"><a href="#2-配置主题" class="headerlink" title="2. 配置主题"></a><a href="https://www.jianshu.com/p/53eb1075f627">2. 配置主题</a></h2><h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><p><a href="https://link.jianshu.com/?t=http://ohmyz.sh">官网</a>有介绍，或者直接在iTerm2终端执行以下代码：</p><p><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></p><h4 id="下载安装Powerline字体库"><a href="#下载安装Powerline字体库" class="headerlink" title="下载安装Powerline字体库"></a>下载安装Powerline字体库</h4><p>从<a href="https://link.jianshu.com/?t=https://github.com/powerline/fonts">Powerline fonts</a>下载字体库</p><h3 id="导入色彩预设"><a href="#导入色彩预设" class="headerlink" title="导入色彩预设"></a>导入色彩预设</h3><p>下载色彩预设和下载字体库是一样的，从<a href="https://link.jianshu.com/?t=http://iterm2colorschemes.com">官网</a>可以看到更多介绍，运行代码将文件保存到下载文件夹：</p><h3 id="修改一长串的hostname（-macbook）"><a href="#修改一长串的hostname（-macbook）" class="headerlink" title="修改一长串的hostname（@macbook）"></a>修改一长串的hostname（@macbook）</h3><p>选择agnoster有一个好处就是可以把路径前面一长串的user@user-macbook选择不显示。。</p><p>打开agnoster.zsh-theme文件，具体操作如下：</p><p><code>vim ~/.oh-my-zsh/themes/agnoster.zsh-theme</code></p><p>找到prompt_context()，然后修改光标附近的区域就可以了 $USER@%m 就是user@user-macbook</p><h2 id="3-插件"><a href="#3-插件" class="headerlink" title="3. 插件"></a>3. 插件</h2><h3 id="3-1-autojump"><a href="#3-1-autojump" class="headerlink" title="3.1. autojump"></a>3.1. autojump</h3><p>自动跳转到最可能的目录</p><p>autojump的工作方式很简单：它会在你每次启动命令时记录你当前位置，并把它添加进它自身的数据库中。这样，某些目录比其它一些目录添加的次数多，这些目录一般就代表你最重要的目录，而它们的“权重”也会增大。</p><p>现在不管你在哪个目录，你都可以使用下面的语法来直接跳转到这些目录：</p><p><code>autojump [目录的名字或名字的一部分]</code></p><h3 id="3-2-自动补全"><a href="#3-2-自动补全" class="headerlink" title="3.2. 自动补全"></a>3.2. 自动补全</h3><h3 id="3-3-语法高亮"><a href="#3-3-语法高亮" class="headerlink" title="3.3. 语法高亮"></a>3.3. 语法高亮</h3><h2 id="TODO-mosh"><a href="#TODO-mosh" class="headerlink" title="TODO: mosh"></a>TODO: mosh</h2><p><a href="https://mosh.mit.edu/">mosh</a> 是全平台更好的 ssh 工具，更健壮，支持断续连接，支持除了 iPhone 之外的几乎任何平台。（iOS 让人爱不释手的优点，也正是它让人恨之入骨的缺点）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一个重度Mac用户不好好魔改一下终端怎么能行……今天终于上道了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jyzhu.top/wp-content/uploads/2020/04/image-1-1024x654.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;暂且这样，功能有了，美观
+      
+    
+    </summary>
+    
+    
+      <category term="Computer Notes" scheme="http://yoursite.com/categories/Computer-Notes/"/>
+    
+    
+      <category term="iTerm" scheme="http://yoursite.com/tags/iTerm/"/>
+    
+      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A pic of the relationship between CRM, SCM &amp; ERP</title>
+    <link href="http://yoursite.com/2020/04/20/a-pic-of-the-relationship-between-crm-scm-erp/"/>
+    <id>http://yoursite.com/2020/04/20/a-pic-of-the-relationship-between-crm-scm-erp/</id>
+    <published>2020-04-20T05:21:50.000Z</published>
+    <updated>2020-08-06T16:44:15.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>What a good pic. It helped me a lot.</p><p>CRM and SCM are outside of the ERP, that connect the ERP with customers or suppliers. And the ERP regards to the core business functions of a company, with Financial Management, Human Resource Management, Marketing &amp; Sales, Operations Management, etc in it.</p><p>I think we’ve already learned these different fields of management. HRM, SCM, Marketing, OM, FM… I should have combined them together.</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/04/image-1024x674.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;What a good pic. It helped me a lot.&lt;/p&gt;
+&lt;p&gt;CRM and SCM are outside of the ERP, that connect the ERP with customers or suppliers. And the
+      
+    
+    </summary>
+    
+    
+      <category term="Computer Notes" scheme="http://yoursite.com/categories/Computer-Notes/"/>
+    
+    
+      <category term="ERP" scheme="http://yoursite.com/tags/ERP/"/>
+    
+      <category term="Management" scheme="http://yoursite.com/tags/Management/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>疫期-大三上-碎念</title>
+    <link href="http://yoursite.com/2020/04/19/%E7%96%AB%E6%9C%9F-%E5%A4%A7%E4%B8%89%E4%B8%8A-%E7%A2%8E%E5%BF%B5/"/>
+    <id>http://yoursite.com/2020/04/19/%E7%96%AB%E6%9C%9F-%E5%A4%A7%E4%B8%89%E4%B8%8A-%E7%A2%8E%E5%BF%B5/</id>
+    <published>2020-04-19T15:13:19.000Z</published>
+    <updated>2020-08-06T16:25:09.927Z</updated>
+    
+    <content type="html"><![CDATA[<p>唉，疫情在家，这都多少天了。有安稳进行的，有新鲜的，有措手不及的。</p><p>跟她的状态算是安稳。几天之前写下的：</p><blockquote><p>对她的喜欢到了半夜自己一个人喃喃自语：Oh my fucking god, I love her. 的地步。闻所未闻吧，朱jy还会这样呢？并且这份爱没有给我不安全感。我觉得它是值得的，她值得，她对我的爱也值得。虽然一大片阴霾在眼前：疫情导致这学期见不到，交换导致大四一年见不到，留学就跑更远了……如果能认定的话，能把这些看上去很漫长但其实很短暂的人生给普通地消磨过去的话，未来有能力朝着她前进的时候，就不是什么问题了吧。<br>挺安稳的，踏踏实实走自己的路的感觉，有归宿有期待的感觉。</p></blockquote><p>安稳的还有学习，不知不觉已经过完前八周了，结了一波课，马上新开一波课。我对新的课没啥期待。</p><p>新鲜的是最近开始学吉他了。现在是每天左手指尖麻麻疼疼的状态。我真的不理解这是人能按的弦吗？在彻底改变身体的一部分（指让左手指尖痛觉彻底坏掉以便按弦）跟学会一门乐器之间选，我还真纠结了一下。不过学吉他还挺有意思的，我甚至花了一天把一整本教材的乐理都给看了一遍，调啊和弦啊节奏啊之类的概念，算是明白了，还挺妙。音乐真有意思，不啻文学嘛！</p><p>措手不及的是ANU交换给取消了，因为疫情。好不容易被选上的，当初我还真怪期待的。挺珍贵的机会，而且从我这破烂学校破烂专业，到人家好学校去学我想学的课程，简直美丽新人生。虽然要提前跟她异地（国）也很让人进退两难。但如今梦幻泡影一场，不胜难受。</p><p>另外还要自己反思一些：</p><ol><li>GRE背单词也太不积极了。要完啊。</li><li>爬虫真的恶心死我了。下次请学会拒绝，时间留在更宝贵的事情上不好吗。你现在整个人方向还是偏的，还没走上ds正途，你岌岌可危哎。</li><li>太懒了，天天只想发呆只想玩。以前那种学习新东西的兴奋劲呢？什么时候才能从这种漫长的疲劳状态中恢复过来啊？</li></ol><p>快让我回学校吧。我想见她。真的想。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;唉，疫情在家，这都多少天了。有安稳进行的，有新鲜的，有措手不及的。&lt;/p&gt;
+&lt;p&gt;跟她的状态算是安稳。几天之前写下的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对她的喜欢到了半夜自己一个人喃喃自语：Oh my fucking god, I love her. 的地步。闻所未
+      
+    
+    </summary>
+    
+    
+      <category term="thoughts" scheme="http://yoursite.com/categories/thoughts/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2020给三嗨</title>
+    <link href="http://yoursite.com/2020/04/19/2020%E7%BB%99%E4%B8%89%E5%97%A8/"/>
+    <id>http://yoursite.com/2020/04/19/2020%E7%BB%99%E4%B8%89%E5%97%A8/</id>
+    <published>2020-04-19T14:52:49.000Z</published>
+    <updated>2020-08-06T16:45:17.557Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-说说过去两年和三嗨的故事-最难忘的事"><a href="#1-说说过去两年和三嗨的故事-最难忘的事" class="headerlink" title="1.说说过去两年和三嗨的故事/最难忘的事"></a>1.说说过去两年和三嗨的故事/最难忘的事</h2><p>一转眼公众号「三嗨」已经创立两年有余。我特地去回顾了一遍推送，72篇，居然也是个丰硕的数字了。这么久了，「三嗨」仍然在定位不明的路上走着，从某种程度上来说倒跟我的这两年轨迹一样，「千回百转自彷徨」。</p><p>遗憾的是一些变化：一是，众嗨坚持在这里写下去的，似乎只剩我一个了。（「坚持」这个词也暗含辛酸。）大家专业各异，都很忙，写下来一篇聊以自慰式长文，（又不赚稿费，）实在不易。另一是，我个人来说，愈发浮躁，静下心来读书明显变少了，长篇论述或表达的欲望也是渐少。从这个意义上来说，「三嗨」的初衷是美好而前瞻的，可是如今形势是危如累卵的。</p><p>但也有一些值得骄傲跟感动的：一是众嗨的奇妙缘分，大家共同热闹地表达或是表达过，这是「三嗨」的本质。另一是这么久了，「三嗨」还活着，偶尔会有新来的朋友投稿，也竟然一直有忠实读者催更。这是「三嗨」的意义。</p><p>怎么讲呢，「三嗨」的路到哪里，我的路到哪里，我一概不知。2020继续边走边嗨吧。</p><h2 id="2-新年有什么愿望"><a href="#2-新年有什么愿望" class="headerlink" title="2.新年有什么愿望"></a>2.新年有什么愿望</h2><p>我没什么仪式感，新年好像不会给我猛地增加什么勇气跟信心，所以立不起来什么flag。连年累月地压力倍增，无意义感又不减，只是用空洞的眼神展望新年罢了。尽管如此，我也有一些超过我自身的，永恒的愿望。新年愿望便是：全家人都开心且健康。</p><h2 id="3-对大家的祝福"><a href="#3-对大家的祝福" class="headerlink" title="3.对大家的祝福"></a>3.对大家的祝福</h2><p>衷心地祝愿大家：嗨。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-说说过去两年和三嗨的故事-最难忘的事&quot;&gt;&lt;a href=&quot;#1-说说过去两年和三嗨的故事-最难忘的事&quot; class=&quot;headerlink&quot; title=&quot;1.说说过去两年和三嗨的故事/最难忘的事&quot;&gt;&lt;/a&gt;1.说说过去两年和三嗨的故事/最难忘的事&lt;/h2&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="thoughts" scheme="http://yoursite.com/categories/thoughts/"/>
+    
+    
+      <category term="三嗨" scheme="http://yoursite.com/tags/%E4%B8%89%E5%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anki使用笔记</title>
+    <link href="http://yoursite.com/2020/04/19/anki%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/04/19/anki%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-04-19T14:49:28.000Z</published>
+    <updated>2020-08-06T16:53:17.081Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="特殊字段"><a href="#特殊字段" class="headerlink" title="特殊字段"></a>特殊字段</h1><p>笔记标签: <code>&#123;&#123;Tags&#125;&#125;</code></p><p>笔记类型: <code>&#123;&#123;Type&#125;&#125;</code></p><p>所属记忆库（牌组）: <code>&#123;&#123;Deck&#125;&#125;</code></p><p>卡片类型（卡片模板中的标签名–译注）(“正向”等等): <code>&#123;&#123;Card&#125;&#125;</code></p><p>正面模板的内容（仅在背面模板有效）： <code>&#123;&#123;FrontSide&#125;&#125;</code></p><h1 id="特殊字段类型"><a href="#特殊字段类型" class="headerlink" title="特殊字段类型"></a>特殊字段类型</h1><p>填空：<code>&#123;&#123;cloze:text&#125;&#125;</code> <strong>必须要单独用cloze类型的卡片创建才有效</strong></p><p>拼写：<code>&#123;&#123;type:text&#125;&#125;</code></p><p>提示：<code>&#123;&#123;hint:text&#125;&#125;</code></p><h1 id="图片引用"><a href="#图片引用" class="headerlink" title="图片引用"></a>图片引用</h1><p>如果希望在所有卡片上包含相同的图像或声音 （例如每张卡片上方的公司标志）：</p><ol><li>重命名文件使其以下划线开头，如“_logo.jpg”。 下划线提示Anki该文件被模板使用并在分享记忆库（牌组）时同时导出。</li><li>在卡片正面或背面模板添加该媒体文件的引用，如：</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;_logo.jpg&quot;&gt;</span><br></pre></td></tr></table></figure><h1 id="条件替换"><a href="#条件替换" class="headerlink" title="条件替换"></a>条件替换</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;#字段名&#125;&#125;</span><br><span class="line">本条文本只在字段名字段非空时显示。</span><br><span class="line">&#123;&#123;&#x2F;字段名&#125;&#125;</span><br><span class="line"></span><br><span class="line">&#123;&#123;^字段名&#125;&#125;</span><br><span class="line">本条文本只在字段名字段为空时显示。</span><br><span class="line">&#123;&#123;&#x2F;字段名&#125;&#125;</span><br></pre></td></tr></table></figure><p>还可以在有笔记存在的条件下给某个字段设置额外的格式哦</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;#笔记&#125;&#125;&lt;span style&#x3D;&quot;color:blue;&quot;&gt;&#123;&#123;&#x2F;笔记&#125;&#125;</span><br><span class="line">&#123;&#123;要设定格式的字段&#125;&#125;</span><br><span class="line">&#123;&#123;#笔记&#125;&#125;&lt;&#x2F;span&gt;&#123;&#123;&#x2F;笔记&#125;&#125;</span><br></pre></td></tr></table></figure><h1 id="词典链接"><a href="#词典链接" class="headerlink" title="词典链接"></a>词典链接</h1><p><code>&lt;a href=&quot;http://example.com/search?q=&#123;&#123;表达&#125;&#125;&quot;&gt;在词典中查询&lt;/a&gt;</code></p><p>如果给字段名称加一个“text:”的前缀， Anki就不会包含任何格式信息。</p><h1 id="浏览器搜索"><a href="#浏览器搜索" class="headerlink" title="浏览器搜索"></a>浏览器搜索</h1><p>dog</p><p>搜索”dog”，将会匹配像“doggy”和“underdog”这类卡片。</p><p>dog cat</p><p>发现“dog”和“cat”的笔记，如“a dog and cat”。</p><p>dog or cat</p><p>发现有“dog”或“cat”的笔记</p><p>dog（cat或mouse）</p><p>发现dog和cat，或dog和mouse的笔记。</p><p>-cat</p><p>发现笔记没有“cat”这个词</p><p>-cat -mouse</p><p>发现笔记既不是“cat”也不是“mouse”。</p><p>-(cat或mouse)</p><p>与上述相同。</p><p>“a dog”</p><p>发现笔记对“a dog”有精确地短语。</p><p>-“a dog”</p><p>发现笔记对“a dog”没有精确地短语。</p><p>d_g</p><p>发现d，\, g,像dog, dig, dug等等的笔记。</p><p>d*g</p><p>发现d, \, g, 像dg, dog, dung等等的笔记。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;特殊字段&quot;&gt;&lt;a href=&quot;#特殊字段&quot; class=&quot;headerlink&quot; title=&quot;特殊字段&quot;&gt;&lt;/a&gt;特殊字段&lt;/h1&gt;&lt;p&gt;笔记标签: &lt;code&gt;&amp;#123;&amp;#123;Tags&amp;#125;&amp;#125;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;笔记类型: &lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Computer Notes" scheme="http://yoursite.com/categories/Computer-Notes/"/>
+    
+    
+      <category term="Anki" scheme="http://yoursite.com/tags/Anki/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Shodan初体验</title>
+    <link href="http://yoursite.com/2020/04/19/shodan%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>http://yoursite.com/2020/04/19/shodan%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
+    <published>2020-04-19T14:43:56.000Z</published>
+    <updated>2020-08-06T16:35:27.104Z</updated>
+    
+    <content type="html"><![CDATA[<p>此前有听过关于网络摄像头泄露隐私的新闻，没想到此次自己也成了一名「偷窥者」。在老师的ppt以及其他一些资料的指导下，我理解了Shodan是一个可以搜索一切暴露在网络上的设备、端口，以及它们的HTTP header或者其他信息的搜索引擎。初体验Shodan之下，我理解了一些头文件格式、视频设备信息等知识，体验了一些弱口令漏洞，主要的还是透过弱口令看到了一些在线摄像头。</p><h3 id="1-常用摄像头设备及其弱口令搜集"><a href="#1-常用摄像头设备及其弱口令搜集" class="headerlink" title="1 常用摄像头设备及其弱口令搜集"></a>1 常用摄像头设备及其弱口令搜集</h3><ul><li>ACTi: admin/123456 or Admin/123456</li><li>American Dynamics: admin/admin or admin/9999</li><li>Arecont Vision: none</li><li>Avigilon: admin/admin</li><li>Axis: traditionally root/pass, new Axis cameras require password creation during first login</li><li>Basler: admin/admin</li><li>Bosch: none</li><li>Brickcom: admin/admin</li><li>Canon: root/camera</li><li>Cisco: No default password, requires creation during first login</li><li>Dahua: admin/admin</li><li>Digital Watchdog: admin/admin</li><li>DRS: admin/1234</li><li>DVTel: Admin/1234</li><li>DynaColor: Admin/1234</li><li>FLIR: admin/fliradmin</li><li>Foscam: admin/</li><li>GeoVision: admin/admin</li><li>Grandstream: admin/admin</li><li>Hikvision: admin/12345</li><li>Honeywell: admin/1234</li><li>IQinVision: root/system</li><li>IPX-DDK: root/admin or root/Admin\</li><li>JVC: admin/jvc</li><li>March: Networks: admin/</li><li>Mobotix: admin/meinsm</li><li>Panasonic: admin/12345</li><li>Pelco Sarix: admin/admin</li><li>Pixord: admin/admin</li><li>Samsung Electronics: root/root or admin/4321</li><li>Samsung Techwin (old): admin/1111111</li><li>Samsung (new): admin/4321</li><li>Sanyo: admin/admin</li><li>Scallop: admin/password</li><li>Sentry360 (mini): admin/1234</li><li>Sentry360 (pro): none</li><li>Sony: admin/admin</li><li>Speco: admin/1234</li><li>Stardot: admin/admin</li><li>Starvedia: admin/</li><li>Trendnet: admin/admin</li><li>Toshiba: root/ikwd</li><li>VideoIQ: supervisor/supervisor</li><li>Vivotek: root/</li><li>Ubiquiti: ubnt/ubnt</li><li>Wodsee: admin/</li></ul><p>1.海康威视IP网络摄像机： 用户：admin，密码：12345 zoomeye搜索关键词：hikvision 2.大华网络摄像机： user:admin pass:admin 管理权限 user:default pass:user 用户默认登陆帐号 user:888888 pass:admin user:666666 pass:user zoomeye搜索关键词：WEB SERVICE 3.cctv摄像机： user：admin pass：空 telnet登陆 user：root pass：”juantech” zoomeye搜索关键词：JAWS/1.0 4.SQ-WEBCAM摄像机： user：admin pass：admin zoomeye搜索关键词：SQ-WEBCAM</p><h3 id="2-尝试的搜索指令"><a href="#2-尝试的搜索指令" class="headerlink" title="2 尝试的搜索指令"></a>2 尝试的搜索指令</h3><p>Server: uc-httpd 1.0.0 200 OK Country:”CN”</p><p>Webcam Country:”CN”</p><h3 id="3-搜到的摄像头"><a href="#3-搜到的摄像头" class="headerlink" title="3 搜到的摄像头"></a>3 搜到的摄像头</h3><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p><a href="http://153.223.242.81:81/home.htm">http://153.223.242.81:81/home.htm</a></p><p>location: japan</p><p>用户名：admin 密码：admin</p><h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p><a href="http://78.186.241.146:81/home.htm">http://78.186.241.146:81/home.htm</a></p><p>location：turkey</p><p>用户名：admin 密码：admin</p><h4 id="3"><a href="#3" class="headerlink" title="3"></a>3</h4><p><a href="http://60.16.233.108:60001/view2.html">http://60.16.233.108:60001/view2.html</a></p><p>location：沈阳</p><p>用户名：空</p><p>密码：空</p><h4 id="4"><a href="#4" class="headerlink" title="4"></a>4</h4><p><a href="http://92.108.85.124:83/home.htm">http://92.108.85.124:83/home.htm</a></p><p>location：Germany</p><p>用户名：admin 密码：admin</p><h4 id="5"><a href="#5" class="headerlink" title="5"></a>5</h4><p>搜到了自己的网站头文件信息……</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;此前有听过关于网络摄像头泄露隐私的新闻，没想到此次自己也成了一名「偷窥者」。在老师的ppt以及其他一些资料的指导下，我理解了Shodan是一个可以搜索一切暴露在网络上的设备、端口，以及它们的HTTP header或者其他信息的搜索引擎。初体验Shodan之下，我理解了一些头
+      
+    
+    </summary>
+    
+    
+      <category term="Computer Notes" scheme="http://yoursite.com/categories/Computer-Notes/"/>
+    
+    
+      <category term="Shodan" scheme="http://yoursite.com/tags/Shodan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Charles抓包知乎app&amp;尝试tcpdump抓包微信</title>
+    <link href="http://yoursite.com/2020/04/19/charles%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp%E5%B0%9D%E8%AF%95tcpdump%E6%8A%93%E5%8C%85%E5%BE%AE%E4%BF%A1/"/>
+    <id>http://yoursite.com/2020/04/19/charles%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp%E5%B0%9D%E8%AF%95tcpdump%E6%8A%93%E5%8C%85%E5%BE%AE%E4%BF%A1/</id>
+    <published>2020-04-19T14:41:25.000Z</published>
+    <updated>2020-08-06T16:42:32.723Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-Charles抓包知乎app"><a href="#1-Charles抓包知乎app" class="headerlink" title="1. Charles抓包知乎app"></a>1. Charles抓包知乎app</h1><h2 id="一、配置http代理并连接"><a href="#一、配置http代理并连接" class="headerlink" title="一、配置http代理并连接"></a>一、配置http代理并连接</h2><p>手动将charles端口设置为8887（8888已有其他程序使用）</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202227829-1024x897.png"></p><p>查看Mac ip地址</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202326968-1024x886.png"></p><p>将上述ip地址和端口填入手机http代理</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418203302486-473x1024.png"></p><p>charles收到连接请求，点击allow</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202628755-1024x314.png"></p><p>手机访问baidu，charles抓到，表示成功连接</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418204227530-1024x375.png"></p><h2 id="二、下载并安装SSL证书，解开https"><a href="#二、下载并安装SSL证书，解开https" class="headerlink" title="二、下载并安装SSL证书，解开https"></a>二、下载并安装SSL证书，解开https</h2><p>在设置中打开SSL proxying，并添加*:*，表示抓包所有https请求</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418204655402-1024x839.png"></p><p>在手机中访问<code>chls.pro/ssl</code>，下载并安装证书</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418205452977-473x1024.jpg"></p><p>在通用-关于中打开证书信任</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418205537380-473x1024.png"></p><h2 id="三、抓包知乎app"><a href="#三、抓包知乎app" class="headerlink" title="三、抓包知乎app"></a>三、抓包知乎app</h2><p>使用手机浏览知乎</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210744247-473x1024.png"></p><p>charles抓到许多相关请求：</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210211496-1024x764.png"></p><p>在<code>https://api.zhihu.com/answers</code>中发现的json内容，即为刚刚所浏览的知乎回答及相关的许多信息，例如回答id、内容、问题id、作者id、作者名等等，如下：</p><p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210405745-1024x764.png"></p><p>抓到json内容如下：</p><p> {<br>   “id”: 1162030612,<br>   “type”: “answer”,<br>   “answer_type”: “normal”,<br>   “question”: {<br>     “type”: “question”,<br>     “id”: 388669115,<br>     “title”: “4月18号美国新冠肺炎确诊病例达70万，死亡人数到达36721人，美国还会坚持复工么？”,<br>     “question_type”: “normal”,<br>     “created”: 1587163853,<br>     “updated_time”: 1587184466,<br>     “url”: “<a href="https://api.zhihu.com/questions/388669115&quot;">https://api.zhihu.com/questions/388669115&quot;</a>,<br>     “admin_closed_comment”: false,<br>     “relationship”: {},<br>     “mute_info”: {<br>       “type”: “”<br>     }<br>   },<br>   “author”: {<br>     “id”: “e4a0b00c8c04bc16c0fed1563f1a0444”,<br>     “url_token”: “liu-xue-sheng-ri-bao”,<br>     “name”: “留学生日报”,<br>     “avatar_url”: “<a href="https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691/_s.jpg&quot;">https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691\_s.jpg&quot;</a>,<br>     “avatar_url_template”: “<a href="https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691/_%7Bsize%7D.jpg&quot;">https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691\_{size}.jpg&quot;</a>,<br>     “is_org”: true,<br>     “type”: “people”,<br>     “url”: “<a href="https://api.zhihu.com/people/e4a0b00c8c04bc16c0fed1563f1a0444&quot;">https://api.zhihu.com/people/e4a0b00c8c04bc16c0fed1563f1a0444&quot;</a>,<br>     “user_type”: “organization”,<br>     “headline”: “百万中国留学生都在关注”,<br>     “badge”: [{<br>       “type”: “identity”,<br>       “description”: “已认证的官方帐号”,<br>       “topics”: []<br>     }],<br>     “gender”: -1,<br>     “is_advertiser”: false,<br>     “is_followed”: false,<br>     “is_privacy”: false<br>   },<br>   “url”: “<a href="https://api.zhihu.com/answers/1162030612&quot;">https://api.zhihu.com/answers/1162030612&quot;</a>,<br>   “thumbnail”: “<a href="https://pic1.zhimg.com/50/v2-a43e1cad6d10fb88bc31af266b018783/_xl.jpg&quot;">https://pic1.zhimg.com/50/v2-a43e1cad6d10fb88bc31af266b018783\_xl.jpg&quot;</a>,<br>   “is_collapsed”: false,<br>   “is_copyable”: false,<br>   “voteup_count”: 5879,<br>   “comment_count”: 424,<br>   “thanks_count”: 480,<br>   “is_mine”: false,<br>   “admin_closed_comment”: false,<br>   “comment_permission”: “all”,<br>   “can_comment”: {<br>     “reason”: “”,<br>     “status”: true<br>   },<br>   “has_publishing_draft”: false,<br>   “editable_content”: “”,<br>   “excerpt”: “我来了。我是芳芳·菲克纽斯 。 这是我的美国疫情日记 第十七篇 《特朗普带血的复工，各州长反水，美国民众持枪上街抗议》 看日记全集的在这里芳芳美国疫情日记汇总 目前更新到第十六篇 ——— 当雪崩发生时，每一篇雪花都在勇闯天涯。 在过去的四周中，一共有2200万美国人失业 越来越多的美国城市，很多手停口停的普通白人民众不戴任何防护措施持枪走上街头，举着声援特朗普的口号，开始示威游行，要求复工。 [图片] [图片] [图片] [图片] 4月30日，特…”,<br>   “relevant_info”: {<br>     “is_relevant”: false,<br>     “relevant_type”: “”,<br>     “relevant_text”: “”<br>   },<br>   “suggest_edit”: {<br>     “reason”: “”,<br>     “status”: false,<br>     “tip”: “”,<br>     “title”: “”,<br>     “unnormal_details”: {<br>       “status”: “”,<br>       “description”: “”,<br>       “reason”: “”,<br>       “reason_id”: 0,<br>       “note”: “”<br>     },<br>     “url”: “”<br>   },<br>   “attached_info”: “ogEQCAQQAxiU3IyqBCC7vaq5AQ==”,<br>   “mcn_fp_show”: -1,<br>   “reward_info”: {<br>     “can_open_reward”: false,<br>     “is_rewardable”: false,<br>     “reward_member_count”: 0,<br>     “reward_total_money”: 0,<br>     “tagline”: “”<br>   },<br>   “relationship”: {<br>     “is_thanked”: false,<br>     “upvoted_followees”: []<br>   },<br>   “ad_answer”: null<br> }</p><p>抓包知乎app成功！</p><h1 id="2-尝试tcpdump抓包微信"><a href="#2-尝试tcpdump抓包微信" class="headerlink" title="2. 尝试tcpdump抓包微信"></a>2. 尝试tcpdump抓包微信</h1><h3 id="1-获取自己手机的udid"><a href="#1-获取自己手机的udid" class="headerlink" title="1.获取自己手机的udid"></a>1.获取自己手机的udid</h3><p>使用数据线将iPhone与Mac连接，找到iPhone的UDID</p><h3 id="2-打开mac终端，将udid添加到rvictl命令中"><a href="#2-打开mac终端，将udid添加到rvictl命令中" class="headerlink" title="2.打开mac终端，将udid添加到rvictl命令中"></a>2.打开mac终端，将udid添加到rvictl命令中</h3><p><code>rvictl -s udid</code></p><h3 id="3-tcpdump运行抓包命令实施监控"><a href="#3-tcpdump运行抓包命令实施监控" class="headerlink" title="3.tcpdump运行抓包命令实施监控"></a>3.tcpdump运行抓包命令实施监控</h3><p><code>sudo tcpdump -i rvi0 -AAl</code></p><p>找到微信相关的包含weixin WeChat等等关键字</p><p>看不懂了……</p><h3 id="4-将自己的设备从rvictl移除"><a href="#4-将自己的设备从rvictl移除" class="headerlink" title="4.将自己的设备从rvictl移除"></a>4.将自己的设备从rvictl移除</h3><p> rvictl -x UUID</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-Charles抓包知乎app&quot;&gt;&lt;a href=&quot;#1-Charles抓包知乎app&quot; class=&quot;headerlink&quot; title=&quot;1. Charles抓包知乎app&quot;&gt;&lt;/a&gt;1. Charles抓包知乎app&lt;/h1&gt;&lt;h2 id=&quot;一、配置htt
+      
+    
+    </summary>
+    
+    
+      <category term="Computer Notes" scheme="http://yoursite.com/categories/Computer-Notes/"/>
+    
+    
+      <category term="Charles" scheme="http://yoursite.com/tags/Charles/"/>
+    
+      <category term="tcpdump" scheme="http://yoursite.com/tags/tcpdump/"/>
+    
+      <category term="抓包" scheme="http://yoursite.com/tags/%E6%8A%93%E5%8C%85/"/>
     
   </entry>
   

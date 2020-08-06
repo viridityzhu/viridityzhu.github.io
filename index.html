@@ -124,12 +124,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">0</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">34</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">2</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a>
 
   </li>
   </ul>
@@ -159,7 +159,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/05/test/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/11/sublime-text-3-package-control%E6%8A%A5%E9%94%99oserror-the-specified-item-could-not-be-found-in-the-keychain%E8%A7%A3%E5%86%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -173,7 +173,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/08/05/test/" class="post-title-link" itemprop="url">test</a>
+            <a href="/2020/07/11/sublime-text-3-package-control%E6%8A%A5%E9%94%99oserror-the-specified-item-could-not-be-found-in-the-keychain%E8%A7%A3%E5%86%B3/" class="post-title-link" itemprop="url">Sublime Text 3 Package Control报错OSError: The specified item could not be found in the keychain解决</a>
         </h2>
 
         <div class="post-meta">
@@ -183,7 +183,23 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-08-05 23:20:38" itemprop="dateCreated datePublished" datetime="2020-08-05T23:20:38+08:00">2020-08-05</time>
+              <time title="创建时间：2020-07-11 15:23:35" itemprop="dateCreated datePublished" datetime="2020-07-11T15:23:35+08:00">2020-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:34:43" itemprop="dateModified" datetime="2020-08-07T00:34:43+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Notes/" itemprop="url" rel="index"><span itemprop="name">Computer Notes</span></a>
+                </span>
             </span>
 
           
@@ -197,7 +213,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p>Sublime Text 3 Package Control 报错 OSError: The specified item could not be found in the keychain解决了，喜大普奔。</p>
+<p>他妈的，这是什么天坑。花了我一整天，好多根头发，最后的解决方法是：在<code>钥匙串</code>中把<code>Apple Worldwide Developer Relations Certification Authority</code>这个证书的信任权限从<code>系统默认</code>改为<code>始终信任</code>。</p>
+<p>我迄今也不太清楚这个证书是干嘛用的，也来不及去搞清楚了。我猜测肯定是系统咋的一更新，出于安全考虑，这个证书的权限被降低了；一般的程序不管是用curl还是用urllib来访问url的时候，一旦遇上https类型的，就需要跟OS沟通来签相关证书，但在这个时候被OS给拒绝了。</p>
+<p>网上搜来搜去也没有直接提到这个问题的解决方案的。记录一下我的debug思路吧，多机智啊：</p>
+<ol>
+<li>解锁新技能，把<code>Package Control.sublime-package</code>后缀改成<code>.zip</code>（网上说.sublime-package本质上就是.zip压缩文件，只是改了个后缀，好的吧…），解压看了源码，然后发现不管是通过curl还是通过urllib来使用package control，都会出现同样的错，排除了sublime text源码的问题，确认问题出在OS上。</li>
+<li>另一方面我看源码的时候发现好像得是https类型的url才会触发这个证书签发的机制，灵机一动把channels手动改成http类型的，发现果然成功了。</li>
+<li>所以我定位到了问题，搜了一下“urllib https 报错The specified item could not be found in the keychain”，终于找到<a target="_blank" rel="noopener" href="https://github.com/electron-userland/electron-builder/issues/820">github一个issue里</a>有人提到了这个证书Apple Worldwide Developer Relations Certification Authority。</li>
+<li>打开钥匙串，找到这个证书，随便改了一下权限，发现ok了。</li>
+</ol>
+
       
     </div>
 
@@ -216,7 +242,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/05/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/%E6%88%91%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9A%E4%BC%B8%E6%89%8B%E6%8E%A5%E8%BF%87%E7%A9%BA%E6%97%A0%E4%B8%80%E7%89%A9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -230,7 +256,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/08/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2020/07/02/%E6%88%91%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9A%E4%BC%B8%E6%89%8B%E6%8E%A5%E8%BF%87%E7%A9%BA%E6%97%A0%E4%B8%80%E7%89%A9/" class="post-title-link" itemprop="url">我的状态：伸手接过空无一物</a>
         </h2>
 
         <div class="post-meta">
@@ -240,7 +266,23 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-08-05 23:19:32" itemprop="dateCreated datePublished" datetime="2020-08-05T23:19:32+08:00">2020-08-05</time>
+              <time title="创建时间：2020-07-02 02:14:50" itemprop="dateCreated datePublished" datetime="2020-07-02T02:14:50+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:27:53" itemprop="dateModified" datetime="2020-08-07T00:27:53+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/poems/" itemprop="url" rel="index"><span itemprop="name">poems</span></a>
+                </span>
             </span>
 
           
@@ -254,19 +296,629 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          <p>网络空间安全成立<br>世上人心不齐<br>一把横放的吉他<br>会受损吗<br>我不在意<br>窗外的小区楼<br>晚饭后变得嘈杂<br>那好 无人听见我的琴声<br>电子书落了尘埃<br>当天的考试沉甸甸<br>吉他心律不齐<br>我的状态：<br>伸手接过空无一物</p>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/%E8%AF%B4%E8%B5%B7%E4%BA%AB%E4%B9%90%E8%A7%82/">
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/02/%E8%AF%B4%E8%B5%B7%E4%BA%AB%E4%B9%90%E8%A7%82/" class="post-title-link" itemprop="url">说起享乐观</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-02 02:14:01" itemprop="dateCreated datePublished" datetime="2020-07-02T02:14:01+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:23:50" itemprop="dateModified" datetime="2020-08-07T00:23:50+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/thoughts/" itemprop="url" rel="index"><span itemprop="name">thoughts</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>说起享乐观，享乐大抵是我的生活追求，只是设有一个底线，有一类享乐不会去接触：极致的，一旦体验过一次，生活再回不了头的。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/%E4%B8%89%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E9%AB%98%E8%80%83%E5%87%BA%E5%88%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/02/%E4%B8%89%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E9%AB%98%E8%80%83%E5%87%BA%E5%88%86/" class="post-title-link" itemprop="url">三年前的今天高考出分</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-02 02:13:26" itemprop="dateCreated datePublished" datetime="2020-07-02T02:13:26+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:30:29" itemprop="dateModified" datetime="2020-08-07T00:30:29+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/thoughts/" itemprop="url" rel="index"><span itemprop="name">thoughts</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>三年前的今天高考出分，北京难得的大雨夜，魏公村常年疏水不畅的下水道，积水没过鞋面。十一二点我跟朋友从ktv出来，几个人各怀心事，没人说很深的话。人生中第一次喝酒是在这次，四瓶忘了是啥的啤酒，喝完清醒得不得了。知道考砸了，栽跟头了，一下子所有都已经不一样了。</p>
+<p>却不知道命运那头是什么样。这头是一股脑走下去了，懂承担选择的责任了，也多了股反叛味儿在骨子里。问起后悔我是不承认的，只是一丁点儿也不愿再回忆高中时期了，一切都蒙着灰，带着愊忆。三年里路过高中校门很多次，一次也没去看望过老师，暂时是无所谓了。</p>
+<p>情绪一直没我妈担忧的差，糟糕的高考分，糟糕的选校，糟糕的专业，竟然就自然地度过了。说来有点玩味，支撑我的可能是那晚一句偏颇的领悟，被我奉为圭臬了：人生还是痛苦多。</p>
+<p>后来发挥这种精神，痛苦的晚上喝点酒，什么也不想，就过去了，我觉得这是我的成年。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/%E6%97%A0%E9%A2%98-trashed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/02/%E6%97%A0%E9%A2%98-trashed/" class="post-title-link" itemprop="url">无题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-02 02:10:59" itemprop="dateCreated datePublished" datetime="2020-07-02T02:10:59+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:26:13" itemprop="dateModified" datetime="2020-08-07T00:26:13+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/poems/" itemprop="url" rel="index"><span itemprop="name">poems</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>想念过去的你 </p>
+<p>我从未见过她 </p>
+<p>却如此熟悉她 </p>
+<p>命运使我们永不能相见 </p>
+<p>我却是深爱着她 </p>
+<p>是怎样的不幸 </p>
+<p>使我没有从一出生就遇见你 </p>
+<p>陪伴你 经历你 </p>
+<p>把更多的我献给你</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/%E8%8D%92%E8%AF%9E%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/02/%E8%8D%92%E8%AF%9E%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">荒诞笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-02 02:10:37" itemprop="dateCreated datePublished" datetime="2020-07-02T02:10:37+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:24:36" itemprop="dateModified" datetime="2020-08-07T00:24:36+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/thoughts/" itemprop="url" rel="index"><span itemprop="name">thoughts</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>荒诞是什么： 1. 人对永恒的追求与横亘在人面前的不得不面对的死亡之间的矛盾 2. 死囚在临死之前什么也看不到，独独看到近在眼前的他的鞋带，荒诞就是死囚的鞋带 3. 人对透明的追求与世界的混沌之间的矛盾 4. 人意识到活着的无意义、无价值，一种脱离生活规则的感受 5. 人一下子把握住时间，即感受到时间对自己的扼杀，将自己与永恒撇开关系 6. 人同时从介入者和旁观者的视角观看生活而产生的差距（齐泽克） 三种人： 1. 自杀者：肉体上逃避荒诞 2. 精神自杀者：选择信仰或希望，这是精神上自杀，同样是逃避荒诞 3. 反抗者（荒诞英雄）：意识到荒诞，意识到荒诞的永恒性，而尽可能丰富地活着，增加生命体验的量（即活着的时长，而无质的差别）。这是真正的勇敢。（对生命最大的反抗即是尽可能活着，对荒诞真正的反抗即是延续荒诞（因为已知荒诞是永恒的）。） 荒诞英雄举例： 1. 西西弗：因贪恋人世而受到诸神的惩罚，终其生命重复推巨石上山，巨石到达山顶后滑落，重新推之。西西弗接受其荒诞的命运，破除对永恒的希冀而完全掌握巨石，掌握命运。西西弗将推巨石视作命运，与自己此前所做相联系，因而不被视作惩罚，本无惩罚。西西弗每次从山顶下山时，是完成了一次反抗之后重新走入命运的空隙，是直视荒诞的时刻，是勇敢。另一视角，西西弗通过不断地推巨石，不断坚持这一选择，使之存在，进而影响其他的人做出的选择，这是他对自己的选择所负的责任（我这么理解）。不可以推测西西弗不幸福。 2. 唐璜：爱过一个又一个女人，重复地深情，重复地离开；接受此后惩罚一般的命运；从未体会失望与忧伤。唐璜是追求生命体验的量，是荒诞人的典范。他有知识，也有意识，通过自己的选择做出对荒诞的反抗。专于一人的爱情本质上是对永恒的信仰，是精神自杀；唐璜跳出这样的藩篱，清楚自己想要的是什么。唐璜是否自私，加缪留给读者解读，我以为是。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/%E9%80%83%E5%90%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/02/%E9%80%83%E5%90%A7/" class="post-title-link" itemprop="url">逃吧</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-02 02:09:30" itemprop="dateCreated datePublished" datetime="2020-07-02T02:09:30+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:23:43" itemprop="dateModified" datetime="2020-08-07T00:23:43+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/poems/" itemprop="url" rel="index"><span itemprop="name">poems</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>加速吧下坠吧 </p>
+<p>不要放弃希望 </p>
+<p>希望在下一代 </p>
+<p>逃吧快逃吧 </p>
+<p>逃去荒芜的赛博空间里 </p>
+<p>逃去原始的阅读欲望里 </p>
+<p>逃到他乡 </p>
+<p>没有枷锁一样的联结 </p>
+<p>没有大爱只有私情</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/%E4%B8%96%E9%97%B4%E7%9A%84%E9%87%8E%E7%81%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/27/%E4%B8%96%E9%97%B4%E7%9A%84%E9%87%8E%E7%81%AB/" class="post-title-link" itemprop="url">世间的野火</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-27 02:20:44" itemprop="dateCreated datePublished" datetime="2020-05-27T02:20:44+08:00">2020-05-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:30:14" itemprop="dateModified" datetime="2020-08-07T00:30:14+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/poems/" itemprop="url" rel="index"><span itemprop="name">poems</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>你成全我 世间的野火 一种年轻的沉迷 我们一起浪费生活 从一句重复的话到另一句 数到第五百二十句爱你 小写的牧歌正是循环 不再怕梦中的寂寞 没有等待的戈多</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/18/%E7%8B%AD%E7%AA%84%E7%9A%84%E4%BA%BA%E7%94%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/18/%E7%8B%AD%E7%AA%84%E7%9A%84%E4%BA%BA%E7%94%9F/" class="post-title-link" itemprop="url">狭窄的人生</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-18 16:26:04" itemprop="dateCreated datePublished" datetime="2020-05-18T16:26:04+08:00">2020-05-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:25:34" itemprop="dateModified" datetime="2020-08-07T00:25:34+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/poems/" itemprop="url" rel="index"><span itemprop="name">poems</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>狭窄的人生里 </p>
+<p>如果重逢 </p>
+<p>是拾起所有偏见 </p>
+<p>旧日之情是死结 </p>
+<p>那么孤独 </p>
+<p>不是傲慢 </p>
+<p>是与黄昏的和解 </p>
+<p>狭窄的人生里 </p>
+<p>如果酒后除了呓语 </p>
+<p>还剩见不得人的诗 </p>
+<p>那么告别是在最早一次 </p>
+<p>或是趁早这次</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/xp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/05/xp/" class="post-title-link" itemprop="url">xp</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-05 03:41:18" itemprop="dateCreated datePublished" datetime="2020-05-05T03:41:18+08:00">2020-05-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:31:28" itemprop="dateModified" datetime="2020-08-07T00:31:28+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/poems/" itemprop="url" rel="index"><span itemprop="name">poems</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>她远远地站在卧室<br>我却喊出了性癖之句：<br>我远远望着的时候你在凝视</p>
 
       
     </div>
@@ -284,6 +936,9 @@
 
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -348,9 +1003,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -447,6 +1113,8 @@
 
 
 
+
+  
 
   
 
