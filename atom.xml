@@ -18,12 +18,12 @@
   
   <entry>
     <title>Sublime Text 3 Package Control报错OSError: The specified item could not be found in the keychain解决</title>
-    <link href="http://yoursite.com/2020/07/11/sublime-text-3-package-control%E6%8A%A5%E9%94%99oserror-the-specified-item-could-not-be-found-in-the-keychain%E8%A7%A3%E5%86%B3/"/>
-    <id>http://yoursite.com/2020/07/11/sublime-text-3-package-control%E6%8A%A5%E9%94%99oserror-the-specified-item-could-not-be-found-in-the-keychain%E8%A7%A3%E5%86%B3/</id>
+    <link href="http://yoursite.com/2020/07/11/sublime-oserror-keychain/"/>
+    <id>http://yoursite.com/2020/07/11/sublime-oserror-keychain/</id>
     <published>2020-07-11T07:23:35.000Z</published>
     <updated>2020-08-06T16:34:43.167Z</updated>
     
-    <content type="html"><![CDATA[<p>Sublime Text 3 Package Control 报错 OSError: The specified item could not be found in the keychain解决了，喜大普奔。</p><p>他妈的，这是什么天坑。花了我一整天，好多根头发，最后的解决方法是：在<code>钥匙串</code>中把<code>Apple Worldwide Developer Relations Certification Authority</code>这个证书的信任权限从<code>系统默认</code>改为<code>始终信任</code>。</p><p>我迄今也不太清楚这个证书是干嘛用的，也来不及去搞清楚了。我猜测肯定是系统咋的一更新，出于安全考虑，这个证书的权限被降低了；一般的程序不管是用curl还是用urllib来访问url的时候，一旦遇上https类型的，就需要跟OS沟通来签相关证书，但在这个时候被OS给拒绝了。</p><p>网上搜来搜去也没有直接提到这个问题的解决方案的。记录一下我的debug思路吧，多机智啊：</p><ol><li>解锁新技能，把<code>Package Control.sublime-package</code>后缀改成<code>.zip</code>（网上说.sublime-package本质上就是.zip压缩文件，只是改了个后缀，好的吧…），解压看了源码，然后发现不管是通过curl还是通过urllib来使用package control，都会出现同样的错，排除了sublime text源码的问题，确认问题出在OS上。</li><li>另一方面我看源码的时候发现好像得是https类型的url才会触发这个证书签发的机制，灵机一动把channels手动改成http类型的，发现果然成功了。</li><li>所以我定位到了问题，搜了一下“urllib https 报错The specified item could not be found in the keychain”，终于找到<a href="https://github.com/electron-userland/electron-builder/issues/820">github一个issue里</a>有人提到了这个证书Apple Worldwide Developer Relations Certification Authority。</li><li>打开钥匙串，找到这个证书，随便改了一下权限，发现ok了。</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>Sublime Text 3 Package Control 报错 OSError: The specified item could not be found in the keychain解决了，喜大普奔。</p><p>他妈的，这是什么天坑。花了我一整天，好多根头发，最后的解决方法是：在<code>钥匙串</code>中把<code>Apple Worldwide Developer Relations Certification Authority</code>这个证书的信任权限从<code>系统默认</code>改为<code>始终信任</code>。</p><p>我迄今也不太清楚这个证书是干嘛用的，也来不及去搞清楚了。我猜测肯定是系统咋的一更新，出于安全考虑，这个证书的权限被降低了；一般的程序不管是用curl还是用urllib来访问url的时候，一旦遇上https类型的，就需要跟OS沟通来签相关证书，但在这个时候被OS给拒绝了。</p><p>网上搜来搜去也没有直接提到这个问题的解决方案的。记录一下我的debug思路吧，多机智啊：</p><ol type="1"><li>解锁新技能，把<code>Package Control.sublime-package</code>后缀改成<code>.zip</code>（网上说.sublime-package本质上就是.zip压缩文件，只是改了个后缀，好的吧…），解压看了源码，然后发现不管是通过curl还是通过urllib来使用package control，都会出现同样的错，排除了sublime text源码的问题，确认问题出在OS上。</li><li>另一方面我看源码的时候发现好像得是https类型的url才会触发这个证书签发的机制，灵机一动把channels手动改成http类型的，发现果然成功了。</li><li>所以我定位到了问题，搜了一下“urllib https 报错The specified item could not be found in the keychain”，终于找到<a href="https://github.com/electron-userland/electron-builder/issues/820">github一个issue里</a>有人提到了这个证书Apple Worldwide Developer Relations Certification Authority。</li><li>打开钥匙串，找到这个证书，随便改了一下权限，发现ok了。</li></ol>]]></content>
     
     <summary type="html">
     
