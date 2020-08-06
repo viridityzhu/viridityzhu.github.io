@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">105</span></a>
 
   </li>
   </ul>
@@ -160,6 +160,110 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/19/charles%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp%E5%B0%9D%E8%AF%95tcpdump%E6%8A%93%E5%8C%85%E5%BE%AE%E4%BF%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/19/charles%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp%E5%B0%9D%E8%AF%95tcpdump%E6%8A%93%E5%8C%85%E5%BE%AE%E4%BF%A1/" class="post-title-link" itemprop="url">Charles抓包知乎app&尝试tcpdump抓包微信</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 22:41:25" itemprop="dateCreated datePublished" datetime="2020-04-19T22:41:25+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 00:42:32" itemprop="dateModified" datetime="2020-08-07T00:42:32+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Notes/" itemprop="url" rel="index"><span itemprop="name">Computer Notes</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-Charles抓包知乎app"><a href="#1-Charles抓包知乎app" class="headerlink" title="1. Charles抓包知乎app"></a>1. Charles抓包知乎app</h1><h2 id="一、配置http代理并连接"><a href="#一、配置http代理并连接" class="headerlink" title="一、配置http代理并连接"></a>一、配置http代理并连接</h2><p>手动将charles端口设置为8887（8888已有其他程序使用）</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202227829-1024x897.png"></p>
+<p>查看Mac ip地址</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202326968-1024x886.png"></p>
+<p>将上述ip地址和端口填入手机http代理</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418203302486-473x1024.png"></p>
+<p>charles收到连接请求，点击allow</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202628755-1024x314.png"></p>
+<p>手机访问baidu，charles抓到，表示成功连接</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418204227530-1024x375.png"></p>
+<h2 id="二、下载并安装SSL证书，解开https"><a href="#二、下载并安装SSL证书，解开https" class="headerlink" title="二、下载并安装SSL证书，解开https"></a>二、下载并安装SSL证书，解开https</h2><p>在设置中打开SSL proxying，并添加*:*，表示抓包所有https请求</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418204655402-1024x839.png"></p>
+<p>在手机中访问<code>chls.pro/ssl</code>，下载并安装证书</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418205452977-473x1024.jpg"></p>
+<p>在通用-关于中打开证书信任</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418205537380-473x1024.png"></p>
+<h2 id="三、抓包知乎app"><a href="#三、抓包知乎app" class="headerlink" title="三、抓包知乎app"></a>三、抓包知乎app</h2><p>使用手机浏览知乎</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210744247-473x1024.png"></p>
+<p>charles抓到许多相关请求：</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210211496-1024x764.png"></p>
+<p>在<code>https://api.zhihu.com/answers</code>中发现的json内容，即为刚刚所浏览的知乎回答及相关的许多信息，例如回答id、内容、问题id、作者id、作者名等等，如下：</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210405745-1024x764.png"></p>
+<p>抓到json内容如下：</p>
+<p> {<br>   “id”: 1162030612,<br>   “type”: “answer”,<br>   “answer_type”: “normal”,<br>   “question”: {<br>     “type”: “question”,<br>     “id”: 388669115,<br>     “title”: “4月18号美国新冠肺炎确诊病例达70万，死亡人数到达36721人，美国还会坚持复工么？”,<br>     “question_type”: “normal”,<br>     “created”: 1587163853,<br>     “updated_time”: 1587184466,<br>     “url”: “<a target="_blank" rel="noopener" href="https://api.zhihu.com/questions/388669115&quot;">https://api.zhihu.com/questions/388669115&quot;</a>,<br>     “admin_closed_comment”: false,<br>     “relationship”: {},<br>     “mute_info”: {<br>       “type”: “”<br>     }<br>   },<br>   “author”: {<br>     “id”: “e4a0b00c8c04bc16c0fed1563f1a0444”,<br>     “url_token”: “liu-xue-sheng-ri-bao”,<br>     “name”: “留学生日报”,<br>     “avatar_url”: “<a target="_blank" rel="noopener" href="https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691/_s.jpg&quot;">https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691\_s.jpg&quot;</a>,<br>     “avatar_url_template”: “<a target="_blank" rel="noopener" href="https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691/_%7Bsize%7D.jpg&quot;">https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691\_{size}.jpg&quot;</a>,<br>     “is_org”: true,<br>     “type”: “people”,<br>     “url”: “<a target="_blank" rel="noopener" href="https://api.zhihu.com/people/e4a0b00c8c04bc16c0fed1563f1a0444&quot;">https://api.zhihu.com/people/e4a0b00c8c04bc16c0fed1563f1a0444&quot;</a>,<br>     “user_type”: “organization”,<br>     “headline”: “百万中国留学生都在关注”,<br>     “badge”: [{<br>       “type”: “identity”,<br>       “description”: “已认证的官方帐号”,<br>       “topics”: []<br>     }],<br>     “gender”: -1,<br>     “is_advertiser”: false,<br>     “is_followed”: false,<br>     “is_privacy”: false<br>   },<br>   “url”: “<a target="_blank" rel="noopener" href="https://api.zhihu.com/answers/1162030612&quot;">https://api.zhihu.com/answers/1162030612&quot;</a>,<br>   “thumbnail”: “<a target="_blank" rel="noopener" href="https://pic1.zhimg.com/50/v2-a43e1cad6d10fb88bc31af266b018783/_xl.jpg&quot;">https://pic1.zhimg.com/50/v2-a43e1cad6d10fb88bc31af266b018783\_xl.jpg&quot;</a>,<br>   “is_collapsed”: false,<br>   “is_copyable”: false,<br>   “voteup_count”: 5879,<br>   “comment_count”: 424,<br>   “thanks_count”: 480,<br>   “is_mine”: false,<br>   “admin_closed_comment”: false,<br>   “comment_permission”: “all”,<br>   “can_comment”: {<br>     “reason”: “”,<br>     “status”: true<br>   },<br>   “has_publishing_draft”: false,<br>   “editable_content”: “”,<br>   “excerpt”: “我来了。我是芳芳·菲克纽斯 。 这是我的美国疫情日记 第十七篇 《特朗普带血的复工，各州长反水，美国民众持枪上街抗议》 看日记全集的在这里芳芳美国疫情日记汇总 目前更新到第十六篇 ——— 当雪崩发生时，每一篇雪花都在勇闯天涯。 在过去的四周中，一共有2200万美国人失业 越来越多的美国城市，很多手停口停的普通白人民众不戴任何防护措施持枪走上街头，举着声援特朗普的口号，开始示威游行，要求复工。 [图片] [图片] [图片] [图片] 4月30日，特…”,<br>   “relevant_info”: {<br>     “is_relevant”: false,<br>     “relevant_type”: “”,<br>     “relevant_text”: “”<br>   },<br>   “suggest_edit”: {<br>     “reason”: “”,<br>     “status”: false,<br>     “tip”: “”,<br>     “title”: “”,<br>     “unnormal_details”: {<br>       “status”: “”,<br>       “description”: “”,<br>       “reason”: “”,<br>       “reason_id”: 0,<br>       “note”: “”<br>     },<br>     “url”: “”<br>   },<br>   “attached_info”: “ogEQCAQQAxiU3IyqBCC7vaq5AQ==”,<br>   “mcn_fp_show”: -1,<br>   “reward_info”: {<br>     “can_open_reward”: false,<br>     “is_rewardable”: false,<br>     “reward_member_count”: 0,<br>     “reward_total_money”: 0,<br>     “tagline”: “”<br>   },<br>   “relationship”: {<br>     “is_thanked”: false,<br>     “upvoted_followees”: []<br>   },<br>   “ad_answer”: null<br> }</p>
+<p>抓包知乎app成功！</p>
+<h1 id="2-尝试tcpdump抓包微信"><a href="#2-尝试tcpdump抓包微信" class="headerlink" title="2. 尝试tcpdump抓包微信"></a>2. 尝试tcpdump抓包微信</h1><h3 id="1-获取自己手机的udid"><a href="#1-获取自己手机的udid" class="headerlink" title="1.获取自己手机的udid"></a>1.获取自己手机的udid</h3><p>使用数据线将iPhone与Mac连接，找到iPhone的UDID</p>
+<h3 id="2-打开mac终端，将udid添加到rvictl命令中"><a href="#2-打开mac终端，将udid添加到rvictl命令中" class="headerlink" title="2.打开mac终端，将udid添加到rvictl命令中"></a>2.打开mac终端，将udid添加到rvictl命令中</h3><p><code>rvictl -s udid</code></p>
+<h3 id="3-tcpdump运行抓包命令实施监控"><a href="#3-tcpdump运行抓包命令实施监控" class="headerlink" title="3.tcpdump运行抓包命令实施监控"></a>3.tcpdump运行抓包命令实施监控</h3><p><code>sudo tcpdump -i rvi0 -AAl</code></p>
+<p>找到微信相关的包含weixin WeChat等等关键字</p>
+<p>看不懂了……</p>
+<h3 id="4-将自己的设备从rvictl移除"><a href="#4-将自己的设备从rvictl移除" class="headerlink" title="4.将自己的设备从rvictl移除"></a>4.将自己的设备从rvictl移除</h3><p> rvictl -x UUID</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -931,82 +1035,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/17/%E5%8F%AF%E6%88%91%E4%BB%8D%E7%84%B6%E5%9C%A8%E8%B0%88%E8%AE%BA%E7%88%B1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kay Zhu">
-      <meta itemprop="description" content="A Base for Secreting and Running at Night">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tianke Youke">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/17/%E5%8F%AF%E6%88%91%E4%BB%8D%E7%84%B6%E5%9C%A8%E8%B0%88%E8%AE%BA%E7%88%B1/" class="post-title-link" itemprop="url">可我仍然在谈论爱</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-17 19:55:00" itemprop="dateCreated datePublished" datetime="2020-01-17T19:55:00+08:00">2020-01-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-07 00:29:44" itemprop="dateModified" datetime="2020-08-07T00:29:44+08:00">2020-08-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/poems/" itemprop="url" rel="index"><span itemprop="name">poems</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我们谈论过了爱，<br>我们做爱，<br>我们表达爱，<br>我们相爱，<br>可我仍然不相信爱。 </p>
-<p>我仍然防备所谓爱，<br>可我仍然奉爱为信仰，<br>我侍奉以浪荡，<br>我全心全意地<br>剖开鲜血的肉，<br>可我仍然没有见到爱。 </p>
-<p>我仍然不见爱，<br>可我仍然在谈论爱，<br>我推翻爱，<br>重塑以情与欲，<br>我贬损爱，掷进心里的淤泥。<br>可我仍然在等待爱。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1076,7 +1104,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">105</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
