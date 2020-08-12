@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1. Charles抓包知乎app一、配置http代理并连接手动将charles端口设置为8887（8888已有其他程序使用）  查看Mac ip地址  将上述ip地址和端口填入手机http代理  charles收到连接请求，点击allow  手机访问baidu，charles抓到，表示成功连接  二、下载并安装SSL证书，解开https在设置中打开SSL proxying，并添加*:*，表示抓包">
+  <meta name="description" content="1. Charles抓包知乎app 一、配置http代理并连接 手动将charles端口设置为8887（8888已有其他程序使用）  查看Mac ip地址  将上述ip地址和端口填入手机http代理  charles收到连接请求，点击allow  手机访问baidu，charles抓到，表示成功连接  二、下载并安装SSL证书，解开https 在设置中打开SSL proxying，并添加*:*，表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Charles抓包知乎app&amp;尝试tcpdump抓包微信">
 <meta property="og:url" content="http://yoursite.com/2020/04/19/charles%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp%E5%B0%9D%E8%AF%95tcpdump%E6%8A%93%E5%8C%85%E5%BE%AE%E4%BF%A1/index.html">
 <meta property="og:site_name" content="Tianke Youke">
-<meta property="og:description" content="1. Charles抓包知乎app一、配置http代理并连接手动将charles端口设置为8887（8888已有其他程序使用）  查看Mac ip地址  将上述ip地址和端口填入手机http代理  charles收到连接请求，点击allow  手机访问baidu，charles抓到，表示成功连接  二、下载并安装SSL证书，解开https在设置中打开SSL proxying，并添加*:*，表示抓包">
+<meta property="og:description" content="1. Charles抓包知乎app 一、配置http代理并连接 手动将charles端口设置为8887（8888已有其他程序使用）  查看Mac ip地址  将上述ip地址和端口填入手机http代理  charles收到连接请求，点击allow  手机访问baidu，charles抓到，表示成功连接  二、下载并安装SSL证书，解开https 在设置中打开SSL proxying，并添加*:*，表">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202227829-1024x897.png">
 <meta property="og:image" content="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202326968-1024x886.png">
@@ -235,7 +235,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="1-Charles抓包知乎app"><a href="#1-Charles抓包知乎app" class="headerlink" title="1. Charles抓包知乎app"></a>1. Charles抓包知乎app</h1><h2 id="一、配置http代理并连接"><a href="#一、配置http代理并连接" class="headerlink" title="一、配置http代理并连接"></a>一、配置http代理并连接</h2><p>手动将charles端口设置为8887（8888已有其他程序使用）</p>
+        <h1 id="charles抓包知乎app">1. Charles抓包知乎app</h1>
+<h2 id="一配置http代理并连接">一、配置http代理并连接</h2>
+<p>手动将charles端口设置为8887（8888已有其他程序使用）</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202227829-1024x897.png"></p>
 <p>查看Mac ip地址</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202326968-1024x886.png"></p>
@@ -245,27 +247,123 @@
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418202628755-1024x314.png"></p>
 <p>手机访问baidu，charles抓到，表示成功连接</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418204227530-1024x375.png"></p>
-<h2 id="二、下载并安装SSL证书，解开https"><a href="#二、下载并安装SSL证书，解开https" class="headerlink" title="二、下载并安装SSL证书，解开https"></a>二、下载并安装SSL证书，解开https</h2><p>在设置中打开SSL proxying，并添加*:*，表示抓包所有https请求</p>
+<h2 id="二下载并安装ssl证书解开https">二、下载并安装SSL证书，解开https</h2>
+<p>在设置中打开SSL proxying，并添加*:*，表示抓包所有https请求</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418204655402-1024x839.png"></p>
 <p>在手机中访问<code>chls.pro/ssl</code>，下载并安装证书</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418205452977-473x1024.jpg"></p>
 <p>在通用-关于中打开证书信任</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418205537380-473x1024.png"></p>
-<h2 id="三、抓包知乎app"><a href="#三、抓包知乎app" class="headerlink" title="三、抓包知乎app"></a>三、抓包知乎app</h2><p>使用手机浏览知乎</p>
+<h2 id="三抓包知乎app">三、抓包知乎app</h2>
+<p>使用手机浏览知乎</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210744247-473x1024.png"></p>
 <p>charles抓到许多相关请求：</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210211496-1024x764.png"></p>
 <p>在<code>https://api.zhihu.com/answers</code>中发现的json内容，即为刚刚所浏览的知乎回答及相关的许多信息，例如回答id、内容、问题id、作者id、作者名等等，如下：</p>
 <p><img src="https://jyzhu.top/wp-content/uploads/2020/05/image-20200418210405745-1024x764.png"></p>
 <p>抓到json内容如下：</p>
-<p> {<br>   “id”: 1162030612,<br>   “type”: “answer”,<br>   “answer_type”: “normal”,<br>   “question”: {<br>     “type”: “question”,<br>     “id”: 388669115,<br>     “title”: “4月18号美国新冠肺炎确诊病例达70万，死亡人数到达36721人，美国还会坚持复工么？”,<br>     “question_type”: “normal”,<br>     “created”: 1587163853,<br>     “updated_time”: 1587184466,<br>     “url”: “<a target="_blank" rel="noopener" href="https://api.zhihu.com/questions/388669115&quot;">https://api.zhihu.com/questions/388669115&quot;</a>,<br>     “admin_closed_comment”: false,<br>     “relationship”: {},<br>     “mute_info”: {<br>       “type”: “”<br>     }<br>   },<br>   “author”: {<br>     “id”: “e4a0b00c8c04bc16c0fed1563f1a0444”,<br>     “url_token”: “liu-xue-sheng-ri-bao”,<br>     “name”: “留学生日报”,<br>     “avatar_url”: “<a target="_blank" rel="noopener" href="https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691/_s.jpg&quot;">https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691\_s.jpg&quot;</a>,<br>     “avatar_url_template”: “<a target="_blank" rel="noopener" href="https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691/_%7Bsize%7D.jpg&quot;">https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691\_{size}.jpg&quot;</a>,<br>     “is_org”: true,<br>     “type”: “people”,<br>     “url”: “<a target="_blank" rel="noopener" href="https://api.zhihu.com/people/e4a0b00c8c04bc16c0fed1563f1a0444&quot;">https://api.zhihu.com/people/e4a0b00c8c04bc16c0fed1563f1a0444&quot;</a>,<br>     “user_type”: “organization”,<br>     “headline”: “百万中国留学生都在关注”,<br>     “badge”: [{<br>       “type”: “identity”,<br>       “description”: “已认证的官方帐号”,<br>       “topics”: []<br>     }],<br>     “gender”: -1,<br>     “is_advertiser”: false,<br>     “is_followed”: false,<br>     “is_privacy”: false<br>   },<br>   “url”: “<a target="_blank" rel="noopener" href="https://api.zhihu.com/answers/1162030612&quot;">https://api.zhihu.com/answers/1162030612&quot;</a>,<br>   “thumbnail”: “<a target="_blank" rel="noopener" href="https://pic1.zhimg.com/50/v2-a43e1cad6d10fb88bc31af266b018783/_xl.jpg&quot;">https://pic1.zhimg.com/50/v2-a43e1cad6d10fb88bc31af266b018783\_xl.jpg&quot;</a>,<br>   “is_collapsed”: false,<br>   “is_copyable”: false,<br>   “voteup_count”: 5879,<br>   “comment_count”: 424,<br>   “thanks_count”: 480,<br>   “is_mine”: false,<br>   “admin_closed_comment”: false,<br>   “comment_permission”: “all”,<br>   “can_comment”: {<br>     “reason”: “”,<br>     “status”: true<br>   },<br>   “has_publishing_draft”: false,<br>   “editable_content”: “”,<br>   “excerpt”: “我来了。我是芳芳·菲克纽斯 。 这是我的美国疫情日记 第十七篇 《特朗普带血的复工，各州长反水，美国民众持枪上街抗议》 看日记全集的在这里芳芳美国疫情日记汇总 目前更新到第十六篇 ——— 当雪崩发生时，每一篇雪花都在勇闯天涯。 在过去的四周中，一共有2200万美国人失业 越来越多的美国城市，很多手停口停的普通白人民众不戴任何防护措施持枪走上街头，举着声援特朗普的口号，开始示威游行，要求复工。 [图片] [图片] [图片] [图片] 4月30日，特…”,<br>   “relevant_info”: {<br>     “is_relevant”: false,<br>     “relevant_type”: “”,<br>     “relevant_text”: “”<br>   },<br>   “suggest_edit”: {<br>     “reason”: “”,<br>     “status”: false,<br>     “tip”: “”,<br>     “title”: “”,<br>     “unnormal_details”: {<br>       “status”: “”,<br>       “description”: “”,<br>       “reason”: “”,<br>       “reason_id”: 0,<br>       “note”: “”<br>     },<br>     “url”: “”<br>   },<br>   “attached_info”: “ogEQCAQQAxiU3IyqBCC7vaq5AQ==”,<br>   “mcn_fp_show”: -1,<br>   “reward_info”: {<br>     “can_open_reward”: false,<br>     “is_rewardable”: false,<br>     “reward_member_count”: 0,<br>     “reward_total_money”: 0,<br>     “tagline”: “”<br>   },<br>   “relationship”: {<br>     “is_thanked”: false,<br>     “upvoted_followees”: []<br>   },<br>   “ad_answer”: null<br> }</p>
+<p> {<br>
+  &quot;id&quot;: 1162030612,<br>
+  &quot;type&quot;: &quot;answer&quot;,<br>
+  &quot;answer_type&quot;: &quot;normal&quot;,<br>
+  &quot;question&quot;: {<br>
+  &quot;type&quot;: &quot;question&quot;,<br>
+  &quot;id&quot;: 388669115,<br>
+  &quot;title&quot;: &quot;4月18号美国新冠肺炎确诊病例达70万，死亡人数到达36721人，美国还会坚持复工么？&quot;,<br>
+  &quot;question_type&quot;: &quot;normal&quot;,<br>
+  &quot;created&quot;: 1587163853,<br>
+  &quot;updated_time&quot;: 1587184466,<br>
+  &quot;url&quot;: &quot;https://api.zhihu.com/questions/388669115&quot;,<br>
+  &quot;admin_closed_comment&quot;: false,<br>
+  &quot;relationship&quot;: {},<br>
+  &quot;mute_info&quot;: {<br>
+  &quot;type&quot;: &quot;&quot;<br>
+  }<br>
+  },<br>
+  &quot;author&quot;: {<br>
+  &quot;id&quot;: &quot;e4a0b00c8c04bc16c0fed1563f1a0444&quot;,<br>
+  &quot;url_token&quot;: &quot;liu-xue-sheng-ri-bao&quot;,<br>
+  &quot;name&quot;: &quot;留学生日报&quot;,<br>
+  &quot;avatar_url&quot;: &quot;https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691_s.jpg&quot;,<br>
+  &quot;avatar_url_template&quot;: &quot;https://pic2.zhimg.com/v2-825f782641b2bda1317f444f9fa09691_{size}.jpg&quot;,<br>
+  &quot;is_org&quot;: true,<br>
+  &quot;type&quot;: &quot;people&quot;,<br>
+  &quot;url&quot;: &quot;https://api.zhihu.com/people/e4a0b00c8c04bc16c0fed1563f1a0444&quot;,<br>
+  &quot;user_type&quot;: &quot;organization&quot;,<br>
+  &quot;headline&quot;: &quot;百万中国留学生都在关注&quot;,<br>
+  &quot;badge&quot;: [{<br>
+  &quot;type&quot;: &quot;identity&quot;,<br>
+  &quot;description&quot;: &quot;已认证的官方帐号&quot;,<br>
+  &quot;topics&quot;: []<br>
+  }],<br>
+  &quot;gender&quot;: -1,<br>
+  &quot;is_advertiser&quot;: false,<br>
+  &quot;is_followed&quot;: false,<br>
+  &quot;is_privacy&quot;: false<br>
+  },<br>
+  &quot;url&quot;: &quot;https://api.zhihu.com/answers/1162030612&quot;,<br>
+  &quot;thumbnail&quot;: &quot;https://pic1.zhimg.com/50/v2-a43e1cad6d10fb88bc31af266b018783_xl.jpg&quot;,<br>
+  &quot;is_collapsed&quot;: false,<br>
+  &quot;is_copyable&quot;: false,<br>
+  &quot;voteup_count&quot;: 5879,<br>
+  &quot;comment_count&quot;: 424,<br>
+  &quot;thanks_count&quot;: 480,<br>
+  &quot;is_mine&quot;: false,<br>
+  &quot;admin_closed_comment&quot;: false,<br>
+  &quot;comment_permission&quot;: &quot;all&quot;,<br>
+  &quot;can_comment&quot;: {<br>
+  &quot;reason&quot;: &quot;&quot;,<br>
+  &quot;status&quot;: true<br>
+  },<br>
+  &quot;has_publishing_draft&quot;: false,<br>
+  &quot;editable_content&quot;: &quot;&quot;,<br>
+  &quot;excerpt&quot;: &quot;我来了。我是芳芳·菲克纽斯 。 这是我的美国疫情日记 第十七篇 《特朗普带血的复工，各州长反水，美国民众持枪上街抗议》 看日记全集的在这里芳芳美国疫情日记汇总 目前更新到第十六篇 ——— 当雪崩发生时，每一篇雪花都在勇闯天涯。 在过去的四周中，一共有2200万美国人失业 越来越多的美国城市，很多手停口停的普通白人民众不戴任何防护措施持枪走上街头，举着声援特朗普的口号，开始示威游行，要求复工。 [图片] [图片] [图片] [图片] 4月30日，特…&quot;,<br>
+  &quot;relevant_info&quot;: {<br>
+  &quot;is_relevant&quot;: false,<br>
+  &quot;relevant_type&quot;: &quot;&quot;,<br>
+  &quot;relevant_text&quot;: &quot;&quot;<br>
+  },<br>
+  &quot;suggest_edit&quot;: {<br>
+  &quot;reason&quot;: &quot;&quot;,<br>
+  &quot;status&quot;: false,<br>
+  &quot;tip&quot;: &quot;&quot;,<br>
+  &quot;title&quot;: &quot;&quot;,<br>
+  &quot;unnormal_details&quot;: {<br>
+  &quot;status&quot;: &quot;&quot;,<br>
+  &quot;description&quot;: &quot;&quot;,<br>
+  &quot;reason&quot;: &quot;&quot;,<br>
+  &quot;reason_id&quot;: 0,<br>
+  &quot;note&quot;: &quot;&quot;<br>
+  },<br>
+  &quot;url&quot;: &quot;&quot;<br>
+  },<br>
+  &quot;attached_info&quot;: &quot;ogEQCAQQAxiU3IyqBCC7vaq5AQ==&quot;,<br>
+  &quot;mcn_fp_show&quot;: -1,<br>
+  &quot;reward_info&quot;: {<br>
+  &quot;can_open_reward&quot;: false,<br>
+  &quot;is_rewardable&quot;: false,<br>
+  &quot;reward_member_count&quot;: 0,<br>
+  &quot;reward_total_money&quot;: 0,<br>
+  &quot;tagline&quot;: &quot;&quot;<br>
+  },<br>
+  &quot;relationship&quot;: {<br>
+  &quot;is_thanked&quot;: false,<br>
+  &quot;upvoted_followees&quot;: []<br>
+  },<br>
+  &quot;ad_answer&quot;: null<br>
+ }</p>
 <p>抓包知乎app成功！</p>
-<h1 id="2-尝试tcpdump抓包微信"><a href="#2-尝试tcpdump抓包微信" class="headerlink" title="2. 尝试tcpdump抓包微信"></a>2. 尝试tcpdump抓包微信</h1><h3 id="1-获取自己手机的udid"><a href="#1-获取自己手机的udid" class="headerlink" title="1.获取自己手机的udid"></a>1.获取自己手机的udid</h3><p>使用数据线将iPhone与Mac连接，找到iPhone的UDID</p>
-<h3 id="2-打开mac终端，将udid添加到rvictl命令中"><a href="#2-打开mac终端，将udid添加到rvictl命令中" class="headerlink" title="2.打开mac终端，将udid添加到rvictl命令中"></a>2.打开mac终端，将udid添加到rvictl命令中</h3><p><code>rvictl -s udid</code></p>
-<h3 id="3-tcpdump运行抓包命令实施监控"><a href="#3-tcpdump运行抓包命令实施监控" class="headerlink" title="3.tcpdump运行抓包命令实施监控"></a>3.tcpdump运行抓包命令实施监控</h3><p><code>sudo tcpdump -i rvi0 -AAl</code></p>
+<h1 id="尝试tcpdump抓包微信">2. 尝试tcpdump抓包微信</h1>
+<h3 id="获取自己手机的udid">1.获取自己手机的udid</h3>
+<p>使用数据线将iPhone与Mac连接，找到iPhone的UDID</p>
+<h3 id="打开mac终端将udid添加到rvictl命令中">2.打开mac终端，将udid添加到rvictl命令中</h3>
+<p><code>rvictl -s udid</code></p>
+<h3 id="tcpdump运行抓包命令实施监控">3.tcpdump运行抓包命令实施监控</h3>
+<p><code>sudo tcpdump -i rvi0 -AAl</code></p>
 <p>找到微信相关的包含weixin WeChat等等关键字</p>
 <p>看不懂了……</p>
-<h3 id="4-将自己的设备从rvictl移除"><a href="#4-将自己的设备从rvictl移除" class="headerlink" title="4.将自己的设备从rvictl移除"></a>4.将自己的设备从rvictl移除</h3><p> rvictl -x UUID</p>
+<h3 id="将自己的设备从rvictl移除">4.将自己的设备从rvictl移除</h3>
+<p> rvictl -x UUID</p>
 
     </div>
 
@@ -370,7 +468,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Charles%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp"><span class="nav-number">1.</span> <span class="nav-text">1. Charles抓包知乎app</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%85%8D%E7%BD%AEhttp%E4%BB%A3%E7%90%86%E5%B9%B6%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.1.</span> <span class="nav-text">一、配置http代理并连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85SSL%E8%AF%81%E4%B9%A6%EF%BC%8C%E8%A7%A3%E5%BC%80https"><span class="nav-number">1.2.</span> <span class="nav-text">二、下载并安装SSL证书，解开https</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp"><span class="nav-number">1.3.</span> <span class="nav-text">三、抓包知乎app</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%B0%9D%E8%AF%95tcpdump%E6%8A%93%E5%8C%85%E5%BE%AE%E4%BF%A1"><span class="nav-number">2.</span> <span class="nav-text">2. 尝试tcpdump抓包微信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96%E8%87%AA%E5%B7%B1%E6%89%8B%E6%9C%BA%E7%9A%84udid"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.获取自己手机的udid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%89%93%E5%BC%80mac%E7%BB%88%E7%AB%AF%EF%BC%8C%E5%B0%86udid%E6%B7%BB%E5%8A%A0%E5%88%B0rvictl%E5%91%BD%E4%BB%A4%E4%B8%AD"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.打开mac终端，将udid添加到rvictl命令中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-tcpdump%E8%BF%90%E8%A1%8C%E6%8A%93%E5%8C%85%E5%91%BD%E4%BB%A4%E5%AE%9E%E6%96%BD%E7%9B%91%E6%8E%A7"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.tcpdump运行抓包命令实施监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%B0%86%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%BE%E5%A4%87%E4%BB%8Ervictl%E7%A7%BB%E9%99%A4"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.将自己的设备从rvictl移除</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#charles%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp"><span class="nav-number">1.</span> <span class="nav-text">1. Charles抓包知乎app</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%85%8D%E7%BD%AEhttp%E4%BB%A3%E7%90%86%E5%B9%B6%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.1.</span> <span class="nav-text">一、配置http代理并连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85ssl%E8%AF%81%E4%B9%A6%E8%A7%A3%E5%BC%80https"><span class="nav-number">1.2.</span> <span class="nav-text">二、下载并安装SSL证书，解开https</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%8A%93%E5%8C%85%E7%9F%A5%E4%B9%8Eapp"><span class="nav-number">1.3.</span> <span class="nav-text">三、抓包知乎app</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%9D%E8%AF%95tcpdump%E6%8A%93%E5%8C%85%E5%BE%AE%E4%BF%A1"><span class="nav-number">2.</span> <span class="nav-text">2. 尝试tcpdump抓包微信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%87%AA%E5%B7%B1%E6%89%8B%E6%9C%BA%E7%9A%84udid"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.获取自己手机的udid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80mac%E7%BB%88%E7%AB%AF%E5%B0%86udid%E6%B7%BB%E5%8A%A0%E5%88%B0rvictl%E5%91%BD%E4%BB%A4%E4%B8%AD"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.打开mac终端，将udid添加到rvictl命令中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tcpdump%E8%BF%90%E8%A1%8C%E6%8A%93%E5%8C%85%E5%91%BD%E4%BB%A4%E5%AE%9E%E6%96%BD%E7%9B%91%E6%8E%A7"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.tcpdump运行抓包命令实施监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%BE%E5%A4%87%E4%BB%8Ervictl%E7%A7%BB%E9%99%A4"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.将自己的设备从rvictl移除</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

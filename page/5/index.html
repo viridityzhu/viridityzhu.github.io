@@ -308,7 +308,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>我在久陷的沼泽地里<br>发现一株花，<br>当我把我奉献给一段沉沦<br>不知道多少回<br>我挣扎，她也挣扎<br>如今我闻着她颤抖的香气<br>在一部分我与另一部分之间<br>我开设无声的花园<br>19.12.12 午夜</p>
+          <p>我在久陷的沼泽地里<br>
+发现一株花，<br>
+当我把我奉献给一段沉沦<br>
+不知道多少回<br>
+我挣扎，她也挣扎<br>
+如今我闻着她颤抖的香气<br>
+在一部分我与另一部分之间<br>
+我开设无声的花园<br>
+19.12.12 午夜</p>
 
       
     </div>
@@ -384,17 +392,17 @@
       
           <p>今天骑自行车的时候想要不顺道打开北理体育刷一刷，刷着刷着想起前几天北大因为跑步数据作弊体育挂科门，心生惶恐，开始拿起手机晃。晃着晃着觉得自己很sb为什么要把时间花在这破事上……一气之下回宿舍决定抓包看看能不能破掉。拿Charles抓包看了看发现原理就是定期post，防黑约等于没有……</p>
 <p>流程：</p>
-<ol>
+<ol type="1">
 <li>POST startRaceRecord.do 向那边表示开始跑步，那边返回一个本次跑步id</li>
 <li>不停POST addRaceRecordGPS.do 向那边发送跑步速度、步数，经纬度</li>
 <li>POST endRaceRecord.do 结束记录，其中包含了本次跑步的id</li>
 </ol>
 <p>识别：</p>
-<ol>
+<ol type="1">
 <li>每次跑步有一个独立的token和一个id</li>
 </ol>
 <p>具体params：</p>
-<ol>
+<ol type="1">
 <li>startRaceRecord.do：设备信息：系统、分辨率、app版本、设备名、机型、sdk</li>
 <li>addRaceRecordGPS.do:1~4条一起发一次：速度、经度、纬度、跑步id、时间戳、总步数、总距离、总时长</li>
 <li>endRaceRecord.do:跑步id</li>
@@ -402,14 +410,12 @@
 <p>具体content：</p>
 <p>startRaceRecord.do:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;front&#x2F;raceRecord&#x2F;1.0&#x2F;startRaceRecord.do HTTP&#x2F;1.1</span><br><span class="line">Host: sport-appapi.bit.edu.cn</span><br><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Accept: *&#x2F;*</span><br><span class="line">User-Agent: run&#x2F;1.6.51 (iPhone; iOS 13.1.2; Scale&#x2F;3.00)</span><br><span class="line">Accept-Language: zh-Hans-CN;q&#x3D;1, en-CN;q&#x3D;0.9, ko-KR;q&#x3D;0.8</span><br><span class="line">Content-Length: 527</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line"></span><br><span class="line">params&#x3D;&#123;</span><br><span class="line">  &quot;deviceInfo&quot; : &#123;</span><br><span class="line">    &quot;os&quot; : &quot;iOS&quot;,</span><br><span class="line">    &quot;display&quot; : &quot;1125x2436&quot;,</span><br><span class="line">    &quot;appVersion&quot; : &quot;1.6.51&quot;,</span><br><span class="line">    &quot;deviceName&quot; : &quot;我也不认识加缪&quot;,</span><br><span class="line">    &quot;model&quot; : &quot;iPhone12,5&quot;,</span><br><span class="line">    &quot;appType&quot; : &quot;iPhone&quot;,</span><br><span class="line">    &quot;sdk&quot; : &quot;13.1.2&quot;</span><br><span class="line">  &#125;&amp;token&#x3D;49FC62464801779D40B4A4505096CF52E37F</span><br></pre></td></tr></table></figure>
-
 <p>addRaceRecordGPS.do:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;front&#x2F;raceRecord&#x2F;1.0&#x2F;addRaceRecordGPS.do HTTP&#x2F;1.1</span><br><span class="line">Host: sport-appapi.bit.edu.cn</span><br><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Accept: *&#x2F;*</span><br><span class="line">User-Agent: run&#x2F;1.6.51 (iPhone; iOS 13.1.2; Scale&#x2F;3.00)</span><br><span class="line">Accept-Language: zh-Hans-CN;q&#x3D;1, en-CN;q&#x3D;0.9, ko-KR;q&#x3D;0.8</span><br><span class="line">Content-Length: 1373</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line"></span><br><span class="line">params&#x3D;[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;speed&quot; : 524,</span><br><span class="line">    &quot;longitude&quot; : &quot;116.169566&quot;,</span><br><span class="line">    &quot;raceRecordId&quot; : &quot;173661&quot;,</span><br><span class="line">    &quot;raceTimestamp&quot; : &quot;1574152129077&quot;,</span><br><span class="line">    &quot;totalStep&quot; : 40,</span><br><span class="line">    &quot;totalDistance&quot; : 581,</span><br><span class="line">    &quot;latitude&quot; : &quot;39.725749&quot;,</span><br><span class="line">    &quot;totalTime&quot; : 541</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;speed&quot; : 604,</span><br><span class="line">    &quot;longitude&quot; : &quot;116.169561&quot;,</span><br><span class="line">    &quot;raceRecordId&quot; : &quot;173661&quot;,</span><br><span class="line">    &quot;raceTimestamp&quot; : &quot;1574152135049&quot;,</span><br><span class="line">    &quot;totalStep&quot; : 40,</span><br><span class="line">    &quot;totalDistance&quot; : 591,</span><br><span class="line">    &quot;latitude&quot; : &quot;39.725668&quot;,</span><br><span class="line">    &quot;totalTime&quot; : 547</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;speed&quot; : 312,</span><br><span class="line">    &quot;longitude&quot; : &quot;116.169594&quot;,</span><br><span class="line">    &quot;raceRecordId&quot; : &quot;173661&quot;,</span><br><span class="line">    &quot;raceTimestamp&quot; : &quot;1574152141098&quot;,</span><br><span class="line">    &quot;totalStep&quot; : 40,</span><br><span class="line">    &quot;totalDistance&quot; : 610,</span><br><span class="line">    &quot;latitude&quot; : &quot;39.725825&quot;,</span><br><span class="line">    &quot;totalTime&quot; : 553</span><br><span class="line">  &#125;</span><br><span class="line">]&amp;token&#x3D;49FC62464801779D40B4A4505096CF52E37F</span><br></pre></td></tr></table></figure>
-
 <p>endRaceRecord.do:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;front&#x2F;raceRecord&#x2F;1.0&#x2F;endRaceRecord.do HTTP&#x2F;1.1</span><br><span class="line">Host: sport-appapi.bit.edu.cn</span><br><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Accept: *&#x2F;*</span><br><span class="line">User-Agent: run&#x2F;1.6.51 (iPhone; iOS 13.1.2; Scale&#x2F;3.00)</span><br><span class="line">Accept-Language: zh-Hans-CN;q&#x3D;1, en-CN;q&#x3D;0.9, ko-KR;q&#x3D;0.8</span><br><span class="line">Content-Length: 62</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line"></span><br><span class="line">raceRecordId&#x3D;173661&amp;token&#x3D;49FC62464801779D40B4A4505096CF52E37F</span><br></pre></td></tr></table></figure>
-
-<h2 id="🤔"><a href="#🤔" class="headerlink" title="🤔"></a>🤔</h2><p>start和end都不用管……从start拿到token和id之后，就可以直接配置gps各参数，然后发过去了……</p>
+<h2 id="section">🤔</h2>
+<p>start和end都不用管……从start拿到token和id之后，就可以直接配置gps各参数，然后发过去了……</p>
 <p>关键是跑步数据要符合实际……最大的危机是拿自己号尝试会不会被挂科……</p>
 <p>绝了 之前的跑步参数全都记录在里面，可以get…… 那就更好办了 稍微改动改动就行</p>
 
@@ -486,7 +492,8 @@
 
       
           <p>真的见鬼了，谁能想到我搜肠刮肚思考Charles为啥哪哪都是404，关了v2ray，关了Chrome的科学上网插件，关了系统vpn的自动配置，到处弄遍了，最后发现导致Charles不能用的是：</p>
-<h2 id="Jupyter！！！"><a href="#Jupyter！！！" class="headerlink" title="Jupyter！！！"></a>Jupyter！！！</h2><p>去看了一下原因……</p>
+<h2 id="jupyter">Jupyter！！！</h2>
+<p>去看了一下原因……</p>
 <p>真没注意Jupyter的默认端口和Charles一样，都是8888，你说巧不巧！？</p>
 <p>以后看到8888一定要留个心眼……</p>
 <p>也怪我没有早点去看一下端口占用情况。唉。</p>
@@ -570,12 +577,11 @@
 <p>记录一下Nginx的配置吧，因为缺少系统的理解，我在这里绕了半天圈，看了一篇《<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kevingrace/p/6187482.html">Nginx虚拟目录alias和root目录</a>》才理解此处应该设置alias。</p>
 <p>编辑配置文件：<code>/etc/nginx/conf.d/wordpress_https.conf</code></p>
 <p>插入配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location &#x2F;fingerspace &#123;</span><br><span class="line">        alias &#x2F;var&#x2F;www&#x2F;html&#x2F;fingerspace&#x2F;;</span><br><span class="line">        index index.html;</span><br><span class="line">        try_files $uri @rewriteweb;</span><br><span class="line">    &#125;</span><br><span class="line">location @rewriteweb&#123;</span><br><span class="line">        rewrite ^&#x2F;fingerspace&#x2F;(.*)$ &#x2F;fingerspace&#x2F;index.html last;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location &#x2F;fingerspace &#123;</span><br><span class="line">     alias &#x2F;var&#x2F;www&#x2F;html&#x2F;fingerspace&#x2F;;</span><br><span class="line">        index index.html;</span><br><span class="line">     try_files $uri @rewriteweb;</span><br><span class="line">   &#125;</span><br><span class="line">location @rewriteweb&#123;</span><br><span class="line">        rewrite ^&#x2F;fingerspace&#x2F;(.*)$ &#x2F;fingerspace&#x2F;index.html last;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>搞定。</p>
 <p>今后自己做点啥项目了可以搞一些网页接口在这儿，指日可待~</p>
 <p>目前还有两个TO-DO：</p>
-<ol>
+<ol type="1">
 <li>指尖星空的网页图标显示不了，不知道是html里面出了问题，还是需要在Nginx里配置？</li>
 <li>images文件也太大了，心疼我的小小服务器</li>
 </ol>
@@ -657,7 +663,7 @@
 <p>不过我到现在也搞不明白到底怎样做优化才是正确的，反正就是乱弄了一通，也没有什么精力……</p>
 <p>不过也没关系……反正我的内容迄今为止也挺杂乱和没有干货的，整个网站好像也没什么价值。</p>
 <p>搜「jyzhu.top」和「tianke youke」都可以搜到，虽然惨兮兮只被收录了域名和网站标题……但已经很不容易了……</p>
-<p>Google显然比Baidu大度多了，还把我的各种归档给收录进去了<del>~</del></p>
+<p>Google显然比Baidu大度多了，还把我的各种归档给收录进去了~~~</p>
 
       
     </div>
@@ -731,36 +737,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Recently I am really tired. I got tooo much to do, that I couldn’t finish. And my mental as well as physical health status is just in danger. I am always tired, exhausted, losing my hair, eager to sleep. Sometimes I couldn’t do anything, but most of the time I just buried myself into the task in my hands, thinking of nothing. I don’t dare to think too much. Because there’s always a question hanging there, that is, what’s the meaning of all of this? Why on earth am I worried about my TOEFL? Why do I try my best to learn, to do everything? What do these things targeting? A success? Some happiness? What is a success? Is there any happiness?</p>
-<p>I don’t dare to ask. Not only because I do believe that there’s no answer, but also because all of my intimates just told me to not bother myself thinking of these useless things. But I have another question here: if these questions don’t have answers, then aren’t those trivial problems in daily life truly useless?</p>
-<p>Hell. I don’t want to talk about them too much. I don’t have time. I am trapped in these trivial things, and I just wanna be trapped. It’s better than die, isn’t it?</p>
-<p>Soooooo, I am gonna set several rules for myself. That’s about what to do and how to live:</p>
-<ol>
+          <p>Recently I am really tired. I got tooo much to do, that I couldn't finish. And my mental as well as physical health status is just in danger. I am always tired, exhausted, losing my hair, eager to sleep. Sometimes I couldn't do anything, but most of the time I just buried myself into the task in my hands, thinking of nothing. I don't dare to think too much. Because there's always a question hanging there, that is, what's the meaning of all of this? Why on earth am I worried about my TOEFL? Why do I try my best to learn, to do everything? What do these things targeting? A success? Some happiness? What is a success? Is there any happiness?</p>
+<p>I don't dare to ask. Not only because I do believe that there's no answer, but also because all of my intimates just told me to not bother myself thinking of these useless things. But I have another question here: if these questions don't have answers, then aren't those trivial problems in daily life truly useless?</p>
+<p>Hell. I don't want to talk about them too much. I don't have time. I am trapped in these trivial things, and I just wanna be trapped. It's better than die, isn't it?</p>
+<p>Soooooo, I am gonna set several rules for myself. That's about what to do and how to live:</p>
+<ol type="1">
 <li>Get up 30 min earlier than routine and go to practice English speaking.</li>
 <li>Get to sleep before 12 every night.</li>
-<li>Definition of Things during Rest Time:<ol>
+<li>Definition of Things during Rest Time:
+<ol type="1">
 <li>Reading books. (Recommendation: ⭐️⭐️⭐️⭐️⭐️)</li>
 <li>Sleeping. (⭐️⭐️⭐️⭐️⭐️)</li>
 <li>Listen to English podcasts. (⭐️⭐️⭐️⭐️)</li>
 <li>Coding. (⭐️⭐️⭐️⭐️)</li>
 <li>Writing here. (⭐️⭐️⭐️)</li>
-</ol>
-</li>
-<li>Definition of Rest Time:<ol>
-<li>After the sunsets and there’s no homework that must be done.</li>
+</ol></li>
+<li>Definition of Rest Time:
+<ol type="1">
+<li>After the sunsets and there's no homework that must be done.</li>
 <li>Naptime in the noon.</li>
 <li>Weekends after finishing homework.</li>
-</ol>
-</li>
-<li>Daily Tasks to choose from (2 out of 6):<ol>
+</ol></li>
+<li>Daily Tasks to choose from (2 out of 6):
+<ol type="1">
 <li>Running.</li>
 <li>Learning vocabulary.</li>
 <li>Listening to English.</li>
 <li>TOEFL Tests.</li>
 <li>Reviewing courses.</li>
 <li>Learning extra computer knowledge.</li>
-</ol>
-</li>
+</ol></li>
 </ol>
 
       
@@ -977,22 +983,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol>
+          <ol type="1">
 <li>R is easy. Half of Python half of Matlab.</li>
 <li>R最大的简便就是把各种统计概率机器学习功能都打包好了嘛</li>
 </ol>
 <p>作业题改错：</p>
 <p>One:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#确定观察值相对较少的站点</span><br><span class="line">agg&lt;-aggregate(Station,list(Station),length)</span><br><span class="line">minStation&lt;-agg[agg$x&#x3D;&#x3D;min(agg$x),]</span><br><span class="line">minStation</span><br><span class="line">#生成一个忽略这些站点的新数据框</span><br><span class="line">newisit&lt;-isit[!Station %in% minStation[,1],]</span><br><span class="line">newisit</span><br></pre></td></tr></table></figure>
-
 <p><code>newisit&lt;-isit[!Station %in% minStation[,1],]</code> instead of <code>minStation[1,1]</code></p>
 <p>To avoid more than one minStations. 我觉得老师就是在找茬，但是我的问题确实在于对那个<code>%in%</code>不熟悉。</p>
 <p>Two:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Month&lt;-c(rep(0,nrow(isit)))</span><br><span class="line">Year&lt;-c(rep(0,nrow(isit)))</span><br><span class="line">newisit&lt;-cbind(isit,Month,Year)</span><br><span class="line">newisit$Month[newisit$Station&gt;&#x3D;1&amp;newisit$Station&lt;6]&lt;-4</span><br><span class="line">newisit$Month[newisit$Station&gt;&#x3D;6&amp;newisit$Station&lt;12]&lt;-8</span><br><span class="line">newisit$Year[newisit$Station&gt;&#x3D;1&amp;newisit$Station&lt;12]&lt;-2001</span><br><span class="line">newisit$Month[newisit$Station&gt;&#x3D;12&amp;newisit$Station&lt;16]&lt;-3</span><br><span class="line">newisit$Month[newisit$Station&gt;&#x3D;16&amp;newisit$Station&lt;20]&lt;-10</span><br><span class="line">newisit$Year[newisit$Station&gt;&#x3D;12&amp;newisit$Station&lt;20]&lt;-2002</span><br></pre></td></tr></table></figure>
-
 <p>这个很讨厌。我一开始用for循环写的，没想太多；但老师说这样效率低，要我当场想出另一个方法，我当时一慌，没想出来。最后老师说可以先把空列跟原frame bind上，然后再根据Station条件来赋值嘛。很简单的点，给我扣分了，不大服气，唉。</p>
 <p>我觉得使用R的基本思路：</p>
-<ol>
+<ol type="1">
 <li>Read table or make table.</li>
 <li>Process datas.</li>
 <li>Draw plots.</li>

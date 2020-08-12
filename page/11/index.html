@@ -508,31 +508,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="1-Deploy-Vultr-VPS-amp-Install-WordPress-Application"><a href="#1-Deploy-Vultr-VPS-amp-Install-WordPress-Application" class="headerlink" title="1. Deploy Vultr VPS &amp; Install WordPress Application"></a>1. Deploy Vultr VPS &amp; Install WordPress Application</h4><p>在 <a target="_blank" rel="noopener" href="https://www.vultr.com/">https://www.vultr.com/</a> 上购买Vultr云服务器。选择Vultr的好处：</p>
-<ol>
-<li>价格感人：充10$送50$，低配服务器只要5$/month（<em>最低2.5，但现在这个价的好像只剩ipv6 only的了）</em></li>
+          <h4 id="deploy-vultr-vps-install-wordpress-application">1. Deploy Vultr VPS &amp; Install WordPress Application</h4>
+<p>在 <a target="_blank" rel="noopener" href="https://www.vultr.com/" class="uri">https://www.vultr.com/</a> 上购买Vultr云服务器。选择Vultr的好处：</p>
+<ol type="1">
+<li>价格感人：充10<span class="math inline">\(送50\)</span>，低配服务器只要5$/month（<em>最低2.5，但现在这个价的好像只剩ipv6 only的了）</em></li>
 <li>地域：国外，你懂的</li>
 </ol>
-<p>我选的是东京的服务器，在选择OS的时候直接选择了WordPress Application，事实证明确实挺one-click的。<br>除了直接安装Application之外，也可以选Ubuntu，网上也有LNMP一键安装包什么的。</p>
+<p>我选的是东京的服务器，在选择OS的时候直接选择了WordPress Application，事实证明确实挺one-click的。<br>
+除了直接安装Application之外，也可以选Ubuntu，网上也有LNMP一键安装包什么的。</p>
 <p><strong>注意：</strong>进行下一步之前一定要确认：新部署的VPS的IP是否已经被墙了。果然如此，那就销毁&amp;重新部署，多试几次，换个能用的IP。</p>
-<h4 id="2-购买域名"><a href="#2-购买域名" class="headerlink" title="2. 购买域名"></a>2. 购买域名</h4><p>我上阿里云买了个1元/年的域名哈哈哈，挺便宜。</p>
-<h4 id="3-Follow-the-Instructions-to-Complete-the-Installation"><a href="#3-Follow-the-Instructions-to-Complete-the-Installation" class="headerlink" title="3. Follow the Instructions to Complete the Installation"></a>3. Follow the Instructions to Complete the Installation</h4><p>在Vultr的页面上直接可以看到的步骤：</p>
-<ol>
+<h4 id="购买域名">2. 购买域名</h4>
+<p>我上阿里云买了个1元/年的域名哈哈哈，挺便宜。</p>
+<h4 id="follow-the-instructions-to-complete-the-installation">3. Follow the Instructions to Complete the Installation</h4>
+<p>在Vultr的页面上直接可以看到的步骤：</p>
+<ol type="1">
 <li>Log into the WP admin panel using your credentials</li>
-<li>Point your domain name “A record” to your IP address</li>
-<li>Edit your “WordPress Address (URL)” and “Site Address (URL)” to match your domain name. This is located in: WordPress Admin, Settings, General.</li>
+<li>Point your domain name &quot;A record&quot; to your IP address</li>
+<li>Edit your &quot;WordPress Address (URL)&quot; and &quot;Site Address (URL)&quot; to match your domain name. This is located in: WordPress Admin, Settings, General.</li>
 </ol>
-<p>除此之外，<a target="_blank" rel="noopener" href="https://www.vultr.com/docs/one-click-wordpress">https://www.vultr.com/docs/one-click-wordpress</a> 这儿的后续步骤也要完成。</p>
+<p>除此之外，<a target="_blank" rel="noopener" href="https://www.vultr.com/docs/one-click-wordpress" class="uri">https://www.vultr.com/docs/one-click-wordpress</a> 这儿的后续步骤也要完成。</p>
 <p><strong>坑：</strong>我一开始用浏览器死活进不去它给我的地址 <code>https://xxx.xx.xx.xx/wp-admin/</code>，求助liangmx，弄了半天才知道是没有SSL证书，Chrome跟Safari都莫名其妙把连接给断了？总之，第一次登录记得用<code>http://xxx.xx.xx.xx/wp-admin/</code></p>
-<h4 id="4-（选做）购买SSL证书-amp-安装证书"><a href="#4-（选做）购买SSL证书-amp-安装证书" class="headerlink" title="4. （选做）购买SSL证书 &amp; 安装证书"></a>4. （选做）购买SSL证书 &amp; 安装证书</h4><p>这个我也是在阿里云买的，有免费DV版，free/年。</p>
-<p>安装的话follow <a target="_blank" rel="noopener" href="https://www.vultr.com/docs/one-click-wordpress">https://www.vultr.com/docs/one-click-wordpress</a> 就行了：</p>
-<ol>
+<h4 id="选做购买ssl证书-安装证书">4. （选做）购买SSL证书 &amp; 安装证书</h4>
+<p>这个我也是在阿里云买的，有免费DV版，free/年。</p>
+<p>安装的话follow <a target="_blank" rel="noopener" href="https://www.vultr.com/docs/one-click-wordpress" class="uri">https://www.vultr.com/docs/one-click-wordpress</a> 就行了：</p>
+<ol type="1">
 <li>Obtain a certificate from a certificate authority for your domain.</li>
 <li>Login to your server using <code>ssh</code> as root.</li>
 <li>Replace the <code>server.crt</code> and <code>server.key</code> files in <code>/etc/nginx/ssl/</code> with the updated certificate. Details on converting certificate formats are outside of the scope of this article.</li>
 <li>Restart the web server: <code>systemctl restart nginx.service &amp;&amp; systemctl restart php7.2-fpm.service</code> ( PHP version may vary )</li>
 </ol>
-<h4 id="5-Select-WordPress-Theme-amp-Decorate-the-Blog"><a href="#5-Select-WordPress-Theme-amp-Decorate-the-Blog" class="headerlink" title="5. Select WordPress Theme &amp; Decorate the Blog"></a>5. Select WordPress Theme &amp; Decorate the Blog</h4><p>我挑来挑去发现还是官配主题「二零一九」性冷淡风比较合我胃口。</p>
+<h4 id="select-wordpress-theme-decorate-the-blog">5. Select WordPress Theme &amp; Decorate the Blog</h4>
+<p>我挑来挑去发现还是官配主题「二零一九」性冷淡风比较合我胃口。</p>
 
       
     </div>
@@ -607,6 +613,7 @@
 
       
           
+
       
     </div>
 
@@ -683,7 +690,7 @@
 <p>我要特别感谢liangmx同学的帮助~</p>
 <p>这篇blog用来表达庆贺！祝贺我自己！耶耶耶！</p>
 <p>To-do list:</p>
-<ol>
+<ol type="1">
 <li>添加SSL证书</li>
 <li>Follow <code>[https://www.vultr.com/docs/one-click-wordpress](https://www.vultr.com/docs/one-click-wordpress)</code> 完成后续步骤</li>
 <li>不知道怎样更方便地支持Markdown？</li>

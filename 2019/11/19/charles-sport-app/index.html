@@ -222,17 +222,17 @@
       
         <p>今天骑自行车的时候想要不顺道打开北理体育刷一刷，刷着刷着想起前几天北大因为跑步数据作弊体育挂科门，心生惶恐，开始拿起手机晃。晃着晃着觉得自己很sb为什么要把时间花在这破事上……一气之下回宿舍决定抓包看看能不能破掉。拿Charles抓包看了看发现原理就是定期post，防黑约等于没有……</p>
 <p>流程：</p>
-<ol>
+<ol type="1">
 <li>POST startRaceRecord.do 向那边表示开始跑步，那边返回一个本次跑步id</li>
 <li>不停POST addRaceRecordGPS.do 向那边发送跑步速度、步数，经纬度</li>
 <li>POST endRaceRecord.do 结束记录，其中包含了本次跑步的id</li>
 </ol>
 <p>识别：</p>
-<ol>
+<ol type="1">
 <li>每次跑步有一个独立的token和一个id</li>
 </ol>
 <p>具体params：</p>
-<ol>
+<ol type="1">
 <li>startRaceRecord.do：设备信息：系统、分辨率、app版本、设备名、机型、sdk</li>
 <li>addRaceRecordGPS.do:1~4条一起发一次：速度、经度、纬度、跑步id、时间戳、总步数、总距离、总时长</li>
 <li>endRaceRecord.do:跑步id</li>
@@ -240,14 +240,12 @@
 <p>具体content：</p>
 <p>startRaceRecord.do:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;front&#x2F;raceRecord&#x2F;1.0&#x2F;startRaceRecord.do HTTP&#x2F;1.1</span><br><span class="line">Host: sport-appapi.bit.edu.cn</span><br><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Accept: *&#x2F;*</span><br><span class="line">User-Agent: run&#x2F;1.6.51 (iPhone; iOS 13.1.2; Scale&#x2F;3.00)</span><br><span class="line">Accept-Language: zh-Hans-CN;q&#x3D;1, en-CN;q&#x3D;0.9, ko-KR;q&#x3D;0.8</span><br><span class="line">Content-Length: 527</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line"></span><br><span class="line">params&#x3D;&#123;</span><br><span class="line">  &quot;deviceInfo&quot; : &#123;</span><br><span class="line">    &quot;os&quot; : &quot;iOS&quot;,</span><br><span class="line">    &quot;display&quot; : &quot;1125x2436&quot;,</span><br><span class="line">    &quot;appVersion&quot; : &quot;1.6.51&quot;,</span><br><span class="line">    &quot;deviceName&quot; : &quot;我也不认识加缪&quot;,</span><br><span class="line">    &quot;model&quot; : &quot;iPhone12,5&quot;,</span><br><span class="line">    &quot;appType&quot; : &quot;iPhone&quot;,</span><br><span class="line">    &quot;sdk&quot; : &quot;13.1.2&quot;</span><br><span class="line">  &#125;&amp;token&#x3D;49FC62464801779D40B4A4505096CF52E37F</span><br></pre></td></tr></table></figure>
-
 <p>addRaceRecordGPS.do:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;front&#x2F;raceRecord&#x2F;1.0&#x2F;addRaceRecordGPS.do HTTP&#x2F;1.1</span><br><span class="line">Host: sport-appapi.bit.edu.cn</span><br><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Accept: *&#x2F;*</span><br><span class="line">User-Agent: run&#x2F;1.6.51 (iPhone; iOS 13.1.2; Scale&#x2F;3.00)</span><br><span class="line">Accept-Language: zh-Hans-CN;q&#x3D;1, en-CN;q&#x3D;0.9, ko-KR;q&#x3D;0.8</span><br><span class="line">Content-Length: 1373</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line"></span><br><span class="line">params&#x3D;[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;speed&quot; : 524,</span><br><span class="line">    &quot;longitude&quot; : &quot;116.169566&quot;,</span><br><span class="line">    &quot;raceRecordId&quot; : &quot;173661&quot;,</span><br><span class="line">    &quot;raceTimestamp&quot; : &quot;1574152129077&quot;,</span><br><span class="line">    &quot;totalStep&quot; : 40,</span><br><span class="line">    &quot;totalDistance&quot; : 581,</span><br><span class="line">    &quot;latitude&quot; : &quot;39.725749&quot;,</span><br><span class="line">    &quot;totalTime&quot; : 541</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;speed&quot; : 604,</span><br><span class="line">    &quot;longitude&quot; : &quot;116.169561&quot;,</span><br><span class="line">    &quot;raceRecordId&quot; : &quot;173661&quot;,</span><br><span class="line">    &quot;raceTimestamp&quot; : &quot;1574152135049&quot;,</span><br><span class="line">    &quot;totalStep&quot; : 40,</span><br><span class="line">    &quot;totalDistance&quot; : 591,</span><br><span class="line">    &quot;latitude&quot; : &quot;39.725668&quot;,</span><br><span class="line">    &quot;totalTime&quot; : 547</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;speed&quot; : 312,</span><br><span class="line">    &quot;longitude&quot; : &quot;116.169594&quot;,</span><br><span class="line">    &quot;raceRecordId&quot; : &quot;173661&quot;,</span><br><span class="line">    &quot;raceTimestamp&quot; : &quot;1574152141098&quot;,</span><br><span class="line">    &quot;totalStep&quot; : 40,</span><br><span class="line">    &quot;totalDistance&quot; : 610,</span><br><span class="line">    &quot;latitude&quot; : &quot;39.725825&quot;,</span><br><span class="line">    &quot;totalTime&quot; : 553</span><br><span class="line">  &#125;</span><br><span class="line">]&amp;token&#x3D;49FC62464801779D40B4A4505096CF52E37F</span><br></pre></td></tr></table></figure>
-
 <p>endRaceRecord.do:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;front&#x2F;raceRecord&#x2F;1.0&#x2F;endRaceRecord.do HTTP&#x2F;1.1</span><br><span class="line">Host: sport-appapi.bit.edu.cn</span><br><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Accept: *&#x2F;*</span><br><span class="line">User-Agent: run&#x2F;1.6.51 (iPhone; iOS 13.1.2; Scale&#x2F;3.00)</span><br><span class="line">Accept-Language: zh-Hans-CN;q&#x3D;1, en-CN;q&#x3D;0.9, ko-KR;q&#x3D;0.8</span><br><span class="line">Content-Length: 62</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line"></span><br><span class="line">raceRecordId&#x3D;173661&amp;token&#x3D;49FC62464801779D40B4A4505096CF52E37F</span><br></pre></td></tr></table></figure>
-
-<h2 id="🤔"><a href="#🤔" class="headerlink" title="🤔"></a>🤔</h2><p>start和end都不用管……从start拿到token和id之后，就可以直接配置gps各参数，然后发过去了……</p>
+<h2 id="section">🤔</h2>
+<p>start和end都不用管……从start拿到token和id之后，就可以直接配置gps各参数，然后发过去了……</p>
 <p>关键是跑步数据要符合实际……最大的危机是拿自己号尝试会不会被挂科……</p>
 <p>绝了 之前的跑步参数全都记录在里面，可以get…… 那就更好办了 稍微改动改动就行</p>
 
@@ -349,7 +347,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A4%94"><span class="nav-number">1.</span> <span class="nav-text">🤔</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">🤔</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
