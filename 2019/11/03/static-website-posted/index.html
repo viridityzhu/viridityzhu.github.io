@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"jyzhu.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="了解了一点点Nginx之后，我发现可以利用二级目录，随便把一些静态网站弄到服务器上来。大一跟几个小组同学在网页设计课一起撸的「指尖星空」网站终于可以拨云见日了—— 指尖星空 https:&#x2F;&#x2F;jyzhu.top&#x2F;fingerspace&#x2F; 其实很简单，只要把整个静态网站用scp传到Ubuntu服务器上，然后在Nginx配置一下子目录的跳转就好了。 记录一下Nginx的配置吧，因为缺少系统的理解，我在这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="静态网站发布-我终于把网页设计课做的「指尖星空」网站弄上来了">
-<meta property="og:url" content="http://yoursite.com/2019/11/03/static-website-posted/index.html">
+<meta property="og:url" content="https://jyzhu.top/2019/11/03/static-website-posted/index.html">
 <meta property="og:site_name" content="Tianke Youke">
 <meta property="og:description" content="了解了一点点Nginx之后，我发现可以利用二级目录，随便把一些静态网站弄到服务器上来。大一跟几个小组同学在网页设计课一起撸的「指尖星空」网站终于可以拨云见日了—— 指尖星空 https:&#x2F;&#x2F;jyzhu.top&#x2F;fingerspace&#x2F; 其实很简单，只要把整个静态网站用scp传到Ubuntu服务器上，然后在Nginx配置一下子目录的跳转就好了。 记录一下Nginx的配置吧，因为缺少系统的理解，我在这">
 <meta property="og:locale" content="zh_CN">
@@ -35,7 +35,7 @@
 <meta property="article:tag" content="Website">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/03/static-website-posted/">
+<link rel="canonical" href="https://jyzhu.top/2019/11/03/static-website-posted/">
 
 
 <script id="page-configurations">
@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">34</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">35</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -139,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">106</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">108</span></a>
 
   </li>
   </ul>
@@ -170,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/03/static-website-posted/">
+    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/11/03/static-website-posted/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -224,7 +224,7 @@
 
       
         <p>了解了一点点Nginx之后，我发现可以利用二级目录，随便把一些静态网站弄到服务器上来。大一跟几个小组同学在网页设计课一起撸的「指尖星空」网站终于可以拨云见日了——</p>
-<p><a target="_blank" rel="noopener" href="https://jyzhu.top/fingerspace/">指尖星空 https://jyzhu.top/fingerspace/</a></p>
+<p><a href="https://jyzhu.top/fingerspace/">指尖星空 https://jyzhu.top/fingerspace/</a></p>
 <p>其实很简单，只要把整个静态网站用scp传到Ubuntu服务器上，然后在Nginx配置一下子目录的跳转就好了。</p>
 <p>记录一下Nginx的配置吧，因为缺少系统的理解，我在这里绕了半天圈，看了一篇《<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kevingrace/p/6187482.html">Nginx虚拟目录alias和root目录</a>》才理解此处应该设置alias。</p>
 <p>编辑配置文件：<code>/etc/nginx/conf.d/wordpress_https.conf</code></p>
@@ -237,7 +237,7 @@
 <li>指尖星空的网页图标显示不了，不知道是html里面出了问题，还是需要在Nginx里配置？</li>
 <li>images文件也太大了，心疼我的小小服务器</li>
 </ol>
-<p>此处要感谢网页设计课的小组成员们。这里有<a target="_blank" rel="noopener" href="https://jyzhu.top/fingerspace/html/%E4%BB%8B%E7%BB%8D%E7%BD%91%E9%A1%B5.html">我们的介绍</a>哈哈哈哈。</p>
+<p>此处要感谢网页设计课的小组成员们。这里有<a href="https://jyzhu.top/fingerspace/html/%E4%BB%8B%E7%BB%8D%E7%BD%91%E9%A1%B5.html">我们的介绍</a>哈哈哈哈。</p>
 
     </div>
 
@@ -355,7 +355,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">108</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -368,7 +368,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
