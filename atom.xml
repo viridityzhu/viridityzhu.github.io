@@ -5,9 +5,9 @@
   <subtitle>A Base for Secreting and Running at Night</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://jyzhu.top/"/>
-  <updated>2020-10-16T08:45:18.977Z</updated>
-  <id>https://jyzhu.top/</id>
+  <link href="https://viridityzhu.github.io/"/>
+  <updated>2020-10-16T14:13:19.526Z</updated>
+  <id>https://viridityzhu.github.io/</id>
   
   <author>
     <name>Kay Zhu</name>
@@ -17,9 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Busy but still have to configure my server!</title>
+    <link href="https://viridityzhu.github.io/2020/10/16/Busy-but-still-have-to-configure-my-server/"/>
+    <id>https://viridityzhu.github.io/2020/10/16/Busy-but-still-have-to-configure-my-server/</id>
+    <published>2020-10-16T08:48:34.000Z</published>
+    <updated>2020-10-16T14:13:19.526Z</updated>
+    
+    <content type="html"><![CDATA[<p>Oh my god. I'm so busy recently. It's stressful for me to prepare for the GRE test. And I'm going to apply for graduate schools. And I also wanna find an internship before I graduate.</p><p>But my personal server met some problems several months ago. After I bought a new server in Ali cloud, I have to configure a new certification for the https. But some weird problems always stop me.</p><p>Now I have gotten several reasons to finish these tasks:</p><ol type="1"><li>Xiao Nf is waiting for my new website.</li><li>I wanna build a personal research page on my website for showing for professors.</li><li>I need this place to write.</li><li>My new website is really beautiful and I miss it.</li></ol><p>Come on.</p><p>搞一下github.io网站 先用它</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Oh my god. I&#39;m so busy recently. It&#39;s stressful for me to prepare for the GRE test. And I&#39;m going to apply for graduate schools. And I al
+      
+    
+    </summary>
+    
+    
+      <category term="thoughts" scheme="https://viridityzhu.github.io/categories/thoughts/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Upload pics automatically via Typora</title>
-    <link href="https://jyzhu.top/2020/10/16/Upload-pics-automatically-via-Typora/"/>
-    <id>https://jyzhu.top/2020/10/16/Upload-pics-automatically-via-Typora/</id>
+    <link href="https://viridityzhu.github.io/2020/10/16/Upload-pics-automatically-via-Typora/"/>
+    <id>https://viridityzhu.github.io/2020/10/16/Upload-pics-automatically-via-Typora/</id>
     <published>2020-10-16T08:40:40.000Z</published>
     <updated>2020-10-16T08:45:18.977Z</updated>
     
@@ -36,17 +60,17 @@
     </summary>
     
     
-      <category term="Computer Notes" scheme="https://jyzhu.top/categories/Computer-Notes/"/>
+      <category term="Computer Notes" scheme="https://viridityzhu.github.io/categories/Computer-Notes/"/>
     
     
-      <category term="Markdown" scheme="https://jyzhu.top/tags/Markdown/"/>
+      <category term="Markdown" scheme="https://viridityzhu.github.io/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>Look at my console!</title>
-    <link href="https://jyzhu.top/2020/10/16/Look-at-my-console/"/>
-    <id>https://jyzhu.top/2020/10/16/Look-at-my-console/</id>
+    <link href="https://viridityzhu.github.io/2020/10/16/Look-at-my-console/"/>
+    <id>https://viridityzhu.github.io/2020/10/16/Look-at-my-console/</id>
     <published>2020-10-16T08:12:00.000Z</published>
     <updated>2020-10-16T08:31:52.298Z</updated>
     
@@ -65,17 +89,17 @@
     </summary>
     
     
-      <category term="Computer Notes" scheme="https://jyzhu.top/categories/Computer-Notes/"/>
+      <category term="Computer Notes" scheme="https://viridityzhu.github.io/categories/Computer-Notes/"/>
     
     
-      <category term="MacOS" scheme="https://jyzhu.top/tags/MacOS/"/>
+      <category term="MacOS" scheme="https://viridityzhu.github.io/tags/MacOS/"/>
     
   </entry>
   
   <entry>
     <title>外公终日会想些什么呢</title>
-    <link href="https://jyzhu.top/2020/08/12/%E6%88%91%E7%9A%84%E5%A4%96%E5%85%AC/"/>
-    <id>https://jyzhu.top/2020/08/12/%E6%88%91%E7%9A%84%E5%A4%96%E5%85%AC/</id>
+    <link href="https://viridityzhu.github.io/2020/08/12/%E6%88%91%E7%9A%84%E5%A4%96%E5%85%AC/"/>
+    <id>https://viridityzhu.github.io/2020/08/12/%E6%88%91%E7%9A%84%E5%A4%96%E5%85%AC/</id>
     <published>2020-08-12T12:46:04.000Z</published>
     <updated>2020-08-12T12:48:05.189Z</updated>
     
@@ -92,15 +116,15 @@
     </summary>
     
     
-      <category term="thoughts" scheme="https://jyzhu.top/categories/thoughts/"/>
+      <category term="thoughts" scheme="https://viridityzhu.github.io/categories/thoughts/"/>
     
     
   </entry>
   
   <entry>
     <title>正式把网站迁移到hexo上啦！为了Markdown。</title>
-    <link href="https://jyzhu.top/2020/08/07/%E6%AD%A3%E5%BC%8F%E6%8A%8A%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E5%88%B0hexo%E4%B8%8A%E5%95%A6%EF%BC%81%E4%B8%BA%E4%BA%86Markdown%E3%80%82/"/>
-    <id>https://jyzhu.top/2020/08/07/%E6%AD%A3%E5%BC%8F%E6%8A%8A%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E5%88%B0hexo%E4%B8%8A%E5%95%A6%EF%BC%81%E4%B8%BA%E4%BA%86Markdown%E3%80%82/</id>
+    <link href="https://viridityzhu.github.io/2020/08/07/%E6%AD%A3%E5%BC%8F%E6%8A%8A%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E5%88%B0hexo%E4%B8%8A%E5%95%A6%EF%BC%81%E4%B8%BA%E4%BA%86Markdown%E3%80%82/"/>
+    <id>https://viridityzhu.github.io/2020/08/07/%E6%AD%A3%E5%BC%8F%E6%8A%8A%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E5%88%B0hexo%E4%B8%8A%E5%95%A6%EF%BC%81%E4%B8%BA%E4%BA%86Markdown%E3%80%82/</id>
     <published>2020-08-06T18:09:27.000Z</published>
     <updated>2020-08-06T18:13:40.782Z</updated>
     
@@ -119,15 +143,15 @@
     </summary>
     
     
-      <category term="thoughts" scheme="https://jyzhu.top/categories/thoughts/"/>
+      <category term="thoughts" scheme="https://viridityzhu.github.io/categories/thoughts/"/>
     
     
   </entry>
   
   <entry>
     <title>Sublime Text 3 Package Control报错OSError: The specified item could not be found in the keychain解决</title>
-    <link href="https://jyzhu.top/2020/07/11/sublime-oserror-keychain/"/>
-    <id>https://jyzhu.top/2020/07/11/sublime-oserror-keychain/</id>
+    <link href="https://viridityzhu.github.io/2020/07/11/sublime-oserror-keychain/"/>
+    <id>https://viridityzhu.github.io/2020/07/11/sublime-oserror-keychain/</id>
     <published>2020-07-11T07:23:35.000Z</published>
     <updated>2020-08-06T16:34:43.167Z</updated>
     
@@ -144,21 +168,21 @@
     </summary>
     
     
-      <category term="Computer Notes" scheme="https://jyzhu.top/categories/Computer-Notes/"/>
+      <category term="Computer Notes" scheme="https://viridityzhu.github.io/categories/Computer-Notes/"/>
     
     
-      <category term="https" scheme="https://jyzhu.top/tags/https/"/>
+      <category term="https" scheme="https://viridityzhu.github.io/tags/https/"/>
     
-      <category term="MacOS" scheme="https://jyzhu.top/tags/MacOS/"/>
+      <category term="MacOS" scheme="https://viridityzhu.github.io/tags/MacOS/"/>
     
-      <category term="Sublime Text 3" scheme="https://jyzhu.top/tags/Sublime-Text-3/"/>
+      <category term="Sublime Text 3" scheme="https://viridityzhu.github.io/tags/Sublime-Text-3/"/>
     
   </entry>
   
   <entry>
     <title>我的状态：伸手接过空无一物</title>
-    <link href="https://jyzhu.top/2020/07/02/%E6%88%91%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9A%E4%BC%B8%E6%89%8B%E6%8E%A5%E8%BF%87%E7%A9%BA%E6%97%A0%E4%B8%80%E7%89%A9/"/>
-    <id>https://jyzhu.top/2020/07/02/%E6%88%91%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9A%E4%BC%B8%E6%89%8B%E6%8E%A5%E8%BF%87%E7%A9%BA%E6%97%A0%E4%B8%80%E7%89%A9/</id>
+    <link href="https://viridityzhu.github.io/2020/07/02/%E6%88%91%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9A%E4%BC%B8%E6%89%8B%E6%8E%A5%E8%BF%87%E7%A9%BA%E6%97%A0%E4%B8%80%E7%89%A9/"/>
+    <id>https://viridityzhu.github.io/2020/07/02/%E6%88%91%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9A%E4%BC%B8%E6%89%8B%E6%8E%A5%E8%BF%87%E7%A9%BA%E6%97%A0%E4%B8%80%E7%89%A9/</id>
     <published>2020-07-01T18:14:50.000Z</published>
     <updated>2020-08-06T16:27:53.554Z</updated>
     
@@ -185,15 +209,15 @@
     </summary>
     
     
-      <category term="poems" scheme="https://jyzhu.top/categories/poems/"/>
+      <category term="poems" scheme="https://viridityzhu.github.io/categories/poems/"/>
     
     
   </entry>
   
   <entry>
     <title>说起享乐观</title>
-    <link href="https://jyzhu.top/2020/07/02/%E8%AF%B4%E8%B5%B7%E4%BA%AB%E4%B9%90%E8%A7%82/"/>
-    <id>https://jyzhu.top/2020/07/02/%E8%AF%B4%E8%B5%B7%E4%BA%AB%E4%B9%90%E8%A7%82/</id>
+    <link href="https://viridityzhu.github.io/2020/07/02/%E8%AF%B4%E8%B5%B7%E4%BA%AB%E4%B9%90%E8%A7%82/"/>
+    <id>https://viridityzhu.github.io/2020/07/02/%E8%AF%B4%E8%B5%B7%E4%BA%AB%E4%B9%90%E8%A7%82/</id>
     <published>2020-07-01T18:14:01.000Z</published>
     <updated>2020-08-06T16:23:50.301Z</updated>
     
@@ -210,15 +234,15 @@
     </summary>
     
     
-      <category term="thoughts" scheme="https://jyzhu.top/categories/thoughts/"/>
+      <category term="thoughts" scheme="https://viridityzhu.github.io/categories/thoughts/"/>
     
     
   </entry>
   
   <entry>
     <title>三年前的今天高考出分</title>
-    <link href="https://jyzhu.top/2020/07/02/%E4%B8%89%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E9%AB%98%E8%80%83%E5%87%BA%E5%88%86/"/>
-    <id>https://jyzhu.top/2020/07/02/%E4%B8%89%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E9%AB%98%E8%80%83%E5%87%BA%E5%88%86/</id>
+    <link href="https://viridityzhu.github.io/2020/07/02/%E4%B8%89%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E9%AB%98%E8%80%83%E5%87%BA%E5%88%86/"/>
+    <id>https://viridityzhu.github.io/2020/07/02/%E4%B8%89%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E9%AB%98%E8%80%83%E5%87%BA%E5%88%86/</id>
     <published>2020-07-01T18:13:26.000Z</published>
     <updated>2020-08-06T16:30:29.820Z</updated>
     
@@ -235,15 +259,15 @@
     </summary>
     
     
-      <category term="thoughts" scheme="https://jyzhu.top/categories/thoughts/"/>
+      <category term="thoughts" scheme="https://viridityzhu.github.io/categories/thoughts/"/>
     
     
   </entry>
   
   <entry>
     <title>无题</title>
-    <link href="https://jyzhu.top/2020/07/02/%E6%97%A0%E9%A2%98-trashed/"/>
-    <id>https://jyzhu.top/2020/07/02/%E6%97%A0%E9%A2%98-trashed/</id>
+    <link href="https://viridityzhu.github.io/2020/07/02/%E6%97%A0%E9%A2%98-trashed/"/>
+    <id>https://viridityzhu.github.io/2020/07/02/%E6%97%A0%E9%A2%98-trashed/</id>
     <published>2020-07-01T18:10:59.000Z</published>
     <updated>2020-08-06T16:26:13.753Z</updated>
     
@@ -268,15 +292,15 @@
     </summary>
     
     
-      <category term="poems" scheme="https://jyzhu.top/categories/poems/"/>
+      <category term="poems" scheme="https://viridityzhu.github.io/categories/poems/"/>
     
     
   </entry>
   
   <entry>
     <title>荒诞笔记</title>
-    <link href="https://jyzhu.top/2020/07/02/%E8%8D%92%E8%AF%9E%E7%AC%94%E8%AE%B0/"/>
-    <id>https://jyzhu.top/2020/07/02/%E8%8D%92%E8%AF%9E%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://viridityzhu.github.io/2020/07/02/%E8%8D%92%E8%AF%9E%E7%AC%94%E8%AE%B0/"/>
+    <id>https://viridityzhu.github.io/2020/07/02/%E8%8D%92%E8%AF%9E%E7%AC%94%E8%AE%B0/</id>
     <published>2020-07-01T18:10:37.000Z</published>
     <updated>2020-08-06T16:24:36.522Z</updated>
     
@@ -292,15 +316,15 @@
     </summary>
     
     
-      <category term="thoughts" scheme="https://jyzhu.top/categories/thoughts/"/>
+      <category term="thoughts" scheme="https://viridityzhu.github.io/categories/thoughts/"/>
     
     
   </entry>
   
   <entry>
     <title>逃吧</title>
-    <link href="https://jyzhu.top/2020/07/02/%E9%80%83%E5%90%A7/"/>
-    <id>https://jyzhu.top/2020/07/02/%E9%80%83%E5%90%A7/</id>
+    <link href="https://viridityzhu.github.io/2020/07/02/%E9%80%83%E5%90%A7/"/>
+    <id>https://viridityzhu.github.io/2020/07/02/%E9%80%83%E5%90%A7/</id>
     <published>2020-07-01T18:09:30.000Z</published>
     <updated>2020-08-06T16:23:43.251Z</updated>
     
@@ -325,15 +349,15 @@
     </summary>
     
     
-      <category term="poems" scheme="https://jyzhu.top/categories/poems/"/>
+      <category term="poems" scheme="https://viridityzhu.github.io/categories/poems/"/>
     
     
   </entry>
   
   <entry>
     <title>世间的野火</title>
-    <link href="https://jyzhu.top/2020/05/27/%E4%B8%96%E9%97%B4%E7%9A%84%E9%87%8E%E7%81%AB/"/>
-    <id>https://jyzhu.top/2020/05/27/%E4%B8%96%E9%97%B4%E7%9A%84%E9%87%8E%E7%81%AB/</id>
+    <link href="https://viridityzhu.github.io/2020/05/27/%E4%B8%96%E9%97%B4%E7%9A%84%E9%87%8E%E7%81%AB/"/>
+    <id>https://viridityzhu.github.io/2020/05/27/%E4%B8%96%E9%97%B4%E7%9A%84%E9%87%8E%E7%81%AB/</id>
     <published>2020-05-26T18:20:44.000Z</published>
     <updated>2020-08-06T16:30:14.867Z</updated>
     
@@ -350,15 +374,15 @@
     </summary>
     
     
-      <category term="poems" scheme="https://jyzhu.top/categories/poems/"/>
+      <category term="poems" scheme="https://viridityzhu.github.io/categories/poems/"/>
     
     
   </entry>
   
   <entry>
     <title>狭窄的人生</title>
-    <link href="https://jyzhu.top/2020/05/18/%E7%8B%AD%E7%AA%84%E7%9A%84%E4%BA%BA%E7%94%9F/"/>
-    <id>https://jyzhu.top/2020/05/18/%E7%8B%AD%E7%AA%84%E7%9A%84%E4%BA%BA%E7%94%9F/</id>
+    <link href="https://viridityzhu.github.io/2020/05/18/%E7%8B%AD%E7%AA%84%E7%9A%84%E4%BA%BA%E7%94%9F/"/>
+    <id>https://viridityzhu.github.io/2020/05/18/%E7%8B%AD%E7%AA%84%E7%9A%84%E4%BA%BA%E7%94%9F/</id>
     <published>2020-05-18T08:26:04.000Z</published>
     <updated>2020-08-06T16:25:34.162Z</updated>
     
@@ -383,15 +407,15 @@
     </summary>
     
     
-      <category term="poems" scheme="https://jyzhu.top/categories/poems/"/>
+      <category term="poems" scheme="https://viridityzhu.github.io/categories/poems/"/>
     
     
   </entry>
   
   <entry>
     <title>xp</title>
-    <link href="https://jyzhu.top/2020/05/05/xp/"/>
-    <id>https://jyzhu.top/2020/05/05/xp/</id>
+    <link href="https://viridityzhu.github.io/2020/05/05/xp/"/>
+    <id>https://viridityzhu.github.io/2020/05/05/xp/</id>
     <published>2020-05-04T19:41:18.000Z</published>
     <updated>2020-08-06T16:31:28.690Z</updated>
     
@@ -408,15 +432,15 @@
     </summary>
     
     
-      <category term="poems" scheme="https://jyzhu.top/categories/poems/"/>
+      <category term="poems" scheme="https://viridityzhu.github.io/categories/poems/"/>
     
     
   </entry>
   
   <entry>
     <title>geek</title>
-    <link href="https://jyzhu.top/2020/05/05/geek/"/>
-    <id>https://jyzhu.top/2020/05/05/geek/</id>
+    <link href="https://viridityzhu.github.io/2020/05/05/geek/"/>
+    <id>https://viridityzhu.github.io/2020/05/05/geek/</id>
     <published>2020-05-04T19:39:14.000Z</published>
     <updated>2020-08-06T16:41:35.998Z</updated>
     
@@ -434,15 +458,15 @@
     </summary>
     
     
-      <category term="poems" scheme="https://jyzhu.top/categories/poems/"/>
+      <category term="poems" scheme="https://viridityzhu.github.io/categories/poems/"/>
     
     
   </entry>
   
   <entry>
     <title>病骨</title>
-    <link href="https://jyzhu.top/2020/05/05/%E7%97%85%E9%AA%A8/"/>
-    <id>https://jyzhu.top/2020/05/05/%E7%97%85%E9%AA%A8/</id>
+    <link href="https://viridityzhu.github.io/2020/05/05/%E7%97%85%E9%AA%A8/"/>
+    <id>https://viridityzhu.github.io/2020/05/05/%E7%97%85%E9%AA%A8/</id>
     <published>2020-05-04T19:36:57.000Z</published>
     <updated>2020-08-06T16:25:04.359Z</updated>
     
@@ -459,15 +483,15 @@
     </summary>
     
     
-      <category term="thoughts" scheme="https://jyzhu.top/categories/thoughts/"/>
+      <category term="thoughts" scheme="https://viridityzhu.github.io/categories/thoughts/"/>
     
     
   </entry>
   
   <entry>
     <title>盆栽</title>
-    <link href="https://jyzhu.top/2020/04/30/%E7%9B%86%E6%A0%BD/"/>
-    <id>https://jyzhu.top/2020/04/30/%E7%9B%86%E6%A0%BD/</id>
+    <link href="https://viridityzhu.github.io/2020/04/30/%E7%9B%86%E6%A0%BD/"/>
+    <id>https://viridityzhu.github.io/2020/04/30/%E7%9B%86%E6%A0%BD/</id>
     <published>2020-04-30T11:40:38.000Z</published>
     <updated>2020-08-06T16:25:00.165Z</updated>
     
@@ -484,15 +508,15 @@
     </summary>
     
     
-      <category term="thoughts" scheme="https://jyzhu.top/categories/thoughts/"/>
+      <category term="thoughts" scheme="https://viridityzhu.github.io/categories/thoughts/"/>
     
     
   </entry>
   
   <entry>
     <title>ITerm2-必须让Mac终端花里胡哨一点</title>
-    <link href="https://jyzhu.top/2020/04/21/iterm2-mac/"/>
-    <id>https://jyzhu.top/2020/04/21/iterm2-mac/</id>
+    <link href="https://viridityzhu.github.io/2020/04/21/iterm2-mac/"/>
+    <id>https://viridityzhu.github.io/2020/04/21/iterm2-mac/</id>
     <published>2020-04-21T15:38:15.000Z</published>
     <updated>2020-08-06T16:40:23.038Z</updated>
     
@@ -510,19 +534,19 @@
     </summary>
     
     
-      <category term="Computer Notes" scheme="https://jyzhu.top/categories/Computer-Notes/"/>
+      <category term="Computer Notes" scheme="https://viridityzhu.github.io/categories/Computer-Notes/"/>
     
     
-      <category term="iTerm" scheme="https://jyzhu.top/tags/iTerm/"/>
+      <category term="iTerm" scheme="https://viridityzhu.github.io/tags/iTerm/"/>
     
-      <category term="Mac" scheme="https://jyzhu.top/tags/Mac/"/>
+      <category term="Mac" scheme="https://viridityzhu.github.io/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>A pic of the relationship between CRM, SCM &amp; ERP</title>
-    <link href="https://jyzhu.top/2020/04/20/a-pic-of-the-relationship-between-crm-scm-erp/"/>
-    <id>https://jyzhu.top/2020/04/20/a-pic-of-the-relationship-between-crm-scm-erp/</id>
+    <link href="https://viridityzhu.github.io/2020/04/20/a-pic-of-the-relationship-between-crm-scm-erp/"/>
+    <id>https://viridityzhu.github.io/2020/04/20/a-pic-of-the-relationship-between-crm-scm-erp/</id>
     <published>2020-04-20T05:21:50.000Z</published>
     <updated>2020-08-06T16:44:15.212Z</updated>
     
@@ -539,39 +563,12 @@
     </summary>
     
     
-      <category term="Computer Notes" scheme="https://jyzhu.top/categories/Computer-Notes/"/>
+      <category term="Computer Notes" scheme="https://viridityzhu.github.io/categories/Computer-Notes/"/>
     
     
-      <category term="ERP" scheme="https://jyzhu.top/tags/ERP/"/>
+      <category term="ERP" scheme="https://viridityzhu.github.io/tags/ERP/"/>
     
-      <category term="Management" scheme="https://jyzhu.top/tags/Management/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>疫期-大三上-碎念</title>
-    <link href="https://jyzhu.top/2020/04/19/%E7%96%AB%E6%9C%9F-%E5%A4%A7%E4%B8%89%E4%B8%8A-%E7%A2%8E%E5%BF%B5/"/>
-    <id>https://jyzhu.top/2020/04/19/%E7%96%AB%E6%9C%9F-%E5%A4%A7%E4%B8%89%E4%B8%8A-%E7%A2%8E%E5%BF%B5/</id>
-    <published>2020-04-19T15:13:19.000Z</published>
-    <updated>2020-08-06T16:25:09.927Z</updated>
-    
-    <content type="html"><![CDATA[<p>唉，疫情在家，这都多少天了。有安稳进行的，有新鲜的，有措手不及的。</p><p>跟她的状态算是安稳。几天之前写下的：</p><blockquote><p>对她的喜欢到了半夜自己一个人喃喃自语：Oh my fucking god, I love her. 的地步。闻所未闻吧，朱jy还会这样呢？并且这份爱没有给我不安全感。我觉得它是值得的，她值得，她对我的爱也值得。虽然一大片阴霾在眼前：疫情导致这学期见不到，交换导致大四一年见不到，留学就跑更远了……如果能认定的话，能把这些看上去很漫长但其实很短暂的人生给普通地消磨过去的话，未来有能力朝着她前进的时候，就不是什么问题了吧。<br>挺安稳的，踏踏实实走自己的路的感觉，有归宿有期待的感觉。</p></blockquote><p>安稳的还有学习，不知不觉已经过完前八周了，结了一波课，马上新开一波课。我对新的课没啥期待。</p><p>新鲜的是最近开始学吉他了。现在是每天左手指尖麻麻疼疼的状态。我真的不理解这是人能按的弦吗？在彻底改变身体的一部分（指让左手指尖痛觉彻底坏掉以便按弦）跟学会一门乐器之间选，我还真纠结了一下。不过学吉他还挺有意思的，我甚至花了一天把一整本教材的乐理都给看了一遍，调啊和弦啊节奏啊之类的概念，算是明白了，还挺妙。音乐真有意思，不啻文学嘛！</p><p>措手不及的是ANU交换给取消了，因为疫情。好不容易被选上的，当初我还真怪期待的。挺珍贵的机会，而且从我这破烂学校破烂专业，到人家好学校去学我想学的课程，简直美丽新人生。虽然要提前跟她异地（国）也很让人进退两难。但如今梦幻泡影一场，不胜难受。</p><p>另外还要自己反思一些：</p><ol type="1"><li>GRE背单词也太不积极了。要完啊。</li><li>爬虫真的恶心死我了。下次请学会拒绝，时间留在更宝贵的事情上不好吗。你现在整个人方向还是偏的，还没走上ds正途，你岌岌可危哎。</li><li>太懒了，天天只想发呆只想玩。以前那种学习新东西的兴奋劲呢？什么时候才能从这种漫长的疲劳状态中恢复过来啊？</li></ol><p>快让我回学校吧。我想见她。真的想。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;唉，疫情在家，这都多少天了。有安稳进行的，有新鲜的，有措手不及的。&lt;/p&gt;
-&lt;p&gt;跟她的状态算是安稳。几天之前写下的：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;对她的喜欢到了半夜自己一个人喃喃自语：Oh my fucking god, I love her. 的地步。闻所未
-      
-    
-    </summary>
-    
-    
-      <category term="thoughts" scheme="https://jyzhu.top/categories/thoughts/"/>
-    
+      <category term="Management" scheme="https://viridityzhu.github.io/tags/Management/"/>
     
   </entry>
   

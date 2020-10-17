@@ -17,20 +17,20 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jyzhu.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"viridityzhu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="A Base for Secreting and Running at Night">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tianke Youke">
-<meta property="og:url" content="https://jyzhu.top/page/6/index.html">
+<meta property="og:url" content="https://viridityzhu.github.io/page/page/6/index.html">
 <meta property="og:site_name" content="Tianke Youke">
 <meta property="og:description" content="A Base for Secreting and Running at Night">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Kay Zhu">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://jyzhu.top/page/6/">
+<link rel="canonical" href="https://viridityzhu.github.io/page/page/6/">
 
 
 <script id="page-configurations">
@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">108</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">109</span></a>
 
   </li>
   </ul>
@@ -164,7 +164,149 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/09/15/r-notes-first-meeting-with-r/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/09/27/data-science-machine-learning-note-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kay Zhu">
+      <meta itemprop="description" content="A Base for Secreting and Running at Night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tianke Youke">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/27/data-science-machine-learning-note-1/" class="post-title-link" itemprop="url">Data Science + Machine Learning Note 1: Classification with Linear Regression and Logistic Regression</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-27 20:11:20" itemprop="dateCreated datePublished" datetime="2019-09-27T20:11:20+08:00">2019-09-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-07 01:39:46" itemprop="dateModified" datetime="2020-08-07T01:39:46+08:00">2020-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Notes/" itemprop="url" rel="index"><span itemprop="name">Computer Notes</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这学期开了数据科学课，很开心。我校信管还是有点跟上时代，不至于跟着整个老旧专业的没落而没落，而是有转型打算的嘛。听c老师说甚至学院开会打算把整个专业改名，安上「大数据」，但后来发现如此的话教学内容也要大改而师资不够。说白了就是学院里边很多老师还是太软了，技术不大行，教不了硬的。</p>
+<p>这课两周内把前四章基础的东西讲完了，数据导入和简单数据预处理之类的，比我想象中快，我还比较期待后面能学到新东西。</p>
+<p>第五章开了个头，讲的是「选择和评价模型」，大抵是介绍机器学习中的常用模型，分清遇到不同数据分析需求时适用的模型。令我失望的是，真的真的只是讲了一下模型的种类，告诉你模型可以用来做什么，连一点点原理都没有涉及。我希望今天把课程所学温习，把上学期的实践课学到的机器学习原理整合进知识框架里，顺道把之前的笔记好好整理一下。如果合适的话，再发个公众号文章也不错（心心念念的广告费）。</p>
+<p>不同于ml角度，把机器学习模型分为监督学习和无监督学习；ds是从业务问题的角度出发，把模型分为分类、打分、概率、排名、聚类等。我显然更喜欢前者的分类，相比较之下后者的分法互相交叉，令人迷惑。</p>
+<p>但我今天还是按照ds的分类来整理一下把。</p>
+<h2 id="分类问题-classification">分类问题 Classification</h2>
+<p>分类问题决定如何为对象分配（已知的）标签 。分类问题属于监督学习，即训练模型时需要数据已经被分类好了。监督（Supervised）本质上说的就是正确答案已知（right answer given），比如训练模型去学习猫狗图片分类时，每张图片已经事先被打上了「猫猫」或者「狗狗」的标签。模型拿到一张图片，给出自己的判断，再查看标准答案，得知自己答对了没有；然后不断修正自己，直到达到令人满意的准确率。这种数据标签都是人工打的，说起来L老师还提起过这甚至催生了一个新兴职业来着，叫「数据标注员」，还挺赚钱？</p>
+<p>分类问题的常用算法，ds课上介绍了朴素贝叶斯、决策树、逻辑斯谛回归和支持向量机。我很遗憾的是这里介绍的几种算法都比较基础，并且不知道为什么似乎甚至不打算提及神经网络的样子……朴素贝叶斯、决策树和逻辑回归都是比较简易的模型，支持向量机虽然很深，但l老师说它是上个世纪的经典，现在已经逐渐过时，被很多算法给取代了……不过从应用角度来说，我们本科生处理处理小规模数据，用简单算法可能比神经网络效果好多了，学这些先入个门也挺合适把。</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2019/09/image-1024x621.png"></p>
+<p>（都是适合比较简单的任务，高级的还是神经网络给力）</p>
+<ol type="1">
+<li>朴素贝叶斯很简单，所以适合处理比较多的变量；尤其在应用中发现它很适合文本分类。但是现在深度学习领域的自然语言处理不是靠谱多了……另一方面，朴素贝叶斯成立有一个必须的假设：各输入变量是相互独立的——这很限制它的靠谱性。</li>
+<li>决策树就比较适合输入变量之间有相关性的情况，它的分类逻辑是一层一层的。</li>
+<li>逻辑回归是可以输出概率值的。</li>
+<li>支持向量机是上世纪的经典，能解决比较复杂的问题；但是巧了，神经网络也很适合解决这类问题，而且效果更好……</li>
+</ol>
+<p>好了现在把脑子切换到ml频道，我想整理一下逻辑回归的算法原理。</p>
+<p>然而线性回归是逻辑回归的基础，所以我需要先整理一下线性回归的原理orz。</p>
+<h2 id="线性回归linear-regression">线性回归Linear Regression</h2>
+<p>线性回归很好理解，输入的是对象的一系列特征值x1、x2、x3……，输出则是需要预测的变量y。比如经典的房价预测问题，输入某地的一些特征值（比如犯罪率啊、住宅数啊、人均收入啊等等），输出预测的该地房价<span class="math inline">\(h_θ(x)\)</span>。公式表示起来是这样：</p>
+<p><span class="math display">\[h_θ(x)=θ_0+θ_1x_1+θ_2x_2+...\]</span></p>
+<p>刚开始非常迷惑我的是已知量未知量的问题。在训练的时候，输入值<span class="math inline">\(x_1\$、\)</span>x_2$和输出值y都是已知量，而参数<span class="math inline">\(θ_0\$、\)</span>θ_1$、$θ_2$……才是未知量，机器的根本任务就是拟合出合适的θ值；而在模型投入使用的时候，θ的值已经敲定了，我们拿输入的一堆x来预测未知的y。</p>
+<p>接下来精彩的来了：模型怎样才能有方向地优化它的参数θ呢？这里所发生的事情实在很巧妙。</p>
+<p>要实现模型优化，需要依次解决两个问题：</p>
+<ol type="1">
+<li><strong>建模误差</strong>：反映模型所预测的值与训练集中实际值之间的差距</li>
+<li><strong>自动优化</strong>：自动找出让误差更小的参数取值</li>
+</ol>
+<h3 id="用代价函数来建模误差cost-function">1. 用代价函数来建模误差Cost Function</h3>
+<p>这个其实很容易想到。预测值和真实值之间的差即为误差，那所有的这些差的平均值就能表示整个模型的误差水平了。</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2019/09/image-2.png"></p>
+<p>假如图中黑色直线就是我们拟合出来的线，直线上的每一个点，意味着在x取相应值时，y即为预测值；而同一横坐标的红色叉叉对应的y表示真实值。那么每一条蓝色线段即为一次预测的误差，所有蓝色线段长度加起来再除以总数就可以表示整个线的误差程度了。</p>
+<p>当然，预测值与真实值的差可正可负，要全部加起来需要取绝对值；为了方便后续的计算，这里在定义代价函数的时候取了平方。代价函数的定义出来了：</p>
+<p><span class="math display">\[J \left( \theta_0, \theta_1 \right) = \frac{1}{2m}\sum\limits_{i=1}^m \left( h_{\theta}(x^{(i)})-y^{(i)} \right)^{2}\]</span></p>
+<p>（呃……本来除以训练个数m就够了，前面这个2是哪冒出来的？现在只好说是未卜先知，这个2是为了方便下一步的计算。）</p>
+<p>好！有了代价函数来表示误差水平，那么模型接下来要做的事情就可以量化了：选取合适的参数θ，使代价函数值最小。</p>
+<h3 id="用梯度下降算法来优化参数gradient-descent">2. 用梯度下降算法来优化参数<strong>Gradient Descent</strong></h3>
+<p>怎么说呢，在我对机器学习肤浅的掌握中，我认为最精妙在于神经网络；其次就在于这里的梯度下降算法了。谁能想到一个不怎么起眼的数学原理，可以应用于这么巧妙的地方，促进回归乃至神经网络的实现，奠定如今一整个蓬勃发展的ml领域的基础。（……我可能太扯了）</p>
+<p>说回我们的目标，要取代价函数的最小值。函数的最值问题，这很容易让人联想到——导数。</p>
+<p>假如代价函数是如图所示的抛物线形状（事实上单变量线性回归的代价函数确实总会是这样的形状），横坐标代表不同的θ取值，纵坐标是代价函数J(θ)。曲线的底部正是J(θ)的最小值，在这一点导数为0。</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2019/09/image-3.png"></p>
+<p>一个容易被忽视的现象来了：在最低点右边，导数值总为正（导数的几何意义就是切线斜率）；在最低点左边，导数值总为负。而且更仔细想一想，越接近低谷，曲线越平缓，斜率的绝对值越小，导数值也越小；反之越远则导数值越大。</p>
+<p>那么，如果对θ进行迭代，总是让当前的θ值减去它对应点的导数值，会发生什么？答案是θ值会越来越接近最优值！在最低点右边的θ会减去一个正数，从而向左移动；在左边的θ会减去一个负数，从而向右移动。离得远的点会减去一个更大的数，从而蹭蹭靠近；离得近的点会减去一个很小的数，从而缓缓趋近。如下图：</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2019/09/image-4.png"></p>
+<p>那么梯度下降的迭代公式即是：</p>
+<p><span class="math display">\[{\theta_{j}}:={\theta_{j}}-\alpha \frac{\partial }{\partial {\theta_{j}}}J\left( \theta \right)\]</span></p>
+<p>其中的<span class="math inline">\(\frac{\partial }{\partial {\theta_{j}}}J\left( \theta \right)\)</span>即为代价函数对<span class="math inline">\(\theta_j\)</span>的偏导数，α则是学习率，用来调节每次下降的步伐。</p>
+<p>至此，我们已经搞明白了线性回归时，参数自动优化的原理。真正实现线性回归，只需要利用梯度下降算法，不断优化参数θ。具体一点来讲，只需要将代价函数的偏导数求解出来，代入梯度下降公式，所得即是最终的算法。如下：</p>
+<p><span class="math display">\[
+\begin{align}
+&amp;Repeat\{\\
+&amp;{\theta_{0} }:={\theta_{0} }-a\frac{1}{m}\sum\limits_{i=1}^{m}{\left({h_{\theta} }({ {x}^{(i)} })-{ {y}^{(i)} }\right)}\\
+&amp;{\theta_{1} }:={\theta_{1} }-a\frac{1}{m}\sum\limits_{i=1}^{m}{\left(\left({h_{\theta } }({ {x}^{(i)} })-{ {y}^{(i)} }\right)\cdot { {x}^{(i)} }\right)}\\
+&amp;......\\
+&amp;\}
+\end{align}
+\]</span></p>
+<h2 id="逻辑回归logistic-regression">逻辑回归Logistic Regression</h2>
+<p>逻辑回归跟线性回归的输入是一样的，即对象的一系列特征值；而输出的是0或1，代表将对象分为两种类型。比如经典的垃圾邮件分类问题，可以将垃圾邮件的特征值（比如文本长短啊、发件邮箱地址啊之类的，我也不知道具体是啥）输入，模型就会给出预测，1代表是垃圾邮件，0代表不是。</p>
+<p>逻辑回归看起来比线性回归简单，只能预测出0、1两个分类，而后者能预测出一整个连续型数值，很厉害的样子。然而事实上，逻辑回归只是在线性回归的结果上加了一个sigmoid函数，暴力让结果泾渭分明。sigmoid函数是这个：</p>
+<p><span class="math display">\[g\left( z \right)=\frac{1}{1+{ {e}^{-z} } }\]</span></p>
+<p>它长这样：</p>
+<p><img src="https://jyzhu.top/wp-content/uploads/2019/09/image-1.png"></p>
+<p>其中自变量z是线性回归的输出结果，值的大小表明对象跟某类的相似程度。比如说，想预测一封邮件是否垃圾邮件，z=999，就是说：这也太太太太太像一封垃圾邮件了；反之z=-999，就是说：这一点点点点也不像垃圾邮件。这么说的话，sigmoid函数的作用仿佛就显现了：它就是把取值范围很跳脱的z值，转换成一个(0,1)间的值，正好可以表示概率。极小的z值对应的概率趋于0，极大的z值对应的概率趋于1。</p>
+<p>那么，逻辑回归的公式可以这么表示：</p>
+<p><span class="math display">\[h_θ(x)=\frac{1}{1+e^{-θ^Tx}}=P\{y=1|x;θ\}\]</span></p>
+<p>其中前一个式子中，e的指数$​​θ^Tx​​$即是线性回归的输出，也就是上面说的自变量z。后一个式子是指在参数为θ，输入为x时，y=1的概率。</p>
+<p>这样的话输出的值仍然是一些诸如0.2、0.4、0.8这样的概率，为了让结果更明确，这里只需要再进行一个简单的判决，大于0.5的判为1，小于0.5的判为0。（这里我理解了很久为什么如此粗暴且似乎没有必要，后来想明白经手sigmoid函数的值往往不是很趋近0就是很趋近1，直接判定为0、1是可以比较笃定的。）</p>
+<p>……天哪，写这个也太繁琐了。我其实真正想整理的是神经网络部分的笔记，不知道还有没有足够的意愿了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/09/15/r-notes-first-meeting-with-r/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -256,7 +398,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/09/15/zhihucrawl-log/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/09/15/zhihucrawl-log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -340,7 +482,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/09/14/anxiety/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/09/14/anxiety/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -425,7 +567,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/09/14/nam-nam/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/09/14/nam-nam/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -511,7 +653,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/09/14/wordpress-email-post-passage/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/09/14/wordpress-email-post-passage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -595,7 +737,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/09/12/pure-rethinking/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/09/12/pure-rethinking/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -669,7 +811,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/09/05/follow-this-toefl-plan-or-die/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/09/05/follow-this-toefl-plan-or-die/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -766,7 +908,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/08/27/every-drink-is-love/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/08/27/every-drink-is-love/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -848,7 +990,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/08/20/sigh/">
+    <link itemprop="mainEntityOfPage" href="https://viridityzhu.github.io/2019/08/20/sigh/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -923,118 +1065,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://jyzhu.top/2019/08/17/reading-lightness-of-being/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kay Zhu">
-      <meta itemprop="description" content="A Base for Secreting and Running at Night">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tianke Youke">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/17/reading-lightness-of-being/" class="post-title-link" itemprop="url">我读《不能承受的生命之轻》</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-17 16:09:17" itemprop="dateCreated datePublished" datetime="2019-08-17T16:09:17+08:00">2019-08-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-07 00:37:20" itemprop="dateModified" datetime="2020-08-07T00:37:20+08:00">2020-08-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/thoughts/" itemprop="url" rel="index"><span itemprop="name">thoughts</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://jyzhu.top/wp-content/uploads/2019/08/image-6.jpeg"></p>
-<p>前：<em>终于第二遍读完了《不能承受的生命之轻》，这本用小说体裁探讨哲学的书中，有太多太多深刻的东西。在书末附的那篇《大写的牧歌与小写的牧歌》的启迪下，我对此书的部分中心思想有了一些肤浅的理解。</em></p>
-<h2 id="刻奇">1. <strong>刻奇</strong></h2>
-<p>《不能承受的生命之轻》揭露了许多谎言，我们的生命和思想藉以为本的谎言，刻奇当属其一。</p>
-<p>《伟大的进军》一章中，一群西方发达国家的医生、教授、明星自发组织去往战乱的柬埔寨提供医疗，却被拦在边境线外，回应伟大喧嚣的竟只是一片死寂，进军尚未开始业已终止。弗兰茨是队伍中的一员，他到头来发现这一切只是行进者的一场演戏，令大家自我感动的无上光荣，原来只是一种表演欲。书中的弗兰茨至死也未接受——但昆德拉在文字中毫不留情地揭露出来——伟大的进军是一场刻奇（kitsch）。</p>
-<p>「刻奇」一词曾被翻译成「媚俗」，为其本就抽象的含义更蒙上一层纱状的误解。昆德拉提出的这一概念，是一种<strong>美学的理想</strong>，追求着一个集结了一切崇高与美好的世界，排除了人类生存中不被接受的一切的世界。</p>
-<p>而这一美学的理想实则是矛盾的，因为其根源是<strong>对生命的绝对认同</strong>。相信生命原本就该如此，生命的一切都是美好的，这种信仰被昆德拉称为「对生命的绝对认同」。然而排便的那一刻，便是对这种信仰的讽刺：粪便是无法接受的，受人避讳的，可它却是人被创造的样子的一部分呀！而正如粪便不可能不存在一样，不被刻奇所接受的事物亦不能被真正消灭，只能被掩盖与无视。</p>
-<p>因此，刻奇是这个世界所戴的漂亮面具。人们为应该喜悦的事情而喜悦，为应该感动的事情而感动，迎合着、表演着，只为表达应该有的认同，对生命的那种认同。</p>
-<p>回过头来便能理解，伟大的进军是一场刻奇，因为「尽管障碍重重，但它是一种壮观的前行，是通向博爱、平等、正义、幸福乃至更远的征程，因为只有征途上多险阻，进军才能堪称伟大的进军」。</p>
-<p><img src="https://jyzhu.top/wp-content/uploads/2019/08/image-10.jpeg"></p>
-<p>据此书改编的电影《布拉格之恋》中的情景</p>
-<h2 id="牧歌">2. <strong>牧歌</strong></h2>
-<p>昆德拉对刻奇的揭露与批评，深层次上是对大写的牧歌的揭露与批评。我很喜欢「牧歌」这个词的修辞方式，用牧人唱的歌谣这一意象来借代其含义，生动无比。对大写的牧歌的向往是一种对幸福的渴望，它宣称要恢复美化的生活；这种美化的生活取缔了个体、抛弃了界限，在完全同质之中消解了冲突；这样一种完满中，人们能感到真实，感到纯粹，找到真正的存在状态。</p>
-<p><strong>革命理想</strong>是《生命之轻》中展现的大写的牧歌的图景之一，旨在通过将世界变成一个没有异端、没有分裂的统一天地，从而结束冲突，达成一种天堂般和谐的社会状态。还有一种看似矛盾实则同质的图景——<strong>裸体海滩</strong>：沙滩上摆满肉体，没有独特，没有隐秘，一切浑然一体。这两幅图景本质上的相同之处在于，个体不再是个体，个体融合成整体，从而达到一种大一统的境界。</p>
-<p>究其根源，刻奇正是大写的牧歌的表现，而刻奇的矛盾之处也正是这种牧歌的矛盾之处。昆德拉同样毫不留情地揭露了大写的牧歌这一谎言。</p>
-<p>然而此书关键而又深刻的另一观点，完全由最后一章《卡列宁的微笑》升华出来。这一章与前几章大不一样，并且显然昆德拉在这一章的架构上颇费心思，是我第一次读的时候混混沌沌而又莫名最喜欢的一章。这一章初读奇怪，怎么与前几章揭露、讽刺的基调大相径庭——是在描写一次牧歌般的图景，美好又圆满？</p>
-<p>其实不奇怪。人们说昆德拉是反牧歌的，实则反的是大写的牧歌，那种虚无缥缈的图景。他的反牧歌，除了批判与揭露，另一方式即是——提出反牧歌之牧歌，即<strong>小写的牧歌</strong>。且来理解一下这小写的牧歌的境界何以实现：抛弃过去的一切，包括命运；彻底的断绝，离群索居，深深孤独。这小写的牧歌大抵是在乡野，在历史的进程所笼罩不到的世界尽头。这其中的幸福来自于重复。卡列宁是主人公特蕾莎和托马斯养的一条狗，它的时间不似人类的线型，而是环型；它过着每天单调又重复的生活，并从中感到幸福，当循环被打断，它会无所适从。这就是动物的幸福，是伊甸园中人类的样子，是小写的牧歌中真正的幸福。</p>
-<p><img src="https://jyzhu.top/wp-content/uploads/2019/08/image-7.jpeg"></p>
-<p>电影《布拉格之恋》中的卡列宁</p>
-<h2 id="生命">3. <strong>生命</strong></h2>
-<p>《不能承受的生命之轻》探讨了许多主题，但根源上，它探讨的是人的生命，这也从书名上可见一斑。<strong>生命之轻</strong>是一次之轻，人只能活一次，历史只能发生一次，一次等于什么也没有。因为我们既没有过往的经验，也无法为未来总结经验，无从比较，无法得知选择是正确还是错误，人生如同永远无法完成的画的草稿。没有必然，全为偶然。托马斯对特蕾莎的爱情源自六次偶然。偶然的一本书、偶然的一声肚子叫……既然如此，生命中每一次选择之后果也无须我们承担，这是真正的轻。</p>
-<p>但贝多芬对命运之神发出了两声叩问：非如此不可？非如此不可。托马斯也一样。紧接着，在特蕾莎离开他的一周之后，他奋然决定回到布拉格，追回特蕾莎的身边。这「非如此不可」的回答是他自己为生命赋予的意义，追回爱情的选择也使他追回了存在的重量。</p>
-<p>除了轻与重的探讨，书中还有对<strong>灵与肉</strong>的探讨。一句反复出现的隐喻是「灵魂的船员」与「肉体的甲板」。特蕾莎自小被母亲对个体独特性的剥夺笼罩，灵魂的船员永远躲在肉体里。她爱上托马斯的时候，感到自己「灵魂的船员冲出了肉体的甲板」，感到自己是独特的，因而感到爱与被爱。</p>
-<p>我实则感到， 此处对灵与肉的探讨，离不开对牧歌的探讨。如前所说，裸体海滩是大写的牧歌的图景之一，因为其实质上也是一种对个体独特性的剥夺，是一种囫囵的大统一。大写的牧歌里，灵魂永远躲在肉体里，而肉体大致相同，不加区分。后果则是，如特蕾莎一样，焦虑着自己的存在，遗失了灵与肉的统一。而小写的牧歌里，强调的本就是灵魂：毕竟它就是建立在彻底的孤独中。牧歌中的人与伴侣，体验着爱情，专注着幸福，这就是对灵魂的重视。</p>
-<p><img src="https://jyzhu.top/wp-content/uploads/2019/08/image-8-300x202.jpeg"></p>
-<p>电影《布拉格之恋》中的托马斯与特蕾莎</p>
-<h2 id="爱情">4. <strong>爱情</strong></h2>
-<p>谈到《不能承受的生命之轻》，许多人首先想到的是其中对爱情的探讨。昆德拉对爱情的阐述不可谓不深刻。我愿着重谈论两处我印象深刻的议论。</p>
-<p><strong>「隐喻是危险的，它常常导致爱情。」</strong></p>
-<p>托马斯最初对特蕾莎的爱情，就源自他内心中这样一个比喻：特蕾莎就像是被放在篮子里，顺着河水飘向他床笫之岸小孩子。如此他就一发不可收拾地爱上了她。隐喻常常使我们将生命中的某种偶然性与必然性联系在一起，将生命之轻转化为重，这容易产生爱情。</p>
-<p>隐喻还容易开启我们心中<strong>「诗化记忆」</strong>的那一部分。</p>
-<p>昆德拉认为，人的记忆分为两部分，普通的记忆和诗化的记忆。诗化记忆记录的，是让我们陶醉，令我们感动，赋予我们生活以美的一切。当一个人开始印在我们的诗化记忆里，爱情也就随之而来了。</p>
-<p><img src="https://jyzhu.top/wp-content/uploads/2019/08/image-11-207x300.jpeg"></p>
-<p>米兰·昆德拉</p>
-<p>后：我有好多尚未消化的地方。这样一篇「读后感」，实则也是我将自己理解的整理。仓促就之，有不当之处，欢迎斧正。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/page/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/page/11/">11</a><a class="extend next" rel="next" href="/page/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1100,7 +1134,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">109</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1142,11 +1176,11 @@
     </label>
     <select class="lang-select" data-canonical="">
       
-        <option value="zh-CN" data-href="/page/6/index.html" selected="">
+        <option value="zh-CN" data-href="/page/page/6/index.html" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/page/6/index.html" selected="">
+        <option value="en" data-href="/en/page/page/6/index.html" selected="">
           English
         </option>
       
@@ -1215,6 +1249,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
