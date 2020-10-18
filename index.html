@@ -612,8 +612,14 @@ strong .red
 }
  
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
+  .sidenav {padding-top: 15px; background-color: #111;}
   .sidenav a {font-size: 18px;}
+
+}
+@media screen and (max-width: 400px) {
+  .sidenav {padding-top: 15px; background-color: #111;opacity: 60%;}
+  .sidenav a {font-size: 12px;}
+
 }
 
 /*xxx*/
@@ -660,11 +666,12 @@ strong .red
   <a href="#skillsothers">SKILLS/OTHERS</a>
   <a href="https://viridityzhu.github.io/page/" style="color:grey;font-size:15px">Visit my blog to know me!</a>
 </div>
-<div style="font-size:20px;display:none; cursor:pointer;position: fixed;right:20px;" id="menuBtn"><a href="javascript:openNav();" style="text-decoration: none;color:#111;">&#9776;</a></div>
+
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
 <div id="write" class>
+    <div style="font-size:20px;display:none; cursor:pointer;position: fixed;right:20px;" id="menuBtn"><a href="javascript:openNav();" style="text-decoration: none;color:#111;">&#9776;</a></div>
     <h1><a name="jiayin-zhu" class="md-header-anchor"></a><span>JIAYIN ZHU</span></h1>
     <center><p><span>+86 13607246999 | </span><a href="mailto:asdfg990518@163.com" target="_blank" class="url">asdfg990518@163.com</a></p></center><a href="CV_Zhu_Jiayin.pdf" target="_blank" class="url">Download CV</a>
     <h2><a name="education" class="md-header-anchor"></a>
@@ -701,5 +708,6 @@ Social network can be said to be the third wave of Internet development after ne
 <center><a href="https://viridityzhu.github.io/page/" style="text-decoration: none;font-size:20px">Visit my blog to know more about me!</a></center>
 
 </div>
+
 </body>
 </html>
