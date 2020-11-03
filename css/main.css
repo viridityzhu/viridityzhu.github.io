@@ -1190,10 +1190,13 @@ pre .javascript .function {
   margin-bottom: 10px;
   margin-right: 10px;
   vertical-align: middle;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f4ffa3;
+  background: #3d03ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1436,7 +1439,7 @@ pre .javascript .function {
   width: 100%;
 }
 .with-love {
-  color: #ff0000;
+  color: #052;
   display: inline-block;
   margin: 0 5px;
 }
@@ -2453,7 +2456,6 @@ mjx-container + br {
 }
 .links-of-author-item {
   margin: 5px 0 0;
-  width: 50%;
 }
 .links-of-author-item a,
 .links-of-author-item span.exturl {
