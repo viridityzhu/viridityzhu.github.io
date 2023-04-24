@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Jiayin ZHU"
 title_separator          : "-"
-name                     : &name "Jiayin ZHU"
+name                     : &name "Jiayin ZHU 朱珈印"
 description              : &description "First-year Ph.D. Student at National University of Singapore"
 url                      : https://jyzhu.top # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Jiayin ZHU"
+  name             : "Jiayin ZHU 朱珈印"
   avatar           : "profile.png"
   bio              : "First-year Ph.D. Student at National University of Singapore"
   location         : "NUS, Singapore"
