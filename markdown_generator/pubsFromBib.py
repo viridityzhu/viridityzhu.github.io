@@ -24,6 +24,9 @@ import html
 import os
 import re
 
+
+os.system('rm -r ../_publications/*')
+os.system('rm -r ../_authors/*')
 #todo: incorporate different collection types rather than a catch all publications, requires other changes to template
 publist = {
     "proceeding": {
@@ -93,12 +96,19 @@ for pubsource in publist:
             url_slug = url_slug.replace("--","-")
 
             md_filename = (str(pub_date) + "-" + url_slug + ".md").replace("--","-")
-            html_filename = (str(pub_date) + "-" + url_slug).replace("--","-")
+            # html_filename = (str(pub_date) + "-" + url_slug).replace("--","-")
+            html_filename = url_slug[0:8] + pub_year
 
             #Build Citation from text
             citation = ""
 
             #citation authors - todo - add highlighting for primary author?
+            allauthor = ""
+            doi = ""
+            keywords=" "
+            single_authors = []
+            if "doi" in b.keys():
+                doi = b["doi"]
             for author in bibdata.entries[bib_id].persons["author"]:
                 citation = citation+" "+author.first_names[0]+" "+author.last_names[0]+", "
 
@@ -127,6 +137,8 @@ for pubsource in publist:
 
             md += "\ndate: " + str(pub_date) 
 
+            md += "\ndoi: " + doi
+
             md += "\nvenue: '" + html_escape(venue) + "'"
             
             url = False
@@ -135,8 +147,29 @@ for pubsource in publist:
                     md += "\npaperurl: '" + b["url"] + "'"
                     url = True
 
-            md += "\ncitation: '" + html_escape(citation) + "'"
+            blog = False        
+            if "blog" in b.keys():
+                if len(str(b["blog"])) > 5:
+                    md += "\nblog: '" + b["blog"] + "'"
+                    blog = True
+            code = False
+            if "code" in b.keys():
+                if len(str(b["code"])) > 5:
+                    md += "\ncode: '" + b["code"] + "'"
+                    code = True
 
+            md += "\nauthor: '" + allauthor + "'"
+            if "doi" in b.keys():
+                md += "\ncitation: '" + html_escape(citation) + ' DOI: ' + str(doi) +"'"
+            else:
+                md += "\ncitation: '" + html_escape(citation) + "'"
+            
+            if "abs" in b.keys():
+                md += "\nabs: '" + b["abs"] + "'"
+            md +="\npub_year: '" + html_escape(pub_year)+"'"
+
+            bibx = "\nbib: >\n    " + bibdata.entries[bib_id].to_string('bibtex')[:-3] + "\n    }\n"
+            md += bibx.replace(',\n', ',<br>').replace('<br>    ','<br>')
             md += "\n---"
 
             
