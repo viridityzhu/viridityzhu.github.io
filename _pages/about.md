@@ -22,7 +22,7 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
 
 - HiFiHR: Enhancing 3D Hand Reconstruction from a Single Image via High-Fidelity Texture,<br>
   **Jiayin Zhu**, [Zhuoran Zhao](https://alicezrzhao.github.io/), [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>
-  German Conference on Pattern Recognition (GCPR), 2023. [[Code]](https://github.com/viridityzhu/HiFiHR)
+  German Conference on Pattern Recognition (GCPR), 2023. [[PDF]](https://arxiv.org/abs/2308.13628) [[Code]](https://github.com/viridityzhu/HiFiHR)
 - 3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective,<br>
 [Zhedong Zheng](https://www.zdzheng.xyz/), **Jiayin Zhu**, Wei Ji, Yi Yang, Tat-Seng Chua,<br>
 [arXiv](https://arxiv.org/abs/2204.13096):2204.13096, 2022. [[PDF]](https://zdzheng.xyz/files/3D_Recon.pdf) [[Code]](https://github.com/layumi/3D-Magic-Mirror)
