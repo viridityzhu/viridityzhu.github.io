@@ -8,15 +8,13 @@ redirect_from:
   - /about.html
 ---
 
-This is Jiayin Zhu's new page!
-
-I am a CS Ph.D. student at the [CVML group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), under the supervision of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My current research interest focuses on 3D reconstruction and generation of humans.
+I am a CS Ph.D. student at [CVML group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), under the supervision of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My current research interest focuses on reconstruction and editing of 3D humans.
 
 I also received the degree of Master of Computing from NUS. Previously, I studied [Information Management and Information System](https://sme.bit.edu.cn/English/programs/enbk/majors/b131767.htm) at the [Beijing Institute of Technology](https://english.bit.edu.cn/).
 
 # News
 
-- [07/2023] One paper about high-fidelity hand reconstruction [[Code]](https://github.com/viridityzhu/HiFiHR) is accepted to GCPR 2023. We will travel to Heidelberg, Germany in September!
+- [07/2023] One paper about high-fidelity hand reconstruction [[Code]](https://github.com/viridityzhu/HiFiHR) [[PDF]](https://arxiv.org/abs/2308.13628) is accepted to GCPR 2023. We will travel to Heidelberg, Germany in September!
 
 # Publications
 
