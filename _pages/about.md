@@ -20,8 +20,7 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
 # Publications
 
 - InstructHumans: Editing Animatable 3D Human Textures with Instructions,<br>
-  **Jiayin Zhu**, [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>
-  2024. [[Website]](https://jyzhu.top/instruct-humans/) [[PDF]](https://jyzhu.top/instruct-humans/data/InstructHumans.pdf) [[Code]](https://github.com/viridityzhu/InstructHumans)
+  **Jiayin Zhu**, [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>2024. [[Website]](https://jyzhu.top/instruct-humans/) [[PDF]](https://jyzhu.top/instruct-humans/data/InstructHumans.pdf) [[Code]](https://github.com/viridityzhu/InstructHumans)
 - HiFiHR: Enhancing 3D Hand Reconstruction from a Single Image via High-Fidelity Texture,<br>
   **Jiayin Zhu**, [Zhuoran Zhao](https://alicezrzhao.github.io/), [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>
   German Conference on Pattern Recognition (GCPR), 2023. [[PDF]](https://arxiv.org/abs/2308.13628) [[Code]](https://github.com/viridityzhu/HiFiHR)
