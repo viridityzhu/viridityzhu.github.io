@@ -19,12 +19,9 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
 
 # Publications
 
-<!-- - InstructHumans: Editing Animatable 3D Human Textures with Instructions,<br>
-  **Jiayin Zhu**, [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>
-  [ArXiv:2404.04037](https://arxiv.org/abs/2404.04037), 2024. [[Website]](https://jyzhu.top/instruct-humans/) [[PDF]](https://jyzhu.top/instruct-humans/data/InstructHumans.pdf) [[Code]](https://github.com/viridityzhu/InstructHumans) -->
-<div style="display: flex; align-items: center; margin-bottom: 20px;">
-  <img src="../images/InstructHumans-teaser.gif" alt="InstructHumans Teaser" width="30%" style="margin-right: 30px;">
-  <div style="line-height: 1;">
+<div class="publication_div">
+  <img src="../images/InstructHumans-teaser.gif" alt="InstructHumans Teaser" width="30%" >
+  <div>
     <p><strong>
       InstructHumans: Editing Animatable 3D Human Textures with Instructions
     </strong></p>
@@ -45,12 +42,9 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
 </div>
 
 
-<!-- - HiFiHR: Enhancing 3D Hand Reconstruction from a Single Image via High-Fidelity Texture,<br>
-  **Jiayin Zhu**, [Zhuoran Zhao](https://alicezrzhao.github.io/), [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>
-  German Conference on Pattern Recognition (GCPR), 2023. [[PDF]](https://arxiv.org/abs/2308.13628) [[Code]](https://github.com/viridityzhu/HiFiHR) -->
-<div style="display: flex; align-items: center; margin-bottom: 20px;"> 
-  <img src="../images/hifihr-teaser.jpg" alt="HiFiHR Teaser" width="30%" style="margin-right: 30px;">
-  <div style="line-height: 1;">
+<div class="publication_div">
+  <img src="../images/hifihr-teaser.jpg" alt="HiFiHR Teaser" width="30%" >
+  <div>
     <p><strong>
       HiFiHR: Enhancing 3D Hand Reconstruction from a Single Image via High-Fidelity Texture
     </strong></p>
@@ -68,13 +62,9 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
   </div>
 </div>
 
-<!-- - 3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective,<br>
-[Zhedong Zheng](https://www.zdzheng.xyz/), **Jiayin Zhu**, Wei Ji, Yi Yang, Tat-Seng Chua,<br>
-[ArXiv:2204.13096](https://arxiv.org/abs/2204.13096), 2022. [[PDF]](https://zdzheng.xyz/files/3D_Recon.pdf) [[Code]](https://github.com/layumi/3D-Magic-Mirror) -->
-
-<div style="display: flex; align-items: center; margin-bottom: 20px;">
-  <img src="../images/3dmm-teaser.gif" alt="3D Magic Mirror Teaser" width="30%" style="margin-right: 30px;">
-  <div style="line-height: 1;">
+<div class="publication_div">
+  <img src="../images/3dmm-teaser.gif" alt="3D Magic Mirror Teaser" width="30%" >
+  <div>
     <p><strong>
       3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective
     </strong></p>
