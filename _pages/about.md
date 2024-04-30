@@ -19,15 +19,78 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
 
 # Publications
 
-- InstructHumans: Editing Animatable 3D Human Textures with Instructions,<br>
+<!-- - InstructHumans: Editing Animatable 3D Human Textures with Instructions,<br>
   **Jiayin Zhu**, [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>
-  [ArXiv:2404.04037](https://arxiv.org/abs/2404.04037), 2024. [[Website]](https://jyzhu.top/instruct-humans/) [[PDF]](https://jyzhu.top/instruct-humans/data/InstructHumans.pdf) [[Code]](https://github.com/viridityzhu/InstructHumans)
-- HiFiHR: Enhancing 3D Hand Reconstruction from a Single Image via High-Fidelity Texture,<br>
+  [ArXiv:2404.04037](https://arxiv.org/abs/2404.04037), 2024. [[Website]](https://jyzhu.top/instruct-humans/) [[PDF]](https://jyzhu.top/instruct-humans/data/InstructHumans.pdf) [[Code]](https://github.com/viridityzhu/InstructHumans) -->
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+  <img src="../images/InstructHumans-teaser.jpg" alt="InstructHumans Teaser" width="30%" style="margin-right: 30px;">
+  <div style="line-height: 1;">
+    <p><strong>
+      InstructHumans: Editing Animatable 3D Human Textures with Instructions
+    </strong></p>
+    <p>
+      <strong>Jiayin Zhu</strong>, <a href="https://www.mu4yang.com/">Linlin Yang</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/2404.04037">ArXiv:2404.04037</a>, 2024.
+    </p>
+    <p>
+      <a href="https://jyzhu.top/instruct-humans/">Website</a>
+       / 
+      <a href="https://jyzhu.top/instruct-humans/data/InstructHumans.pdf">Paper</a>
+       /
+       <a href="https://github.com/viridityzhu/InstructHumans">Code</a>
+    </p>
+  </div>
+</div>
+
+
+<!-- - HiFiHR: Enhancing 3D Hand Reconstruction from a Single Image via High-Fidelity Texture,<br>
   **Jiayin Zhu**, [Zhuoran Zhao](https://alicezrzhao.github.io/), [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>
-  German Conference on Pattern Recognition (GCPR), 2023. [[PDF]](https://arxiv.org/abs/2308.13628) [[Code]](https://github.com/viridityzhu/HiFiHR)
-- 3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective,<br>
+  German Conference on Pattern Recognition (GCPR), 2023. [[PDF]](https://arxiv.org/abs/2308.13628) [[Code]](https://github.com/viridityzhu/HiFiHR) -->
+<div style="display: flex; align-items: center; margin-bottom: 20px;"> 
+  <img src="../images/hifihr-teaser.jpg" alt="HiFiHR Teaser" width="30%" style="margin-right: 30px;">
+  <div style="line-height: 1;">
+    <p><strong>
+      HiFiHR: Enhancing 3D Hand Reconstruction from a Single Image via High-Fidelity Texture
+    </strong></p>
+    <p>
+      <strong>Jiayin Zhu</strong>, <a href="https://alicezrzhao.github.io/">Zhuoran Zhao</a>, <a href="https://www.mu4yang.com/">Linlin Yang</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
+    </p>
+    <p>
+      German Conference on Pattern Recognition (GCPR), 2023.
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/2308.13628">Paper</a>
+       / 
+       <a href="https://github.com/viridityzhu/HiFiHR">Code</a>
+    </p>
+  </div>
+</div>
+
+<!-- - 3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective,<br>
 [Zhedong Zheng](https://www.zdzheng.xyz/), **Jiayin Zhu**, Wei Ji, Yi Yang, Tat-Seng Chua,<br>
-[ArXiv:2204.13096](https://arxiv.org/abs/2204.13096), 2022. [[PDF]](https://zdzheng.xyz/files/3D_Recon.pdf) [[Code]](https://github.com/layumi/3D-Magic-Mirror)
+[ArXiv:2204.13096](https://arxiv.org/abs/2204.13096), 2022. [[PDF]](https://zdzheng.xyz/files/3D_Recon.pdf) [[Code]](https://github.com/layumi/3D-Magic-Mirror) -->
+
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+  <img src="../images/3dmm-teaser.jpg" alt="3D Magic Mirror Teaser" width="30%" style="margin-right: 30px;">
+  <div style="line-height: 1;">
+    <p><strong>
+      3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective
+    </strong></p>
+    <p>
+      <a href="https://www.zdzheng.xyz/">Zhedong Zheng</a>, <strong>Jiayin Zhu</strong>, Wei Ji, Yi Yang, Tat-Seng Chua
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/2204.13096">ArXiv:2204.13096</a>, 2022.
+    </p>
+    <p>
+      <a href="https://zdzheng.xyz/files/3D_Recon.pdf">Paper</a>
+       /
+       <a href="https://github.com/layumi/3D-Magic-Mirror">Code</a>
+    </p>
+  </div>
+</div>
 
 ---
 
