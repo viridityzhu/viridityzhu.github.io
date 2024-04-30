@@ -23,7 +23,7 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
   **Jiayin Zhu**, [Linlin Yang](https://www.mu4yang.com/), [Angela Yao](https://www.comp.nus.edu.sg/~ayao/),<br>
   [ArXiv:2404.04037](https://arxiv.org/abs/2404.04037), 2024. [[Website]](https://jyzhu.top/instruct-humans/) [[PDF]](https://jyzhu.top/instruct-humans/data/InstructHumans.pdf) [[Code]](https://github.com/viridityzhu/InstructHumans) -->
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-  <img src="../images/InstructHumans-teaser.jpg" alt="InstructHumans Teaser" width="30%" style="margin-right: 30px;">
+  <img src="../images/InstructHumans-teaser.gif" alt="InstructHumans Teaser" width="30%" style="margin-right: 30px;">
   <div style="line-height: 1;">
     <p><strong>
       InstructHumans: Editing Animatable 3D Human Textures with Instructions
@@ -73,7 +73,7 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
 [ArXiv:2204.13096](https://arxiv.org/abs/2204.13096), 2022. [[PDF]](https://zdzheng.xyz/files/3D_Recon.pdf) [[Code]](https://github.com/layumi/3D-Magic-Mirror) -->
 
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-  <img src="../images/3dmm-teaser.jpg" alt="3D Magic Mirror Teaser" width="30%" style="margin-right: 30px;">
+  <img src="../images/3dmm-teaser.gif" alt="3D Magic Mirror Teaser" width="30%" style="margin-right: 30px;">
   <div style="line-height: 1;">
     <p><strong>
       3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective
