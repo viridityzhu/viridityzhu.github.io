@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a CS Ph.D. student at [CVML group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), under the supervision of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My current research interest focuses on editing of 3D human avatars.
+I am a CS Ph.D. candidate at [CVML group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), under the supervision of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My current research interest focuses on editing of 3D human avatars.
 
 I also received the degree of Master of Computing from NUS. Previously, I studied [Information Management and Information System](https://sme.bit.edu.cn/English/programs/enbk/majors/b131767.htm) at the [Beijing Institute of Technology](https://english.bit.edu.cn/).
 
@@ -82,6 +82,13 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
   </div>
 </div>
 
+# Services
+
+- Teaching Asistant
+  - [CS2100 Computer Organisation](https://nusmods.com/courses/CS2100/computer-organisation) in Sem 1 AY2023/2024
+  - [CS4243 Computer Vision and Pattern Recognition](https://nusmods.com/courses/CS4243/computer-vision-and-pattern-recognition) in Sem 2 AY2023/2024
+- Reviewer: NeurIPS, ECCV, AAAI
+
 ---
 
 # Others
@@ -89,5 +96,3 @@ I also received the degree of Master of Computing from NUS. Previously, I studie
 - [My Blog](https://jyzhu.top/blog) (I post and archive study notes here, and occasionally write other weird stuff.)
 
 - Hopefully, I would keep reading ([reading list](https://jyzhu.top/blog/books/)).
-
-- [My Awesome Everything](https://github.com/viridityzhu/viridityzhu/blob/main/README.md#awesome-everything--click-to-see).
