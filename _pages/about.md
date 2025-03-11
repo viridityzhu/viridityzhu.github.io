@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. candidate in Computer Science at the [CVML Group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), working under the guidance of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My research focuses on the exciting challenge of editing 3D human avatars, with the goal of enhancing both the creation and manipulation of 3D content.
+I am a Ph.D. candidate in Computer Science at the [CVML Group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), working under the guidance of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My research focuses on the exciting challenge of 3D generation and editing.
 
 I hold a Master of Computing degree from NUS, where I deepened my passion for exploring the intersection of AI and computer vision. Prior to this, I studied [Information Management and Information Systems](https://sme.bit.edu.cn/English/programs/enbk/majors/b131767.htm) at the [Beijing Institute of Technology](https://english.bit.edu.cn/), where I developed a strong foundation in technology and problem-solving.
 
