@@ -98,3 +98,25 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
 - [My Blog](https://jyzhu.top/blog) (I post and archive study notes here, and occasionally write other weird stuff.)
 
 - Hopefully, I would keep reading ([reading list](https://jyzhu.top/blog/books/)).
+
+<figure><embed src="https://wakatime.com/share/@7974bf3e-99a6-4d26-8e4b-38ca6d5c9c64/6a27f97e-6212-44b7-944c-91045cc09630.svg"></embed></figure>
+
+<link rel="stylesheet" href="/assets/css/vote-counter.css">
+
+<div class="vote-container">
+  <p class="vote-title">Rate my coding activity</p>
+  <div class="vote-buttons">
+    <button id="vote-yes" class="btn btn--primary vote-button-yes">
+      <span class="vote-button-text">🔥 Productive!</span>
+    </button>
+    <button id="vote-no" class="btn btn--primary vote-button-no">
+      <span class="vote-button-text">Need more coffee ☕</span>
+    </button>
+  </div>
+  <p id="vote-count" class="vote-count">
+    <span id="yes-count">0</span> think it's productive, <span id="no-count">0</span> suggest more coding
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.15.0/dist/av-min.js"></script>
+<script src="/assets/js/vote-counter.js"></script>
