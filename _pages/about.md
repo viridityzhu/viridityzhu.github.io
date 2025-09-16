@@ -14,10 +14,10 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
 
 I value collaboration and enjoy connecting with like-minded researchers to drive impactful projects forward.
 
-# News
+<!-- # News
 
 - [04/2024] The [[Code]](https://github.com/viridityzhu/InstructHumans), [[ArXiv]](https://arxiv.org/abs/2404.04037) and [[Website]](https://jyzhu.top/instruct-humans/) for the paper **InstructHumans: Editing Animatable 3D Human Textures with Instructions** is just released. Have a look at the results! [[👀]](https://jyzhu.top/instruct-humans/)
-- [07/2023] One paper about high-fidelity hand reconstruction [[Code]](https://github.com/viridityzhu/HiFiHR) [[PDF]](https://arxiv.org/abs/2308.13628) is accepted to GCPR 2023. We will travel to Heidelberg, Germany in September!
+- [07/2023] One paper about high-fidelity hand reconstruction [[Code]](https://github.com/viridityzhu/HiFiHR) [[PDF]](https://arxiv.org/abs/2308.13628) is accepted to GCPR 2023. We will travel to Heidelberg, Germany in September! -->
 
 # Publications
 
@@ -31,7 +31,7 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
       <strong>Jiayin Zhu</strong>, <a href="https://www.mu4yang.com/">Linlin Yang</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
     </p>
     <p>
-      <a href="https://arxiv.org/abs/2404.04037">ArXiv:2404.04037</a>, 2024.
+      <a href="https://arxiv.org/abs/2404.04037">ArXiv:2404.04037</a>, 2024. To appear in IEEE Transactions on Multimedia (TMM).
     </p>
     <p>
       <a href="https://jyzhu.top/instruct-humans/">Website</a>
