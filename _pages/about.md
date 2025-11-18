@@ -22,6 +22,29 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
 # Publications
 
 <div class="publication_div">
+  <img src="../images/pumpkin.gif" alt="AnchorDS Teaser" width="30%" >
+  <div>
+    <p><strong>
+      AnchorDS: Anchoring Dynamic Sources for Semantically Consistent Text-to-3D Generation
+    </strong></p>
+    <p>
+      <strong>Jiayin Zhu</strong>, <a href="https://www.mu4yang.com/">Linlin Yang</a>, <a href="https://yl3800.github.io/">Yicong Li</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
+    </p>
+    <p>
+      AAAI, 2026.
+    </p>
+    <p>
+      <a href="https://jyzhu.top/AnchorDS_Webpage/">Website</a>
+       / 
+      <a href="https://arxiv.org/abs/2511.11692">Paper</a>
+       /
+       <a href="https://github.com/viridityzhu/AnchorDS">Code</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="publication_div">
   <img src="../images/InstructHumans-teaser.gif" alt="InstructHumans Teaser" width="30%" >
   <div>
     <p><strong>
@@ -31,7 +54,7 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
       <strong>Jiayin Zhu</strong>, <a href="https://www.mu4yang.com/">Linlin Yang</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
     </p>
     <p>
-      <a href="https://arxiv.org/abs/2404.04037">ArXiv:2404.04037</a>, 2024. To appear in IEEE Transactions on Multimedia (TMM).
+      <a href="https://arxiv.org/abs/2404.04037">ArXiv:2404.04037</a>, 2025. To appear in IEEE Transactions on Multimedia (TMM).
     </p>
     <p>
       <a href="https://jyzhu.top/instruct-humans/">Website</a>
