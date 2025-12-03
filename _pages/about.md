@@ -122,7 +122,7 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
 
 - Hopefully, I would keep reading ([reading list](https://jyzhu.top/blog/books/)).
 
-<figure><embed src="https://wakatime.com/share/@7974bf3e-99a6-4d26-8e4b-38ca6d5c9c64/6a27f97e-6212-44b7-944c-91045cc09630.svg"></embed></figure>
+<figure><embed src="https://wakatime.com/share/@7974bf3e-99a6-4d26-8e4b-38ca6d5c9c64/6a27f97e-6212-44b7-944c-91045cc09630.svg" /></figure>
 
 <link rel="stylesheet" href="/assets/css/vote-counter.css">
 
