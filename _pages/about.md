@@ -118,9 +118,13 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
 
 # Others
 
-- [My Blog](https://jyzhu.top/blog) (I post and archive study notes here, and occasionally write other weird stuff.)
+<!-- - [My Blog](https://jyzhu.top/blog) (I post and archive study notes here, and occasionally write other weird stuff.)
 
-- Hopefully, I would keep reading ([reading list](https://jyzhu.top/blog/books/)).
+- Hopefully, I would keep reading ([reading list](https://jyzhu.top/blog/books/)). -->
+
+## Rate my coding activity (?)
+
+<img src="https://raw.githubusercontent.com/viridityzhu/viridityzhu/f56cb58e6831f225da0633f074e297cb788a84bd/profile-3d-contrib/profile-gitblock.svg" />
 
 <figure><embed src="https://wakatime.com/share/@7974bf3e-99a6-4d26-8e4b-38ca6d5c9c64/6a27f97e-6212-44b7-944c-91045cc09630.svg" /></figure>
 
