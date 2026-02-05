@@ -22,6 +22,29 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
 # Publications
 
 <div class="publication_div">
+  <img src="https://interp3d.github.io/taser_page-0001.jpg" alt="AnchorDS Teaser" width="30%" >
+  <div>
+    <p><strong>
+      Interp3D: Correspondence-Aware Interpolation for Generative Textured 3D Morphing
+    </strong></p>
+    <p>
+      <a href="https://github.com/xiaolul2">Xiaolu Liu</a>, <a href="https://yl3800.github.io/">Yicong Li</a>,  <a href="https://qy-h00.github.io/">Qiyuan He</a>,<strong>Jiayin Zhu</strong>,  <a href="https://jiwei0523.github.io/">Wei Ji</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>, <a href="https://scholar.google.com/citations?user=SC-WmzwAAAAJ&hl=en&oi=ao">Jianke Zhu</a>
+    </p>
+    <p>
+      The Fourteenth International Conference on Learning Representations (ICLR), 2026.
+    </p>
+    <p>
+      <a href="https://interp3d.github.io/">Website</a>
+       / 
+      <a href="https://arxiv.org/abs/2601.14103">Paper</a>
+       /
+       <a href="https://github.com/xiaolul2/interp3d">Code</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="publication_div">
   <img src="../images/pumpkin.gif" alt="AnchorDS Teaser" width="30%" >
   <div>
     <p><strong>
@@ -31,7 +54,7 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
       <strong>Jiayin Zhu</strong>, <a href="https://www.mu4yang.com/">Linlin Yang</a>, <a href="https://yl3800.github.io/">Yicong Li</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
     </p>
     <p>
-      AAAI, 2026.
+      The 40th Annual AAAI Conference on Artificial Intelligence, 2026.
     </p>
     <p>
       <a href="https://jyzhu.top/AnchorDS_Webpage/">Website</a>
