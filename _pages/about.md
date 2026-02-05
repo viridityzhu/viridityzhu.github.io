@@ -12,7 +12,9 @@ I am a Ph.D. candidate in Computer Science at the [CVML Group](https://cvml.comp
 
 I hold a Master of Computing degree from NUS, where I deepened my passion for exploring the intersection of AI and computer vision. Prior to this, I studied [Information Management and Information Systems](https://sme.bit.edu.cn/English/programs/enbk/majors/b131767.htm) at the [Beijing Institute of Technology](https://english.bit.edu.cn/), where I developed a strong foundation in technology and problem-solving.
 
-I value collaboration and enjoy connecting with like-minded researchers to drive impactful projects forward.
+**Actively seeking industrial internship opportunities**
+
+<!-- I value collaboration and enjoy connecting with like-minded researchers to drive impactful projects forward. -->
 
 <!-- # News
 
@@ -28,7 +30,7 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
       Interp3D: Correspondence-Aware Interpolation for Generative Textured 3D Morphing
     </strong></p>
     <p>
-      <a href="https://github.com/xiaolul2">Xiaolu Liu</a>, <a href="https://yl3800.github.io/">Yicong Li</a>,  <a href="https://qy-h00.github.io/">Qiyuan He</a>,<strong>Jiayin Zhu</strong>,  <a href="https://jiwei0523.github.io/">Wei Ji</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>, <a href="https://scholar.google.com/citations?user=SC-WmzwAAAAJ&hl=en&oi=ao">Jianke Zhu</a>
+      <a href="https://github.com/xiaolul2">Xiaolu Liu</a>, <a href="https://yl3800.github.io/">Yicong Li</a>, <a href="https://qy-h00.github.io/">Qiyuan He</a>, <strong>Jiayin Zhu</strong>,  <a href="https://jiwei0523.github.io/">Wei Ji</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>, <a href="https://scholar.google.com/citations?user=SC-WmzwAAAAJ&hl=en&oi=ao">Jianke Zhu</a>
     </p>
     <p>
       The Fourteenth International Conference on Learning Representations (ICLR), 2026.
@@ -135,7 +137,13 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
 - Teaching Asistant
   - [CS2100 Computer Organisation](https://nusmods.com/courses/CS2100/computer-organisation) in Sem 1 AY2023/2024
   - [CS4243 Computer Vision and Pattern Recognition](https://nusmods.com/courses/CS4243/computer-vision-and-pattern-recognition) in Sem 2 AY2023/2024
+  - [CS4243 Computer Vision and Pattern Recognition](https://nusmods.com/courses/CS4243/computer-vision-and-pattern-recognition) in Sem 2 AY2025/2026
 - Reviewer: NeurIPS, ECCV, AAAI, ICLR, CVPR, ICML
+
+<!-- # Awards
+
+- NUS Research Achievement Award, 2025
+- NUS Research Scholarship,  -->
 
 ---
 
