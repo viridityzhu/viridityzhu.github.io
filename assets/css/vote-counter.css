@@ -46,8 +46,32 @@
   color: #666;
 }
 
+.vote-buttons button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.vote-message {
+  display: none;
+  margin: 12px auto 0;
+  padding: 10px 12px;
+  max-width: 520px;
+  border-radius: 10px;
+  border: 1px solid rgba(46, 204, 113, 0.35);
+  background: rgba(46, 204, 113, 0.12);
+  color: #1f7a3a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.vote-message--visible {
+  display: block;
+}
+
 .vote-thanks {
-  color: #2ecc71;
-  font-weight: 500;
+  color: #1f7a3a;
+  font-weight: 600;
   margin-top: 10px;
 } 

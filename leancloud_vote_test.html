@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeanCloud Vote Counter Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-container {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            background-color: #f6f8fa;
+        }
+        .vote-container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        button {
+            padding: 10px 16px;
+            margin: 0 5px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        button:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+        .btn--primary {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn--primary:hover {
+            background-color: #2980b9;
+        }
+        .btn--secondary {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .btn--secondary:hover {
+            background-color: #c0392b;
+        }
+        h1, h2 {
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 6px;
+            padding: 16px;
+            overflow: auto;
+        }
+        .result-section {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+        }
+        #debug {
+            font-family: monospace;
+            white-space: pre;
+            background-color: #f8f8f8;
+            padding: 10px;
+            height: 200px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LeanCloud Vote Counter Test</h1>
+    <p>This page allows you to test the voting functionality with your LeanCloud credentials before deploying it to your website.</p>
+
+    <div class="test-container">
+        <h2>Test Configuration</h2>
+        <p>Your LeanCloud credentials are loaded:</p>
+        <ul>
+            <li>App ID: <code>efLA0qg1Vu8kMjj7e1SC6evd-gzGzoHsz</code></li>
+            <li>App Key: <code>uexWsXddCqHicPng8NOVKkcN</code></li>
+            <li>Server URL: <code>https://efla0qg1.lc-cn-n1-shared.com</code></li>
+        </ul>
+    </div>
+
+    <div class="vote-container">
+        <figure>
+            <embed src="https://wakatime.com/share/@7974bf3e-99a6-4d26-8e4b-38ca6d5c9c64/6a27f97e-6212-44b7-944c-91045cc09630.svg" width="100%"></embed>
+        </figure>
+        
+        <p style="font-size: 1.2em; font-weight: 600; margin: 20px 0 15px; color: #333;">Rate my coding activity</p>
+        <div style="margin-bottom: 25px;">
+            <button id="vote-yes" class="btn--primary" style="margin-right: 15px; padding: 12px 24px;">
+                <span style="font-size: 16px;">🔥 Productive!</span>
+            </button>
+            <button id="vote-no" class="btn--secondary" style="padding: 12px 24px;">
+                <span style="font-size: 16px;">☕ Need more code</span>
+            </button>
+        </div>
+        <p id="vote-count" style="margin-top: 15px; font-size: 15px; color: #666;">
+            <span id="yes-count">0</span> think it's productive, <span id="no-count">0</span> suggest more coding
+        </p>
+    </div>
+
+    <div class="result-section">
+        <h2>Debug Console</h2>
+        <p>This section shows actions and responses for troubleshooting:</p>
+        <div id="debug"></div>
+        <button id="reset" style="margin-top: 10px;">Reset Local User ID</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.15.0/dist/av-min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const debugEl = document.getElementById("debug");
+        
+        // Custom log function that writes to our debug div
+        function log(message, data) {
+            const timestamp = new Date().toLocaleTimeString();
+            let logMessage = `[${timestamp}] ${message}`;
+            if (data) {
+                if (typeof data === "object") {
+                    logMessage += "\n" + JSON.stringify(data, null, 2);
+                } else {
+                    logMessage += " " + data;
+                }
+            }
+            debugEl.textContent += logMessage + "\n";
+            debugEl.scrollTop = debugEl.scrollHeight;
+            console.log(message, data || "");
+        }
+
+        // Initialize LeanCloud
+        try {
+            AV.init({
+                appId: "efLA0qg1Vu8kMjj7e1SC6evd-gzGzoHsz",
+                appKey: "uexWsXddCqHicPng8NOVKkcN",
+                serverURL: "https://efla0qg1.lc-cn-n1-shared.com"
+            });
+            log("LeanCloud initialized successfully");
+        } catch (error) {
+            log("Error initializing LeanCloud:", error);
+        }
+        
+        let hasVoted = false;
+        const LAST_VOTE_DAY_KEY = "vote-last-vote-day";
+        
+        function getLocalDayKey(date = new Date()) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0");
+            const day = String(date.getDate()).padStart(2, "0");
+            return `${year}-${month}-${day}`;
+        }
+        
+        function getTodayKey() {
+            return getLocalDayKey(new Date());
+        }
+        
+        function getLastVoteDay() {
+            return localStorage.getItem(LAST_VOTE_DAY_KEY);
+        }
+        
+        function setLastVoteDay(dayKey) {
+            localStorage.setItem(LAST_VOTE_DAY_KEY, dayKey);
+        }
+        
+        // Create or get a unique user identifier
+        function getUserId() {
+            let userId = localStorage.getItem("vote-user-id");
+            if (!userId) {
+                userId = "user_" + Math.random().toString(36).substring(2, 15);
+                localStorage.setItem("vote-user-id", userId);
+                log("Created new user ID:", userId);
+            } else {
+                log("Using existing user ID:", userId);
+            }
+            return userId;
+        }
+        
+        // Check if user has already voted
+        async function checkUserVote() {
+            const todayKey = getTodayKey();
+            if (getLastVoteDay() === todayKey) {
+                hasVoted = true;
+                log("User vote check result:", "Already voted today (local)");
+                disableButtons("already_voted_today");
+                return true;
+            }
+            
+            const userId = getUserId();
+            try {
+                log("Checking if user has voted...");
+                const query = new AV.Query("VoteRecords");
+                query.equalTo("deviceId", userId);
+                query.equalTo("voteDay", todayKey);
+                const result = await query.first();
+                hasVoted = !!result;
+                log("User vote check result:", hasVoted ? "Has voted before" : "Has not voted yet");
+                
+                if (hasVoted) {
+                    setLastVoteDay(todayKey);
+                    disableButtons("already_voted_today");
+                }
+                return hasVoted;
+            } catch (error) {
+                log("Error checking vote status:", error);
+                return false;
+            }
+        }
+        
+        // Get the current vote counts
+        async function getVoteCounts() {
+            try {
+                log("Fetching vote counts...");
+                const query = new AV.Query("VoteCounter");
+                const counter = await query.first();
+                
+                if (counter) {
+                    const yesCount = counter.get("yesCount") || 0;
+                    const noCount = counter.get("noCount") || 0;
+                    log("Vote counts retrieved", { yes: yesCount, no: noCount });
+                    
+                    document.getElementById("yes-count").textContent = yesCount;
+                    document.getElementById("no-count").textContent = noCount;
+                } else {
+                    log("No counter object found, creating one...");
+                    // Create counter object if it doesn't exist
+                    const VoteCounter = AV.Object.extend("VoteCounter");
+                    const newCounter = new VoteCounter();
+                    
+                    // Set public read/write ACL
+                    const acl = new AV.ACL();
+                    acl.setPublicReadAccess(true);
+                    acl.setPublicWriteAccess(true);
+                    newCounter.setACL(acl);
+                    
+                    newCounter.set("yesCount", 0);
+                    newCounter.set("noCount", 0);
+                    await newCounter.save();
+                    log("New counter object created with zeros and public ACL");
+                    
+                    document.getElementById("yes-count").textContent = "0";
+                    document.getElementById("no-count").textContent = "0";
+                }
+            } catch (error) {
+                log("Error getting vote counts:", error);
+                document.getElementById("yes-count").textContent = "0";
+                document.getElementById("no-count").textContent = "0";
+            }
+        }
+        
+        // Record vote and increment counter
+        async function recordVote(type) {
+            if (hasVoted) {
+                log("Already voted, ignoring request");
+                return;
+            }
+            
+            const userId = getUserId();
+            const todayKey = getTodayKey();
+            
+            if (getLastVoteDay() === todayKey) {
+                hasVoted = true;
+                log("Already voted today (local), ignoring request");
+                disableButtons("already_voted_today");
+                return;
+            }
+            log(`Recording vote: ${type} for user ${userId}`);
+            
+            // First check if user has already voted
+            try {
+                const userQuery = new AV.Query("VoteRecords");
+                userQuery.equalTo("deviceId", userId);
+                userQuery.equalTo("voteDay", todayKey);
+                const existingVote = await userQuery.first();
+                
+                if (existingVote) {
+                    log("User has already voted, aborting");
+                    hasVoted = true;
+                    setLastVoteDay(todayKey);
+                    disableButtons("already_voted_today");
+                    return;
+                }
+                
+                // Find or create counter
+                log("Looking for counter object...");
+                const counterQuery = new AV.Query("VoteCounter");
+                let counter = await counterQuery.first();
+                
+                if (!counter) {
+                    log("No counter found, creating new one");
+                    const VoteCounter = AV.Object.extend("VoteCounter");
+                    counter = new VoteCounter();
+                    
+                    // Set public read/write ACL
+                    const acl = new AV.ACL();
+                    acl.setPublicReadAccess(true);
+                    acl.setPublicWriteAccess(true);
+                    counter.setACL(acl);
+                    
+                    counter.set("yesCount", 0);
+                    counter.set("noCount", 0);
+                }
+                
+                // Ensure counter has public write access if it already exists
+                if (!counter.getACL() || !counter.getACL().getPublicWriteAccess()) {
+                    log("Setting public write access on existing counter");
+                    const acl = counter.getACL() || new AV.ACL();
+                    acl.setPublicReadAccess(true);
+                    acl.setPublicWriteAccess(true);
+                    counter.setACL(acl);
+                }
+                
+                // Increment the appropriate counter
+                if (type === "yes") {
+                    counter.increment("yesCount", 1);
+                    log("Incrementing yes count");
+                } else {
+                    counter.increment("noCount", 1);
+                    log("Incrementing no count");
+                }
+                
+                // Save the counter
+                const savedCounter = await counter.save();
+                log("Counter saved successfully");
+                
+                // Record this user's vote with public write access
+                const VoteRecord = AV.Object.extend("VoteRecords");
+                const record = new VoteRecord();
+                
+                // Set ACL for vote record
+                const recordAcl = new AV.ACL();
+                recordAcl.setPublicReadAccess(true);
+                recordAcl.setPublicWriteAccess(true);
+                record.setACL(recordAcl);
+                
+                record.set("deviceId", userId);
+                record.set("voteType", type);
+                record.set("voteDay", todayKey);
+                await record.save();
+                log("Vote record saved successfully");
+                
+                // Update UI
+                document.getElementById("yes-count").textContent = counter.get("yesCount") || 0;
+                document.getElementById("no-count").textContent = counter.get("noCount") || 0;
+                
+                hasVoted = true;
+                setLastVoteDay(todayKey);
+                disableButtons("voted_now");
+                
+                log("Vote recorded successfully", { 
+                    type: type, 
+                    yesCount: counter.get("yesCount"), 
+                    noCount: counter.get("noCount") 
+                });
+                
+            } catch (error) {
+                log("Error recording vote:", error);
+            }
+        }
+        
+        function disableButtons(reason = "already_voted_today") {
+            document.getElementById("vote-yes").disabled = true;
+            document.getElementById("vote-no").disabled = true;
+            
+            const message =
+                reason === "voted_now"
+                    ? "✓ Thanks for voting today!"
+                    : "✓ You've already voted today — thank you!";
+            
+            const existing = document.getElementById("vote-message");
+            if (existing) existing.remove();
+            
+            const messageEl = document.createElement("p");
+            messageEl.id = "vote-message";
+            messageEl.textContent = message;
+            messageEl.style.maxWidth = "520px";
+            messageEl.style.margin = "12px auto 0";
+            messageEl.style.padding = "10px 12px";
+            messageEl.style.borderRadius = "10px";
+            messageEl.style.border = "1px solid rgba(46, 204, 113, 0.35)";
+            messageEl.style.background = "rgba(46, 204, 113, 0.12)";
+            messageEl.style.color = "#1f7a3a";
+            messageEl.style.fontWeight = "600";
+            messageEl.style.fontSize = "14px";
+            
+            document.querySelector(".vote-container").appendChild(messageEl);
+        }
+        
+        // Reset button to clear localStorage for testing
+        document.getElementById("reset").addEventListener("click", function() {
+            localStorage.removeItem("vote-user-id");
+            log("Local user ID reset. Reload the page to test as a new user.");
+            
+            // Show alert
+            alert("User ID has been reset. Reload the page to test as a new user.");
+        });
+        
+        // Initialize
+        checkUserVote().then(() => {
+            getVoteCounts();
+        });
+        
+        // Add event listeners to buttons
+        document.getElementById("vote-yes").addEventListener("click", function() {
+            recordVote("yes");
+        });
+        
+        document.getElementById("vote-no").addEventListener("click", function() {
+            recordVote("no");
+        });
+    });
+    </script>
+</body>
+</html> 

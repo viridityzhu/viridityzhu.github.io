@@ -143,6 +143,7 @@ I value collaboration and enjoy connecting with like-minded researchers to drive
   <p id="vote-count" class="vote-count">
     <span id="yes-count">0</span> think it's productive, <span id="no-count">0</span> suggest more coding
   </p>
+  <p id="vote-message" class="vote-message" aria-live="polite"></p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.15.0/dist/av-min.js"></script>

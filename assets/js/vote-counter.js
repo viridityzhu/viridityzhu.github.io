@@ -7,6 +7,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   let hasVoted = false;
+  const LAST_VOTE_DAY_KEY = 'vote-last-vote-day';
+  
+  function getLocalDayKey(date = new Date()) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+  
+  function getTodayKey() {
+    return getLocalDayKey(new Date());
+  }
+  
+  function getLastVoteDay() {
+    return localStorage.getItem(LAST_VOTE_DAY_KEY);
+  }
+  
+  function setLastVoteDay(dayKey) {
+    localStorage.setItem(LAST_VOTE_DAY_KEY, dayKey);
+  }
   
   // Create or get a unique user identifier
   function getUserId() {
@@ -18,15 +38,49 @@ document.addEventListener('DOMContentLoaded', function() {
     return userId;
   }
   
+  function ensureMessageEl() {
+    let messageEl = document.getElementById('vote-message');
+    if (!messageEl) {
+      messageEl = document.createElement('p');
+      messageEl.id = 'vote-message';
+      messageEl.className = 'vote-message';
+      messageEl.setAttribute('aria-live', 'polite');
+      
+      const container = document.querySelector('.vote-container');
+      const countEl = document.getElementById('vote-count');
+      if (container && countEl && countEl.parentNode === container) {
+        container.insertBefore(messageEl, countEl.nextSibling);
+      } else if (container) {
+        container.appendChild(messageEl);
+      }
+    }
+    return messageEl;
+  }
+  
+  function showMessage(text) {
+    const messageEl = ensureMessageEl();
+    messageEl.textContent = text;
+    messageEl.classList.add('vote-message--visible');
+  }
+  
   // Check if user has already voted
   async function checkUserVote() {
+    const todayKey = getTodayKey();
+    if (getLastVoteDay() === todayKey) {
+      hasVoted = true;
+      disableButtons('already_voted_today');
+      return true;
+    }
+    
     const userId = getUserId();
     try {
       const query = new AV.Query('VoteRecords');
       query.equalTo('deviceId', userId);
+      query.equalTo('voteDay', todayKey);
       const result = await query.first();
       hasVoted = !!result;
       if (hasVoted) {
+        setLastVoteDay(todayKey);
         disableButtons();
       }
       return hasVoted;
@@ -75,15 +129,24 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hasVoted) return;
     
     const userId = getUserId();
+    const todayKey = getTodayKey();
+    
+    if (getLastVoteDay() === todayKey) {
+      hasVoted = true;
+      disableButtons('already_voted_today');
+      return;
+    }
     
     // First check if user has already voted
     try {
       const userQuery = new AV.Query('VoteRecords');
       userQuery.equalTo('deviceId', userId);
+      userQuery.equalTo('voteDay', todayKey);
       const existingVote = await userQuery.first();
       
       if (existingVote) {
         hasVoted = true;
+        setLastVoteDay(todayKey);
         disableButtons();
         return;
       }
@@ -136,6 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       record.set('deviceId', userId);
       record.set('voteType', type);
+      record.set('voteDay', todayKey);
       await record.save();
       
       // Update UI
@@ -143,17 +207,23 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('no-count').textContent = counter.get('noCount') || 0;
       
       hasVoted = true;
-      disableButtons();
+      setLastVoteDay(todayKey);
+      disableButtons('voted_now');
       
     } catch (error) {
       console.error('Error recording vote:', error);
     }
   }
   
-  function disableButtons() {
+  function disableButtons(reason = 'already_voted_today') {
     document.getElementById('vote-yes').disabled = true;
     document.getElementById('vote-no').disabled = true;
-    document.getElementById('vote-count').innerHTML += '<p class="vote-thanks">Thanks for voting!</p>';
+    
+    if (reason === 'voted_now') {
+      showMessage("✓ Thanks for voting today!");
+    } else {
+      showMessage("✓ You've already voted today — thank you!");
+    }
   }
   
   // Initialize
