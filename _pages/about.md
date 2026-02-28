@@ -79,12 +79,13 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
       <strong>Jiayin Zhu</strong>, <a href="https://www.mu4yang.com/">Linlin Yang</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
     </p>
     <p>
-      <a href="https://arxiv.org/abs/2404.04037">ArXiv:2404.04037</a>, 2025. To appear in IEEE Transactions on Multimedia (TMM).
+      <!-- <a href="https://arxiv.org/abs/2404.04037">ArXiv:2404.04037</a>.  -->
+      IEEE Transactions on Multimedia (TMM), 2026.
     </p>
     <p>
       <a href="https://jyzhu.top/instruct-humans/">Website</a>
        / 
-      <a href="https://jyzhu.top/instruct-humans/data/InstructHumans.pdf">Paper</a>
+      <a href="https://ieeexplore.ieee.org/document/11417296">Paper</a>
        /
        <a href="https://github.com/viridityzhu/InstructHumans">Code</a>
     </p>
