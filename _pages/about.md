@@ -92,6 +92,26 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
   </div>
 </div>
 
+<div class="publication_div">
+  <img src="../images/3dmm-teaser.gif" alt="3D Magic Mirror Teaser" width="30%" >
+  <div>
+    <p><strong>
+      3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective
+    </strong></p>
+    <p>
+      <a href="https://www.zdzheng.xyz/">Zhedong Zheng</a>, <strong>Jiayin Zhu</strong>, Wei Ji, Yi Yang, Tat-Seng Chua
+    </p>
+    <p>
+      <!-- <a href="https://arxiv.org/abs/2204.13096">ArXiv:2204.13096</a>, 2022. -->
+      npj Artificial Intelligence, 2026.
+    </p>
+    <p>
+      <a href="https://zdzheng.xyz/files/3D_Recon.pdf">Paper</a>
+       /
+       <a href="https://github.com/layumi/3D-Magic-Mirror">Code</a>
+    </p>
+  </div>
+</div>
 
 <div class="publication_div">
   <img src="../images/hifihr-teaser.jpg" alt="HiFiHR Teaser" width="30%" >
@@ -113,26 +133,6 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
   </div>
 </div>
 
-<div class="publication_div">
-  <img src="../images/3dmm-teaser.gif" alt="3D Magic Mirror Teaser" width="30%" >
-  <div>
-    <p><strong>
-      3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective
-    </strong></p>
-    <p>
-      <a href="https://www.zdzheng.xyz/">Zhedong Zheng</a>, <strong>Jiayin Zhu</strong>, Wei Ji, Yi Yang, Tat-Seng Chua
-    </p>
-    <p>
-      <!-- <a href="https://arxiv.org/abs/2204.13096">ArXiv:2204.13096</a>, 2022. -->
-      npj Artificial Intelligence, 2026.
-    </p>
-    <p>
-      <a href="https://zdzheng.xyz/files/3D_Recon.pdf">Paper</a>
-       /
-       <a href="https://github.com/layumi/3D-Magic-Mirror">Code</a>
-    </p>
-  </div>
-</div>
 
 # Services
 
