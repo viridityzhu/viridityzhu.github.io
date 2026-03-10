@@ -24,6 +24,26 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
 # Publications
 
 <div class="publication_div">
+  <img src="https://raw.githubusercontent.com/viridityzhu/RelaxFlow/main/doc/teaser.png" alt="RelaxFlow Teaser" width="30%" >
+  <div>
+    <p><strong>
+      RelaxFlow: Text-Driven Amodal 3D Generation
+    </strong></p>
+    <p>
+      <strong>Jiayin Zhu</strong>, <a href="https://scholar.google.com/citations?user=a8CLpC0AAAAJ&hl=en">Guoji Fu</a>, <a href="https://github.com/xiaolul2">Xiaolu Liu</a>, <a href="https://qy-h00.github.io/">Qiyuan He</a>, <a href="https://yl3800.github.io/">Yicong Li</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
+    </p>
+    <p>
+      arXiv preprint, 2026.
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/2603.05425">Arxiv</a>
+       /
+       <a href="https://github.com/viridityzhu/RelaxFlow">Code</a>
+    </p>
+  </div>
+</div>
+
+<div class="publication_div">
   <img src="https://interp3d.github.io/taser_page-0001.jpg" alt="AnchorDS Teaser" width="30%" >
   <div>
     <p><strong>
