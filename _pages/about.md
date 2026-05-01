@@ -8,11 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. candidate in Computer Science at the [CVML Group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), working under the guidance of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My research focuses on the exciting challenge of 3D generation and editing.
+I am a Ph.D. candidate in Computer Science at the [CVML Group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), working under the guidance of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My research focuses on controllable 3D generation and editing, exploring how multimodal guidance and diffusion models can preserve reliable input evidence while completing and controlling missing or ambiguous 3D information.
 
 I hold a Master of Computing degree from NUS, where I deepened my passion for exploring the intersection of AI and computer vision. Prior to this, I studied [Information Management and Information Systems](https://sme.bit.edu.cn/English/programs/enbk/majors/b131767.htm) at the [Beijing Institute of Technology](https://english.bit.edu.cn/), where I developed a strong foundation in technology and problem-solving.
 
-**Actively seeking industrial internship opportunities**
+**Actively seeking industrial internship opportunities.**
 
 <!-- I value collaboration and enjoy connecting with like-minded researchers to drive impactful projects forward. -->
 
@@ -33,7 +33,7 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
       <strong>Jiayin Zhu</strong>, <a href="https://scholar.google.com/citations?user=a8CLpC0AAAAJ&hl=en">Guoji Fu</a>, <a href="https://github.com/xiaolul2">Xiaolu Liu</a>, <a href="https://qy-h00.github.io/">Qiyuan He</a>, <a href="https://yl3800.github.io/">Yicong Li</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
     </p>
     <p>
-      arXiv preprint, 2026.
+      International Conference on Machine Learning (ICML), 2026. <strong style="color: red;">Spotlight, top 2.2%</strong>.
     </p>
     <p>
       <a href="https://jyzhu.top/RelaxFlow_Webpage/">Website</a>
@@ -121,7 +121,7 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
       3D Magic Mirror: Clothing Reconstruction from a Single Image via a Causal Perspective
     </strong></p>
     <p>
-      <a href="https://www.zdzheng.xyz/">Zhedong Zheng</a>, <strong>Jiayin Zhu</strong>, Wei Ji, Yi Yang, Tat-Seng Chua
+      <a href="https://www.zdzheng.xyz/">Zhedong Zheng</a>, <strong>Jiayin Zhu</strong>, <a href="https://jiwei0523.github.io/">Wei Ji</a>, <a href="https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en">Yi Yang</a>, <a href="https://scholar.google.com/citations?user=3kz6GDEAAAAJ&hl=en">Tat-Seng Chua</a>
     </p>
     <p>
       <!-- <a href="https://arxiv.org/abs/2204.13096">ArXiv:2204.13096</a>, 2022. -->
