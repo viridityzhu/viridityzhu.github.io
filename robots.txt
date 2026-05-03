@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jyzhu.top/sitemap.xml
+Sitemap: https://jyzhu.top/blog/sitemap.xml
