@@ -163,7 +163,13 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
   - [CS4243 Computer Vision and Pattern Recognition](https://nusmods.com/courses/CS4243/computer-vision-and-pattern-recognition) in Sem 2 AY2023/2024
   - [CS4243 Computer Vision and Pattern Recognition](https://nusmods.com/courses/CS4243/computer-vision-and-pattern-recognition) in Sem 2 AY2025/2026
 - Reviewer: NeurIPS, ECCV, AAAI, ICLR, CVPR, ICML
-- **🏆 ICML 2026 Gold Reviewer Award**
+
+# Honors
+
+- ICML Gold Reviewer Award, 2026
+- Research Achievement Award, NUS, 2025
+- Finalist (1%), Interdisciplinary Contest in Modeling, COMAP MCM/ICM, 2020
+- Dean's Academic Scholarship, BIT, 2020
 
 <!-- # Awards
 
