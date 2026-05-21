@@ -162,7 +162,7 @@ I hold a Master of Computing degree from NUS, where I deepened my passion for ex
   - [CS2100 Computer Organisation](https://nusmods.com/courses/CS2100/computer-organisation) in Sem 1 AY2023/2024
   - [CS4243 Computer Vision and Pattern Recognition](https://nusmods.com/courses/CS4243/computer-vision-and-pattern-recognition) in Sem 2 AY2023/2024
   - [CS4243 Computer Vision and Pattern Recognition](https://nusmods.com/courses/CS4243/computer-vision-and-pattern-recognition) in Sem 2 AY2025/2026
-- Reviewer: NeurIPS, ECCV, AAAI, ICLR, CVPR, ICML
+- Reviewer: NeurIPS, ECCV, AAAI, ICLR, CVPR, ICML (ICML 2026 Gold Reviewer Award)
 
 <!-- # Awards
 
