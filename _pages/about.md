@@ -8,11 +8,12 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. candidate in Computer Science at the [CVML Group](https://cvml.comp.nus.edu.sg/) of the [National University of Singapore](http://www.nus.edu.sg/) (NUS), working under the guidance of [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). My research focuses on controllable 3D generation and editing, exploring how multimodal guidance and diffusion models can preserve reliable input evidence while completing and controlling missing or ambiguous 3D information.
+I am a Ph.D. candidate in Computer Science at the [CVML Group](https://www.comp.nus.edu.sg/~ayao/group.html), [National University of Singapore](http://www.nus.edu.sg/) (NUS), advised by [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). I am also a research intern at [Taobao3D](https://github.com/alibaba/Taobao3D), Alibaba, working on large-scale 3D generative models.
 
-I hold a Master of Computing degree from NUS, where I deepened my passion for exploring the intersection of AI and computer vision. Prior to this, I studied [Information Management and Information Systems](https://sme.bit.edu.cn/English/programs/enbk/majors/b131767.htm) at the [Beijing Institute of Technology](https://english.bit.edu.cn/), where I developed a strong foundation in technology and problem-solving.
+My research focuses on controllable 3D generation and editing. I am particularly interested in how multimodal guidance and diffusion models can preserve reliable input evidence while completing, refining, and controlling ambiguous or missing 3D information.
 
-**Actively seeking industrial internship opportunities.**
+I received my Master of Computing degree from NUS, where I further developed my research interests in AI and computer vision. Before that, I studied Information Management and Information Systems at the [Beijing Institute of Technology](https://english.bit.edu.cn/) (BIT), where I built a foundation in computing, systems, and problem-solving.
+
 
 <!-- I value collaboration and enjoy connecting with like-minded researchers to drive impactful projects forward. -->
 
