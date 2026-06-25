@@ -137,6 +137,24 @@ I received my Master of Computing degree from NUS, where I further developed my 
 </div>
 
 <div class="publication_div">
+  <img src="../images/vpg-teaser.png" alt="VPG Teaser" width="30%" >
+  <div>
+    <p><strong>
+      VPG: Visual Prefix Guidance for Autoregressive Image and Video Generation
+    </strong></p>
+    <p>
+      <a href="https://lil-shake.github.io/">Xinyao Liao</a>, <a href="https://qy-h00.github.io/">Qiyuan He</a>, <a href="https://yl3800.github.io/">Yicong Li</a>, <strong>Jiayin Zhu</strong>, <a href="https://scholar.google.com/citations?user=rT3hqdcAAAAJ&hl=en">Xiaoye Qu</a>, <a href="https://www.eric-weiwei.com/">Wei Wei</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
+    </p>
+    <p>
+      arXiv preprint, 2026.
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/2605.30317">Paper</a>
+    </p>
+  </div>
+</div>
+
+<div class="publication_div">
   <img src="../images/hifihr-teaser.jpg" alt="HiFiHR Teaser" width="30%" >
   <div>
     <p><strong>
