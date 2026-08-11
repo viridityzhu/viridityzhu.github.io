@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. candidate in Computer Science at the [CVML Group](https://www.comp.nus.edu.sg/~ayao/group.html), [National University of Singapore](http://www.nus.edu.sg/) (NUS), advised by [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). I am also a research intern at [Taobao3D](https://github.com/alibaba/Taobao3D), Alibaba, working on large-scale 3D generative models.
+I am a Ph.D. candidate in Computer Science at the [CVML Group](https://www.comp.nus.edu.sg/~ayao/group.html), [National University of Singapore](http://www.nus.edu.sg/) (NUS), advised by [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). I am also a T-Star Lab intern at [Taobao3D](https://github.com/alibaba/Taobao3D), Alibaba, working on large-scale 3D generative models.
 
 My research focuses on controllable 3D generation and editing. I am particularly interested in how multimodal guidance and diffusion models can preserve reliable input evidence while completing, refining, and controlling ambiguous or missing 3D information.
 
