@@ -1,0 +1,388 @@
+/* The board and its window styles only exist while the duck is loose. */
+body.collage-open {
+  overflow: hidden;
+}
+
+.collage-flight {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+.duck-collage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  color: var(--portfolio-ink);
+  background: var(--portfolio-turquoise);
+
+  &[open] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--portfolio-ink);
+    outline-offset: 3px;
+  }
+}
+
+.collage-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 1.15rem;
+  padding: 0.65rem var(--portfolio-gutter);
+  border-top: 6px solid var(--portfolio-ink);
+  border-bottom: 3px solid var(--portfolio-ink);
+  background: var(--portfolio-paper);
+
+  h2 {
+    margin: 0;
+    font: 850 clamp(1.3rem, 3vw, 2rem) / 1.05 var(--portfolio-display);
+    letter-spacing: -0.05em;
+  }
+}
+
+.collage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-left: auto;
+
+  button,
+  a {
+    padding: 0.32em 0.65em;
+    border: var(--portfolio-line);
+    background: var(--portfolio-paper);
+    color: var(--portfolio-ink);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--portfolio-yellow);
+    }
+  }
+
+  form {
+    margin: 0;
+  }
+}
+
+.collage-playground {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: url("../../images/masthead-marks.svg") center 1.1rem / 15rem auto no-repeat;
+}
+
+.collage-scroll {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.collage-board {
+  position: relative;
+  isolation: isolate;
+  max-width: 1480px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.collage-panel {
+  position: relative;
+  border: var(--portfolio-line);
+  box-shadow: 5px 5px 0 var(--portfolio-ink);
+  background: var(--portfolio-paper);
+  transform: translate(var(--panel-x, 0), var(--panel-y, 0)) rotate(var(--panel-angle, -1.4deg));
+}
+
+@media (min-width: 980px) {
+  .collage-board {
+    height: unquote("max(100%, 940px)");
+  }
+
+  .collage-panel {
+    position: absolute;
+    left: var(--paper-left);
+    top: var(--paper-top);
+    width: var(--paper-width);
+  }
+
+  // Set the windows by hand so the center stays open for the duck.
+  .collage-panel:nth-child(1) {
+    --paper-left: 4.1%;
+    --paper-top: 13%;
+    --paper-width: 19.7%;
+    --panel-angle: -3.6deg;
+  }
+
+  .collage-panel:nth-child(2) {
+    --paper-left: 26.5%;
+    --paper-top: 2.8%;
+    --paper-width: 17.6%;
+    --panel-angle: 3deg;
+  }
+
+  .collage-panel:nth-child(3) {
+    --paper-left: 72.7%;
+    --paper-top: 7%;
+    --paper-width: 22.5%;
+    --panel-angle: 2.2deg;
+  }
+
+  .collage-panel:nth-child(4) {
+    --paper-left: 8.6%;
+    --paper-top: var(--small-window-top, 46%);
+    --paper-width: 15.3%;
+    --panel-angle: 4.1deg;
+  }
+
+  .collage-panel:nth-child(5) {
+    --paper-left: 78.6%;
+    --paper-top: 44.5%;
+    --paper-width: 17.3%;
+    --panel-angle: -3.3deg;
+  }
+
+  .collage-panel:nth-child(6) {
+    --paper-left: 26.4%;
+    --paper-top: 69.5%;
+    --paper-width: 21.8%;
+    --panel-angle: -2.5deg;
+  }
+
+  .collage-panel:nth-child(7) {
+    --paper-left: 56.8%;
+    --paper-top: 74%;
+    --paper-width: 18.3%;
+    --panel-angle: 3.9deg;
+  }
+}
+
+.collage-grip {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 29px;
+  padding: 0.24em 2.6rem 0.24em 0.65rem;
+  border: 0;
+  border-bottom: var(--portfolio-line);
+  background: var(--portfolio-ink);
+  color: var(--portfolio-paper);
+  font: 700 0.78rem / 1.2 var(--portfolio-display);
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: grab;
+  touch-action: none;
+
+  &::after {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 2rem;
+    background: var(--portfolio-hatch);
+    content: "";
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.collage-content {
+  padding: clamp(0.55rem, 1.15vw, 0.85rem);
+  padding-bottom: 0.95rem;
+  font-size: 0.89rem;
+  overflow-wrap: anywhere;
+
+  a {
+    color: var(--portfolio-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--portfolio-link);
+    text-underline-offset: 0.14em;
+  }
+
+  a:hover {
+    background: var(--portfolio-yellow);
+  }
+}
+
+.collage-duck {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: unquote("min(64vw, 96dvh, 850px)");
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: url("../../images/duck-ripples.svg") center bottom / 74% auto no-repeat;
+
+  .duck-turn {
+    cursor: default;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  .duck-turn canvas {
+    filter: drop-shadow(4px 5px 0 var(--portfolio-ink));
+  }
+}
+
+.academic-home .collage-board .publication_div {
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
+  padding: 0;
+  border: 0;
+
+  img {
+    max-width: none;
+    max-height: 165px;
+    object-fit: contain;
+    background: #fff;
+  }
+
+  p:first-child {
+    font-size: 0.99rem;
+  }
+}
+
+@media (min-width: 980px) {
+  .collage-panel:nth-child(2) .collage-content {
+    max-height: clamp(8.2rem, 21dvh, 13rem);
+    overflow: auto;
+    scrollbar-width: thin;
+  }
+
+  .academic-home .collage-board .publication_div {
+    font-size: 0.77rem;
+    line-height: 1.34;
+    gap: 0.4rem;
+
+    img {
+      max-height: clamp(72px, 9.5vh, 104px);
+    }
+
+    p:first-child {
+      font-size: 0.88rem;
+    }
+
+    p:last-child {
+      font-size: 0.72rem;
+    }
+  }
+}
+
+@media (max-width: 979px) {
+  .collage-playground {
+    --collage-duck-size: min(98vw, 420px);
+  }
+
+  .collage-duck {
+    top: 0;
+    width: var(--collage-duck-size);
+    transform: translateX(-50%);
+  }
+
+  .collage-board {
+    max-width: 34rem;
+    padding: var(--collage-duck-size) var(--portfolio-gutter) 3.5rem;
+  }
+
+  .collage-panel {
+    --panel-angle: -1.1deg;
+    width: 93%;
+    margin-bottom: 0.9rem;
+
+    &:nth-child(even) {
+      --panel-angle: 1.35deg;
+      width: 88%;
+      margin-left: auto;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: -0.35rem;
+    }
+  }
+
+  .collage-actions {
+    margin-left: 0;
+  }
+}
+
+.collage-question {
+  position: fixed;
+  z-index: 1001;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 62px;
+  border: var(--portfolio-line);
+  background: var(--portfolio-paper);
+  box-shadow: var(--portfolio-shadow);
+  pointer-events: none;
+  animation: duck-question-in 380ms ease-out both;
+
+  &::after {
+    position: absolute;
+    bottom: -8px;
+    left: 10px;
+    width: 13px;
+    height: 13px;
+    transform: skewY(-38deg);
+    border: solid var(--portfolio-ink);
+    border-width: 0 2px 2px;
+    background: var(--portfolio-paper);
+    content: "";
+  }
+
+  svg {
+    width: 36px;
+    height: 45px;
+  }
+
+  path {
+    fill: none;
+    stroke: var(--portfolio-ink);
+    stroke-width: 5.5;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    animation: duck-question-draw 830ms 220ms ease-in-out both;
+  }
+
+  circle {
+    fill: var(--portfolio-ink);
+    animation: duck-question-in 200ms 1020ms ease-out both;
+  }
+
+  &.is-still,
+  &.is-still svg * {
+    animation: none;
+  }
+}
+
+@keyframes duck-question-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes duck-question-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

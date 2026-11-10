@@ -1,4 +1,9 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+{% if page.academic_home %}
+  {% include duck-collage.html %}
+  <script type="module" src="{{ '/assets/js/duck-mascot.js' | relative_url }}"></script>
+{% endif %}
+
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}

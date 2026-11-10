@@ -1,0 +1,25 @@
+<template id="duck-collage-template">
+  <dialog class="duck-collage" aria-labelledby="duck-collage-title">
+    <header class="collage-bar">
+      <h2 id="duck-collage-title">Duck on the loose</h2>
+      <div class="collage-actions">
+        <button type="button" data-collage-reset>Reset layout</button>
+        <form method="dialog">
+          <button type="submit" autofocus>Back to homepage</button>
+        </form>
+      </div>
+    </header>
+    <div class="collage-playground">
+      <div class="collage-duck"></div>
+      <div class="collage-scroll">
+        <section class="collage-board" aria-label="Publications"></section>
+      </div>
+    </div>
+  </dialog>
+  <div class="collage-question" aria-hidden="true">
+    <svg viewBox="0 0 42 52" focusable="false">
+      <path d="M9 14C9 4 30 3 33 13C36 23 22 24 21 34" pathLength="1"/>
+      <circle cx="21" cy="44" r="3.5"/>
+    </svg>
+  </div>
+</template>

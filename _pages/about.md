@@ -3,16 +3,22 @@ permalink: /
 title: "About me"
 excerpt: "About me"
 author_profile: true
+academic_home: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+<div class="academic-intro" markdown="1">
+{% include duck-mascot.html %}
 
 I am a Ph.D. candidate in Computer Science at the [CVML Group](https://www.comp.nus.edu.sg/~ayao/group.html), [National University of Singapore](http://www.nus.edu.sg/) (NUS), advised by [Prof. Angela Yao](https://www.comp.nus.edu.sg/~ayao/). I am also a T-Star Lab intern at [Alibaba Taobao3D](https://alibaba.github.io/Taobao3D/), working on multimodal 3D generative foundation models.
 
 My research focuses on multimodal controllable 3D generation and editing. I am particularly interested in how multimodal guidance and diffusion models can preserve reliable input evidence while completing, refining, and controlling ambiguous or missing 3D information.
 
 I received my Master of Computing degree from NUS, where I further developed my research interests in AI and computer vision. Before that, I studied Information Management and Information Systems at the [Beijing Institute of Technology](https://english.bit.edu.cn/) (BIT), where I built a foundation in computing, systems, and problem-solving.
+
+</div>
 
 
 <!-- I value collaboration and enjoy connecting with like-minded researchers to drive impactful projects forward. -->
@@ -34,7 +40,7 @@ I received my Master of Computing degree from NUS, where I further developed my 
       <strong>Jiayin Zhu</strong>, <a href="https://scholar.google.com/citations?user=a8CLpC0AAAAJ&hl=en">Guoji Fu</a>, <a href="https://github.com/xiaolul2">Xiaolu Liu</a>, <a href="https://qy-h00.github.io/">Qiyuan He</a>, <a href="https://yl3800.github.io/">Yicong Li</a>, <a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a>
     </p>
     <p>
-      International Conference on Machine Learning (ICML), 2026. <strong style="color: red;">Spotlight, top 2.2%</strong>.
+      International Conference on Machine Learning (ICML), 2026. <strong class="publication-distinction">Spotlight, top 2.2%</strong>.
     </p>
     <p>
       <a href="https://jyzhu.top/RelaxFlow_Webpage/">Website</a>
