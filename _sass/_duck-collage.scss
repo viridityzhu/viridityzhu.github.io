@@ -13,6 +13,12 @@ body.collage-open {
   pointer-events: none;
 }
 
+.duck-word {
+  display: inline-block;
+  text-decoration: inherit;
+  will-change: transform;
+}
+
 .duck-collage {
   position: fixed;
   inset: 0;
@@ -30,6 +36,7 @@ body.collage-open {
   &[open] {
     display: grid;
     grid-template-rows: auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   :focus-visible {
@@ -39,12 +46,6 @@ body.collage-open {
 }
 
 .collage-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.55rem 1.15rem;
-  padding: 0.65rem var(--portfolio-gutter);
-  border-top: 6px solid var(--portfolio-ink);
   border-bottom: 3px solid var(--portfolio-ink);
   background: var(--portfolio-paper);
 
@@ -52,6 +53,55 @@ body.collage-open {
     margin: 0;
     font: 850 clamp(1.3rem, 3vw, 2rem) / 1.05 var(--portfolio-display);
     letter-spacing: -0.05em;
+  }
+}
+
+.collage-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 1.15rem;
+  padding: 0.6rem var(--portfolio-gutter);
+}
+
+// The reference's ticker tape, carrying research keywords instead of instructions.
+.collage-ticker {
+  overflow: hidden;
+  background: var(--portfolio-ink);
+  color: var(--portfolio-paper);
+
+  p {
+    display: flex;
+    width: max-content;
+    margin: 0;
+    padding: 0.36em 0;
+    font: 700 0.62rem / 1 var(--portfolio-display);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    animation: collage-ticker 36s linear infinite;
+  }
+
+  span {
+    padding-inline: 1.5em;
+
+    &::after {
+      position: relative;
+      left: 1.5em;
+      color: var(--portfolio-yellow);
+      content: "\2733";
+    }
+  }
+}
+
+@keyframes collage-ticker {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collage-ticker p,
+  .collage-morph i {
+    animation: none;
   }
 }
 
@@ -63,9 +113,10 @@ body.collage-open {
 
   button,
   a {
-    padding: 0.32em 0.65em;
+    padding: 0.32em 0.7em;
     border: var(--portfolio-line);
     background: var(--portfolio-paper);
+    box-shadow: 3px 3px 0 var(--portfolio-ink);
     color: var(--portfolio-ink);
     font-weight: 700;
     font-size: 0.8rem;
@@ -74,6 +125,8 @@ body.collage-open {
 
     &:hover {
       background: var(--portfolio-yellow);
+      box-shadow: 1px 1px 0 var(--portfolio-ink);
+      transform: translate(2px, 2px);
     }
   }
 
@@ -104,80 +157,208 @@ body.collage-open {
   margin: 0 auto;
 }
 
-.collage-panel {
+.collage-item {
   position: relative;
-  border: var(--portfolio-line);
-  box-shadow: 5px 5px 0 var(--portfolio-ink);
-  background: var(--portfolio-paper);
+  display: block;
+  box-sizing: border-box;
   transform: translate(var(--panel-x, 0), var(--panel-y, 0)) rotate(var(--panel-angle, -1.4deg));
 }
 
+.collage-panel {
+  border: var(--portfolio-line);
+  box-shadow: 5px 5px 0 var(--portfolio-ink);
+  background: var(--portfolio-paper);
+}
+
+[data-grip] {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+// Art pieces. Sizes are shares of the board so the collage keeps its proportions.
+.collage-sticker {
+  height: auto;
+  filter: drop-shadow(3px 4px 0 var(--portfolio-ink));
+}
+
+.collage-art--bxsb {
+  --art-width: 12.4%;
+  --panel-angle: -7deg;
+  filter: drop-shadow(5px 6px 0 var(--portfolio-ink));
+}
+
+.collage-art--relief {
+  --art-width: 7.6%;
+  --panel-angle: 5deg;
+  height: auto;
+  border: var(--portfolio-line);
+  box-shadow: 5px 5px 0 var(--portfolio-ink);
+}
+
+.collage-art--mesh {
+  --art-width: 5.6%;
+  --panel-angle: 12deg;
+}
+
+.collage-art--spark {
+  --art-width: 4.2%;
+  --panel-angle: 9deg;
+}
+
+.collage-art--pointer {
+  --art-width: 2.6%;
+  --panel-angle: -14deg;
+}
+
+.collage-art--morph {
+  --art-width: 6.6%;
+  --panel-angle: 3deg;
+}
+
+.collage-art--morph .collage-grip {
+  padding-inline: 0.45rem 1.2rem;
+
+  &::after {
+    width: 0.9rem;
+  }
+}
+
+.collage-morph {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+
+  i {
+    width: 52%;
+    aspect-ratio: 1;
+    border: var(--portfolio-line);
+    background: var(--portfolio-yellow);
+    box-shadow: 3px 3px 0 var(--portfolio-ink);
+    animation: collage-morph 5.2s cubic-bezier(.6, 0, .4, 1) infinite alternate;
+  }
+}
+
+@keyframes collage-morph {
+  0%, 12% { border-radius: 0; background-color: var(--portfolio-yellow); transform: rotate(0); }
+  88%, 100% { border-radius: 50%; background-color: var(--portfolio-coral); transform: rotate(180deg); }
+}
+
+.collage-art--pixels {
+  --art-width: 13%;
+  --panel-angle: -2.6deg;
+}
+
+.collage-pixels {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  margin: 7px 7px 0;
+  border: 1px solid var(--portfolio-ink);
+
+  i {
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+}
+
+.collage-swatches {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  margin: 7px;
+
+  i {
+    aspect-ratio: 1.5;
+    border: 1px solid var(--portfolio-ink);
+  }
+}
+
+.collage-pixels [data-colour="0"], .collage-swatches i:nth-child(1) { background: #ff8fdc; }
+.collage-pixels [data-colour="1"], .collage-swatches i:nth-child(2) { background: var(--portfolio-yellow); }
+.collage-pixels [data-colour="2"], .collage-swatches i:nth-child(3) { background: var(--portfolio-coral); }
+.collage-pixels [data-colour="3"], .collage-swatches i:nth-child(4) { background: var(--portfolio-turquoise); }
+.collage-pixels [data-colour="4"], .collage-swatches i:nth-child(5) { background: #8ea4f4; }
+
 @media (min-width: 980px) {
   .collage-board {
-    height: unquote("max(100%, 940px)");
+    height: unquote("max(100%, 980px)");
   }
 
-  .collage-panel {
+  .collage-item {
     position: absolute;
     left: var(--paper-left);
     top: var(--paper-top);
-    width: var(--paper-width);
+    width: var(--art-width, var(--paper-width));
   }
 
   // Set the windows by hand so the center stays open for the duck.
-  .collage-panel:nth-child(1) {
+  .collage-paper--1 {
     --paper-left: 4.1%;
     --paper-top: 13%;
     --paper-width: 19.7%;
     --panel-angle: -3.6deg;
   }
 
-  .collage-panel:nth-child(2) {
+  .collage-paper--2 {
     --paper-left: 26.5%;
     --paper-top: 2.8%;
     --paper-width: 17.6%;
     --panel-angle: 3deg;
   }
 
-  .collage-panel:nth-child(3) {
+  .collage-paper--3 {
     --paper-left: 72.7%;
     --paper-top: 7%;
     --paper-width: 22.5%;
     --panel-angle: 2.2deg;
   }
 
-  .collage-panel:nth-child(4) {
+  .collage-paper--4 {
     --paper-left: 8.6%;
     --paper-top: var(--small-window-top, 46%);
     --paper-width: 15.3%;
     --panel-angle: 4.1deg;
   }
 
-  .collage-panel:nth-child(5) {
+  .collage-paper--5 {
     --paper-left: 78.6%;
-    --paper-top: 44.5%;
+    --paper-top: 43%;
     --paper-width: 17.3%;
     --panel-angle: -3.3deg;
   }
 
-  .collage-panel:nth-child(6) {
+  .collage-paper--6 {
     --paper-left: 26.4%;
     --paper-top: 69.5%;
     --paper-width: 21.8%;
     --panel-angle: -2.5deg;
   }
 
-  .collage-panel:nth-child(7) {
+  .collage-paper--7 {
     --paper-left: 56.8%;
     --paper-top: 74%;
     --paper-width: 18.3%;
     --panel-angle: 3.9deg;
   }
+
+  // The art fills the gaps the papers leave, with a few edges tucked under or over.
+  .collage-art--bxsb { --paper-left: 57.2%; --paper-top: 1%; }
+  .collage-art--relief { --paper-left: 13.2%; --paper-top: 1.2%; }
+  .collage-art--mesh { --paper-left: 25.6%; --paper-top: 52%; }
+  .collage-art--morph { --paper-left: 69.6%; --paper-top: 47%; }
+  .collage-art--pixels { --paper-left: 81.5%; --paper-top: 80%; }
+  .collage-art--spark { --paper-left: 50.6%; --paper-top: 88%; }
+  .collage-art--pointer { --paper-left: 3.4%; --paper-top: 66%; }
 }
 
 .collage-grip {
   position: relative;
   display: block;
+  box-sizing: border-box;
   width: 100%;
   min-height: 29px;
   padding: 0.24em 2.6rem 0.24em 0.65rem;
@@ -190,8 +371,6 @@ body.collage-open {
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
-  cursor: grab;
-  touch-action: none;
 
   &::after {
     position: absolute;
@@ -199,10 +378,6 @@ body.collage-open {
     width: 2rem;
     background: var(--portfolio-hatch);
     content: "";
-  }
-
-  &:active {
-    cursor: grabbing;
   }
 }
 
@@ -264,7 +439,7 @@ body.collage-open {
 }
 
 @media (min-width: 980px) {
-  .collage-panel:nth-child(2) .collage-content {
+  .collage-paper--2 .collage-content {
     max-height: clamp(8.2rem, 21dvh, 13rem);
     overflow: auto;
     scrollbar-width: thin;
@@ -305,21 +480,32 @@ body.collage-open {
     padding: var(--collage-duck-size) var(--portfolio-gutter) 3.5rem;
   }
 
-  .collage-panel {
+  .collage-paper {
     --panel-angle: -1.1deg;
     width: 93%;
     margin-bottom: 0.9rem;
 
-    &:nth-child(even) {
+    &:nth-of-type(even) {
       --panel-angle: 1.35deg;
       width: 88%;
       margin-left: auto;
     }
-
-    &:nth-child(3) {
-      margin-bottom: -0.35rem;
-    }
   }
+
+  // On a phone the art sits between the papers, alternating sides.
+  .collage-item:not(.collage-paper) {
+    z-index: 1;
+    width: var(--phone-width, 30%);
+    margin: -0.5rem 6% 0.5rem auto;
+  }
+
+  .collage-art--bxsb { --phone-width: 44%; margin: -2.2rem auto 0.4rem 3% !important; }
+  .collage-art--relief { --phone-width: 31%; }
+  .collage-art--mesh { --phone-width: 22%; margin-left: 12% !important; }
+  .collage-art--morph { --phone-width: 27%; }
+  .collage-art--pixels { --phone-width: 52%; margin-left: 4% !important; }
+  .collage-art--spark { --phone-width: 17%; }
+  .collage-art--pointer { --phone-width: 11%; margin-left: 40% !important; }
 
   .collage-actions {
     margin-left: 0;

@@ -1,12 +1,19 @@
 <template id="duck-collage-template">
   <dialog class="duck-collage" aria-labelledby="duck-collage-title">
     <header class="collage-bar">
-      <h2 id="duck-collage-title">Duck on the loose</h2>
-      <div class="collage-actions">
-        <button type="button" data-collage-reset>Reset layout</button>
-        <form method="dialog">
-          <button type="submit" autofocus>Back to homepage</button>
-        </form>
+      <div class="collage-ticker" aria-hidden="true">
+        <p>
+          {% for round in (1..2) %}<span>Multimodal 3D generation</span><span>Amodal completion</span><span>Textured morphing</span><span>Hands &amp; humans</span><span>Diffusion guidance</span><span>Quack</span>{% endfor %}
+        </p>
+      </div>
+      <div class="collage-heading">
+        <h2 id="duck-collage-title">Duck on the loose</h2>
+        <div class="collage-actions">
+          <button type="button" data-collage-reset>Reset layout</button>
+          <form method="dialog">
+            <button type="submit" autofocus>Back to homepage</button>
+          </form>
+        </div>
       </div>
     </header>
     <div class="collage-playground">
@@ -14,6 +21,28 @@
       <div class="collage-scroll">
         <section class="collage-board" aria-label="Publications"></section>
       </div>
+    </div>
+    <!-- Decorative pieces. data-after places each one behind that paper in reading order. -->
+    <div class="collage-stock" aria-hidden="true" hidden>
+      <img class="collage-item collage-sticker collage-art--bxsb" data-after="0" data-grip draggable="false" alt=""
+        src="{{ '/images/collage-bxsb.svg' | relative_url }}" width="240" height="240">
+      <img class="collage-item collage-art--relief" data-after="1" data-grip draggable="false" alt=""
+        src="{{ '/images/collage-relief.svg' | relative_url }}" width="160" height="160">
+      <img class="collage-item collage-sticker collage-art--mesh" data-after="3" data-grip draggable="false" alt=""
+        src="{{ '/images/collage-mesh.svg' | relative_url }}" width="100" height="100">
+      <div class="collage-item collage-panel collage-art--morph" data-after="4">
+        <div class="collage-grip" data-grip>Morph</div>
+        <div class="collage-morph"><i></i></div>
+      </div>
+      <div class="collage-item collage-panel collage-art--pixels" data-after="5">
+        <div class="collage-grip" data-grip>Activity</div>
+        <div class="collage-pixels" data-collage-pixels></div>
+        <div class="collage-swatches"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <img class="collage-item collage-sticker collage-art--spark" data-after="6" data-grip draggable="false" alt=""
+        src="{{ '/images/collage-spark.svg' | relative_url }}" width="100" height="100">
+      <img class="collage-item collage-sticker collage-art--pointer" data-after="7" data-grip draggable="false" alt=""
+        src="{{ '/images/collage-pointer.svg' | relative_url }}" width="60" height="80">
     </div>
   </dialog>
   <div class="collage-question" aria-hidden="true">

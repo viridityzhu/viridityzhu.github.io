@@ -21,6 +21,11 @@ body {
   color: var(--portfolio-ink);
 }
 
+::selection {
+  background: var(--portfolio-yellow);
+  color: var(--portfolio-ink);
+}
+
 .masthead {
   background: var(--portfolio-paper);
   border-top: 7px solid var(--portfolio-ink);
@@ -77,11 +82,17 @@ body {
     background: var(--portfolio-paper);
     box-shadow: var(--portfolio-shadow);
     font-weight: 750;
+    transition: transform 90ms, box-shadow 90ms, background-color 90ms;
 
     &:hover {
       background: var(--portfolio-yellow);
       box-shadow: 2px 2px 0 var(--portfolio-ink);
       transform: translate(2px, 2px);
+    }
+
+    &:active {
+      box-shadow: none;
+      transform: translate(4px, 4px);
     }
   }
 
@@ -149,7 +160,11 @@ body {
   }
 
   .page__title {
+    width: fit-content;
     margin-bottom: 0.3em;
+    padding-right: 0.14em;
+    // A highlighter stroke, set low and slightly off the baseline.
+    background: linear-gradient(var(--portfolio-yellow), var(--portfolio-yellow)) 0.1em 86% / 100% 0.3em no-repeat;
     font-size: clamp(2.3rem, 5vw, 3.4rem);
   }
 
@@ -195,9 +210,16 @@ body {
     box-shadow: var(--portfolio-shadow);
     font-weight: 750;
 
+    transition: transform 90ms, box-shadow 90ms;
+
     &:hover:not(:disabled) {
       box-shadow: 2px 2px 0 var(--portfolio-ink);
       transform: translate(2px, 2px);
+    }
+
+    &:active:not(:disabled) {
+      box-shadow: none;
+      transform: translate(4px, 4px);
     }
   }
 
@@ -222,6 +244,21 @@ body {
       border: var(--portfolio-line);
       background: var(--portfolio-turquoise);
     }
+  }
+
+  .page__content > ul {
+    list-style: square;
+
+    > li::marker {
+      color: var(--portfolio-link);
+    }
+  }
+
+  .page__content > hr {
+    height: 9px;
+    margin-block: 2.2em 0.4em;
+    border: var(--portfolio-line);
+    background: var(--portfolio-hatch);
   }
 
   #publications::after {
@@ -374,6 +411,13 @@ body {
       width: 100%;
       margin: 0;
       border: var(--portfolio-line);
+      background: #fff;
+      transition: transform 120ms, box-shadow 120ms;
+    }
+
+    &:hover img {
+      box-shadow: var(--portfolio-shadow);
+      transform: translate(-2px, -2px);
     }
 
     p {
@@ -397,18 +441,30 @@ body {
         display: inline-block;
         min-height: 24px;
         margin-block: 0.12em;
-        padding: 0.08em 0.38em;
-        border: 1px solid var(--portfolio-ink);
+        padding: 0.08em 0.5em;
+        border: 1.5px solid var(--portfolio-ink);
+        background: var(--portfolio-paper);
+        box-shadow: 2px 2px 0 var(--portfolio-ink);
         font-weight: 700;
         text-decoration: none;
+        transition: transform 90ms, box-shadow 90ms;
+
+        &:hover {
+          background: var(--portfolio-yellow);
+          box-shadow: none;
+          transform: translate(2px, 2px);
+        }
       }
     }
   }
 
   .publication-distinction {
-    font-style: normal;
+    display: inline-block;
+    padding-inline: 0.4em;
+    border: 1.5px solid var(--portfolio-ink);
     background: var(--portfolio-yellow);
-    padding-inline: 0.22em;
+    font-style: normal;
+    transform: rotate(-1.5deg);
   }
 
   .vote-container {

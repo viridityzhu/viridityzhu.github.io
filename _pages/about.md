@@ -213,7 +213,7 @@ I received my Master of Computing degree from NUS, where I further developed my 
 
 <img src="https://raw.githubusercontent.com/viridityzhu/viridityzhu/main/profile-3d-contrib/profile-gitblock.svg" />
 
-<figure><embed src="https://wakatime.com/share/@7974bf3e-99a6-4d26-8e4b-38ca6d5c9c64/6a27f97e-6212-44b7-944c-91045cc09630.svg" /></figure>
+<div class="coding-chart" data-coding-activity="https://wakatime.com/share/@jyzhu/efa2ab0f-35c9-4085-84a4-922650da85ee.json" data-fallback="https://wakatime.com/share/@7974bf3e-99a6-4d26-8e4b-38ca6d5c9c64/6a27f97e-6212-44b7-944c-91045cc09630.svg"></div>
 
 <link rel="stylesheet" href="/assets/css/vote-counter.css">
 
