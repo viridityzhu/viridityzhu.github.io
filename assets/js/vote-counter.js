@@ -1,242 +1,134 @@
+// "Rate my coding activity" vote widget.
+//
+// Counts live in the Waline server shared with the blog (comments.jyzhu.top),
+// stored as two reaction counters on a virtual page path:
+//   reaction0 = "Productive!"   reaction1 = "Need more coffee"
+// (Migrated from LeanCloud in Nov 2026, before its 2027-01-12 shutdown.)
+// One vote per browser per day, enforced client-side via localStorage.
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize LeanCloud
-  AV.init({
-    appId: "efLA0qg1Vu8kMjj7e1SC6evd-gzGzoHsz",
-    appKey: "uexWsXddCqHicPng8NOVKkcN",
-    serverURL: "https://efla0qg1.lc-cn-n1-shared.com"
-  });
-  
-  let hasVoted = false;
+  const API_URL = 'https://comments.jyzhu.top/api/article';
+  const VOTE_PATH = '/vote/coding-activity';
+  const REACTIONS = { yes: 'reaction0', no: 'reaction1' };
   const LAST_VOTE_DAY_KEY = 'vote-last-vote-day';
-  
-  function getLocalDayKey(date = new Date()) {
+
+  const yesButton = document.getElementById('vote-yes');
+  const noButton = document.getElementById('vote-no');
+  const yesCountEl = document.getElementById('yes-count');
+  const noCountEl = document.getElementById('no-count');
+  if (!yesButton || !noButton || !yesCountEl || !noCountEl) return;
+
+  let hasVoted = false;
+  let voting = false;
+
+  function getTodayKey() {
+    const date = new Date();
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   }
-  
-  function getTodayKey() {
-    return getLocalDayKey(new Date());
-  }
-  
+
   function getLastVoteDay() {
-    return localStorage.getItem(LAST_VOTE_DAY_KEY);
-  }
-  
-  function setLastVoteDay(dayKey) {
-    localStorage.setItem(LAST_VOTE_DAY_KEY, dayKey);
-  }
-  
-  // Create or get a unique user identifier
-  function getUserId() {
-    let userId = localStorage.getItem('vote-user-id');
-    if (!userId) {
-      userId = 'user_' + Math.random().toString(36).substring(2, 15);
-      localStorage.setItem('vote-user-id', userId);
+    try {
+      return localStorage.getItem(LAST_VOTE_DAY_KEY);
+    } catch (error) {
+      return null;
     }
-    return userId;
   }
-  
-  function ensureMessageEl() {
+
+  function setLastVoteDay(dayKey) {
+    try {
+      localStorage.setItem(LAST_VOTE_DAY_KEY, dayKey);
+    } catch (error) {
+      // Private mode etc.: the vote still counts, it just isn't remembered.
+    }
+  }
+
+  function showMessage(text) {
     let messageEl = document.getElementById('vote-message');
     if (!messageEl) {
       messageEl = document.createElement('p');
       messageEl.id = 'vote-message';
       messageEl.className = 'vote-message';
       messageEl.setAttribute('aria-live', 'polite');
-      
       const container = document.querySelector('.vote-container');
-      const countEl = document.getElementById('vote-count');
-      if (container && countEl && countEl.parentNode === container) {
-        container.insertBefore(messageEl, countEl.nextSibling);
-      } else if (container) {
-        container.appendChild(messageEl);
-      }
+      if (container) container.appendChild(messageEl);
     }
-    return messageEl;
-  }
-  
-  function showMessage(text) {
-    const messageEl = ensureMessageEl();
     messageEl.textContent = text;
     messageEl.classList.add('vote-message--visible');
   }
-  
-  // Check if user has already voted
-  async function checkUserVote() {
-    const todayKey = getTodayKey();
-    if (getLastVoteDay() === todayKey) {
-      hasVoted = true;
-      disableButtons('already_voted_today');
-      return true;
-    }
-    
-    const userId = getUserId();
-    try {
-      const query = new AV.Query('VoteRecords');
-      query.equalTo('deviceId', userId);
-      query.equalTo('voteDay', todayKey);
-      const result = await query.first();
-      hasVoted = !!result;
-      if (hasVoted) {
-        setLastVoteDay(todayKey);
-        disableButtons();
-      }
-      return hasVoted;
-    } catch (error) {
-      console.error('Error checking vote status:', error);
-      return false;
-    }
+
+  function setButtonsDisabled(disabled) {
+    yesButton.disabled = disabled;
+    noButton.disabled = disabled;
   }
-  
-  // Get the current vote counts
-  async function getVoteCounts() {
-    try {
-      const query = new AV.Query('VoteCounter');
-      const counter = await query.first();
-      
-      if (counter) {
-        document.getElementById('yes-count').textContent = counter.get('yesCount') || 0;
-        document.getElementById('no-count').textContent = counter.get('noCount') || 0;
-      } else {
-        // Create counter object if it doesn't exist
-        const VoteCounter = AV.Object.extend('VoteCounter');
-        const newCounter = new VoteCounter();
-        
-        // Set public read/write ACL
-        const acl = new AV.ACL();
-        acl.setPublicReadAccess(true);
-        acl.setPublicWriteAccess(true);
-        newCounter.setACL(acl);
-        
-        newCounter.set('yesCount', 0);
-        newCounter.set('noCount', 0);
-        await newCounter.save();
-        
-        document.getElementById('yes-count').textContent = '0';
-        document.getElementById('no-count').textContent = '0';
-      }
-    } catch (error) {
-      console.error('Error getting vote counts:', error);
-      document.getElementById('yes-count').textContent = '0';
-      document.getElementById('no-count').textContent = '0';
-    }
+
+  function renderCounts(counts) {
+    yesCountEl.textContent = Number(counts && counts[REACTIONS.yes]) || 0;
+    noCountEl.textContent = Number(counts && counts[REACTIONS.no]) || 0;
   }
-  
-  // Record vote and increment counter
+
+  async function request(url, options) {
+    const response = await fetch(url, options);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const body = await response.json();
+    if (body.errno) throw new Error(body.errmsg || `errno ${body.errno}`);
+    return body.data;
+  }
+
+  async function loadCounts() {
+    const query = `path=${encodeURIComponent(VOTE_PATH)}` +
+      `&type=${encodeURIComponent(Object.values(REACTIONS).join(','))}`;
+    const data = await request(`${API_URL}?${query}`);
+    renderCounts(Array.isArray(data) ? data[0] : data);
+  }
+
   async function recordVote(type) {
-    if (hasVoted) return;
-    
-    const userId = getUserId();
-    const todayKey = getTodayKey();
-    
-    if (getLastVoteDay() === todayKey) {
-      hasVoted = true;
-      disableButtons('already_voted_today');
-      return;
-    }
-    
-    // First check if user has already voted
+    if (hasVoted || voting) return;
+    voting = true;
+    setButtonsDisabled(true);
+
     try {
-      const userQuery = new AV.Query('VoteRecords');
-      userQuery.equalTo('deviceId', userId);
-      userQuery.equalTo('voteDay', todayKey);
-      const existingVote = await userQuery.first();
-      
-      if (existingVote) {
-        hasVoted = true;
-        setLastVoteDay(todayKey);
-        disableButtons();
-        return;
-      }
-      
-      // Find or create counter
-      const counterQuery = new AV.Query('VoteCounter');
-      let counter = await counterQuery.first();
-      
-      if (!counter) {
-        const VoteCounter = AV.Object.extend('VoteCounter');
-        counter = new VoteCounter();
-        
-        // Set public read/write ACL
-        const acl = new AV.ACL();
-        acl.setPublicReadAccess(true);
-        acl.setPublicWriteAccess(true);
-        counter.setACL(acl);
-        
-        counter.set('yesCount', 0);
-        counter.set('noCount', 0);
-      }
-      
-      // Ensure counter has public write access if it already exists
-      if (!counter.getACL() || !counter.getACL().getPublicWriteAccess()) {
-        const acl = counter.getACL() || new AV.ACL();
-        acl.setPublicReadAccess(true);
-        acl.setPublicWriteAccess(true);
-        counter.setACL(acl);
-      }
-      
-      // Increment the appropriate counter
-      if (type === 'yes') {
-        counter.increment('yesCount', 1);
-      } else {
-        counter.increment('noCount', 1);
-      }
-      
-      // Save the counter
-      await counter.save();
-      
-      // Record this user's vote with public read/write permissions
-      const VoteRecord = AV.Object.extend('VoteRecords');
-      const record = new VoteRecord();
-      
-      // Set ACL for vote record
-      const recordAcl = new AV.ACL();
-      recordAcl.setPublicReadAccess(true);
-      recordAcl.setPublicWriteAccess(true);
-      record.setACL(recordAcl);
-      
-      record.set('deviceId', userId);
-      record.set('voteType', type);
-      record.set('voteDay', todayKey);
-      await record.save();
-      
-      // Update UI
-      document.getElementById('yes-count').textContent = counter.get('yesCount') || 0;
-      document.getElementById('no-count').textContent = counter.get('noCount') || 0;
-      
+      await request(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: VOTE_PATH, type: REACTIONS[type], action: 'inc' })
+      });
       hasVoted = true;
-      setLastVoteDay(todayKey);
-      disableButtons('voted_now');
-      
+      setLastVoteDay(getTodayKey());
+      showMessage('✓ Thanks for voting today!');
+      // Show the vote immediately, then sync with the server's numbers.
+      const el = type === 'yes' ? yesCountEl : noCountEl;
+      el.textContent = (Number(el.textContent) || 0) + 1;
+      loadCounts().catch(function() {});
     } catch (error) {
       console.error('Error recording vote:', error);
+      setButtonsDisabled(false);
+      showMessage('Vote failed — please try again in a moment.');
+    } finally {
+      voting = false;
     }
   }
-  
-  function disableButtons(reason = 'already_voted_today') {
-    document.getElementById('vote-yes').disabled = true;
-    document.getElementById('vote-no').disabled = true;
-    
-    if (reason === 'voted_now') {
-      showMessage("✓ Thanks for voting today!");
-    } else {
-      showMessage("✓ You've already voted today — thank you!");
-    }
+
+  if (getLastVoteDay() === getTodayKey()) {
+    hasVoted = true;
+    setButtonsDisabled(true);
+    showMessage("✓ You've already voted today — thank you!");
   }
-  
-  // Initialize
-  checkUserVote().then(() => {
-    getVoteCounts();
+
+  loadCounts().catch(function(error) {
+    console.error('Error getting vote counts:', error);
+    // The database may be waking from idle; one retry usually succeeds.
+    setTimeout(function() {
+      loadCounts().catch(function() {});
+    }, 2000);
   });
-  
-  // Add event listeners to buttons
-  document.getElementById('vote-yes').addEventListener('click', function() {
+
+  yesButton.addEventListener('click', function() {
     recordVote('yes');
   });
-  
-  document.getElementById('vote-no').addEventListener('click', function() {
+
+  noButton.addEventListener('click', function() {
     recordVote('no');
   });
-}); 
+});

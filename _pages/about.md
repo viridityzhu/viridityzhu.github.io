@@ -233,5 +233,4 @@ I received my Master of Computing degree from NUS, where I further developed my 
   <p id="vote-message" class="vote-message" aria-live="polite"></p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.15.0/dist/av-min.js"></script>
-<script src="/assets/js/vote-counter.js"></script>
+<script src="/assets/js/vote-counter.js" defer></script>
