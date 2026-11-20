@@ -65,7 +65,7 @@ export async function prepareEvolution() {
   if (!id) return null;
   const meta = forms[id];
   const [THREE, module] = await Promise.all([
-    import("./vendor/three/three.module.min.js"),
+    import("./lib/three/three.module.min.js"),
     import(meta.module),
   ]);
   const container = document.createElement("div");
