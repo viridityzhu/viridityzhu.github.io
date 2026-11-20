@@ -212,8 +212,14 @@ export async function openCollage(turn, reducedMotion, prepareDuck) {
   let frame;
   let page;
   let stackEdge;
+  let thunder;
   let cancel;
   const cancelled = new Promise(resolve => { cancel = () => resolve(false); });
+  // The evolved duck loads and builds while the old one is still wondering and swimming.
+  // Without it (reduced motion, no WebGL, a failed download) the plain collage opens.
+  const evolving = reducedMotion ? null
+    : import("./duck-evolution.js").then(module => module.prepareEvolution()).catch(() => null);
+  let evolution = null;
 
   function move(node, destination) {
     const marker = document.createComment("collage position");
@@ -287,6 +293,10 @@ export async function openCollage(turn, reducedMotion, prepareDuck) {
       step(previous);
 
       if (!await Promise.race([launch.finished.then(() => true), cancelled])) return;
+      // A slow connection gets a short grace period, with the duck waiting mid-page.
+      const patience = new Promise(resolve => { timer = window.setTimeout(resolve, 2500, null); });
+      evolution = await Promise.race([evolving, patience, cancelled]);
+      if (evolution === false) return;
       cancelAnimationFrame(frame);
       arrival = flight.getBoundingClientRect();
       // The dialog opens in this same task, so the restored words are never painted.
@@ -296,15 +306,19 @@ export async function openCollage(turn, reducedMotion, prepareDuck) {
     question.remove();
     dock.append(turn);
     flight.remove();
-    deal(0);
-    for (const [index, paper] of publications.entries()) {
-      move(paper, makePaperPanel(board, paper, index + 1));
-      deal(index + 1);
+    // The evolved duck gets the stage to itself; the papers stay on the page.
+    if (evolution) {
+      thunder = evolution.mount(dialog);
+    } else {
+      deal(0);
+      for (const [index, paper] of publications.entries()) {
+        move(paper, makePaperPanel(board, paper, index + 1));
+        deal(index + 1);
+      }
+      fillPixels(board.querySelector("[data-collage-pixels]"));
+      installDragging(dialog, board);
     }
     stock.remove();
-    fillPixels(board.querySelector("[data-collage-pixels]"));
-
-    installDragging(dialog, board);
     const closed = new Promise(resolve => {
       function returnToPage(event) {
         event.preventDefault();
@@ -316,13 +330,16 @@ export async function openCollage(turn, reducedMotion, prepareDuck) {
     });
     dialog.showModal();
     const leadPaper = board.querySelector(".collage-paper--1");
-    const alignStack = () => {
-      board.style.setProperty("--small-window-top", `${leadPaper.offsetTop + leadPaper.offsetHeight - 7}px`);
-    };
-    alignStack();
-    stackEdge = new ResizeObserver(alignStack);
-    stackEdge.observe(leadPaper);
-    stackEdge.observe(board);
+    if (leadPaper) {
+      const alignStack = () => {
+        board.style.setProperty("--small-window-top", `${leadPaper.offsetTop + leadPaper.offsetHeight - 7}px`);
+      };
+      alignStack();
+      stackEdge = new ResizeObserver(alignStack);
+      stackEdge.observe(leadPaper);
+      stackEdge.observe(board);
+    }
+    thunder?.reveal();
     if (arrival) {
       const final = dock.getBoundingClientRect();
       const x = arrival.x + arrival.width / 2 - final.x - final.width / 2;
@@ -333,8 +350,8 @@ export async function openCollage(turn, reducedMotion, prepareDuck) {
       ], { duration: 620, easing: "ease-out" }));
       animations.push(dialog.animate([
         { backgroundColor: "var(--portfolio-paper)" },
-        { backgroundColor: "var(--portfolio-turquoise)" },
-      ], { duration: 470 }));
+        { backgroundColor: thunder ? "var(--thunder-night)" : "var(--portfolio-turquoise)" },
+      ], { duration: thunder ? 900 : 470 }));
       animations.push(dialog.querySelector(".collage-bar").animate([
         { translate: "0 -100%" },
         { translate: "0 0" },
@@ -355,6 +372,9 @@ export async function openCollage(turn, reducedMotion, prepareDuck) {
     window.clearTimeout(timer);
     cancelAnimationFrame(frame);
     stackEdge?.disconnect();
+    thunder?.dispose();
+    // Also frees a form that finished loading only after the plain collage had opened.
+    evolving?.then(loaded => loaded?.form.dispose());
     for (const animation of animations) animation.cancel();
     page?.restore();
     for (const [marker, node] of moves) marker.replaceWith(node);

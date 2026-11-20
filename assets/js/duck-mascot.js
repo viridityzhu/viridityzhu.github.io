@@ -213,10 +213,34 @@ async function mountDuck(mascot) {
   let contextLost = false;
   let exploring = false;
   let keyboardTrail = newShake();
+  let drags = 0;
+  let hintTimer;
+
+  // A faint speech bubble that nudges towards the shake: first to drag at all,
+  // then, after each of the first two drags, to try again.
+  const hint = document.createElement("p");
+  hint.className = "duck-hint";
+  hint.setAttribute("aria-hidden", "true");
+  turn.after(hint);
+
+  function hideHint() {
+    window.clearTimeout(hintTimer);
+    hint.classList.remove("is-on");
+  }
+
+  function hintLater(text, delay) {
+    hideHint();
+    hintTimer = window.setTimeout(() => {
+      if (exploring || drag || contextLost) return;
+      hint.textContent = text;
+      hint.classList.add("is-on");
+    }, delay);
+  }
 
   async function tryEscape() {
     if (exploring) return;
     exploring = true;
+    hideHint();
     keyboardTrail = newShake();
     try {
       const { openCollage } = await import("./duck-collage.js");
@@ -338,6 +362,7 @@ async function mountDuck(mascot) {
 
   turn.addEventListener("pointerdown", event => {
     if (exploring || !event.isPrimary || event.button !== 0) return;
+    hideHint();
     // A new press also settles a drag whose release left the browser.
     settleWarmup(true);
     if (dragsBeforeShake > 0) warmupDrag = { id: event.pointerId, moved: false };
@@ -391,6 +416,7 @@ async function mountDuck(mascot) {
     if (drag?.id !== event.pointerId) return;
     drag = null;
     syncAnimation();
+    if (dragged && ++drags < 3) hintLater("Once more...?", 3000);
   });
   turn.addEventListener("click", event => {
     // Keep keyboard activation, but leave a mouse click or tap at the current pose.
@@ -433,6 +459,7 @@ async function mountDuck(mascot) {
   poster.hidden = true;
   resize.observe(canvas);
   intersection.observe(turn);
+  hintLater("Drag me...?", 6000);
 }
 
 const mascot = document.querySelector("[data-duck-mesh]");

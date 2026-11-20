@@ -7,8 +7,15 @@
         </p>
       </div>
       <div class="collage-heading">
-        <h2 id="duck-collage-title">Duck on the loose</h2>
+        <h2 id="duck-collage-title">Duck on the loose<span class="thunder-code" data-thunder hidden></span></h2>
+        <!-- Filled in when the duck evolves: poking and shaking it charge it up. -->
+        <div class="thunder-charge" data-thunder hidden>
+          <div class="thunder-meter" role="meter" aria-label="Thunder charge" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
+          <ol class="thunder-tiers"><li></li><li></li><li></li></ol>
+          <p class="thunder-hint">Poke the duck &middot; shake it</p>
+        </div>
         <div class="collage-actions">
+          <button type="button" data-thunder data-thunder-sound aria-pressed="true" hidden>Sound on</button>
           <button type="button" data-collage-reset>Reset layout</button>
           <form method="dialog">
             <button type="submit" autofocus>Back to homepage</button>
@@ -17,10 +24,22 @@
       </div>
     </header>
     <div class="collage-playground">
-      <div class="collage-duck"></div>
+      <div class="collage-stage" aria-hidden="true"></div>
+      <div class="collage-duck">
+        <svg class="thunder-bolts" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <polyline points="38,-70 46,-34 37,-30 49,2 42,6 52,40"/>
+          <polyline points="70,-70 61,-38 69,-33 57,-4 64,1 51,36"/>
+          <polyline points="14,-58 27,-26 20,-21 36,8 30,13 46,44"/>
+          <polyline points="92,-52 78,-22 85,-17 68,10 74,15 56,42"/>
+          <polyline points="50,-74 44,-40 53,-36 46,-6 55,-1 50,34"/>
+          <polyline points="26,-72 40,-38 32,-33 47,-2 41,3 53,38"/>
+        </svg>
+      </div>
       <div class="collage-scroll">
         <section class="collage-board" aria-label="Publications"></section>
       </div>
+      <div class="collage-flash" aria-hidden="true"></div>
+      <p class="thunder-toast" role="status" aria-live="polite"></p>
     </div>
     <!-- Decorative pieces. data-after places each one behind that paper in reading order. -->
     <div class="collage-stock" aria-hidden="true" hidden>

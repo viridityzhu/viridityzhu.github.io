@@ -563,6 +563,57 @@ body.collage-open {
   }
 }
 
+// The same bubble, fainter and with words: the duck hinting that it can be dragged.
+.academic-home .academic-intro .academic-intro__mascot .duck-hint {
+  position: absolute;
+  right: -10px;
+  // Clear of the title bar above the stage, so the pause button stays visible.
+  bottom: calc(100% + 38px);
+  z-index: 2;
+  margin: 0;
+  padding: 0.4em 0.7em;
+  border: var(--portfolio-line);
+  background: var(--portfolio-paper);
+  box-shadow: var(--portfolio-shadow);
+  color: var(--portfolio-ink);
+  font: 700 0.78rem / 1.2 var(--portfolio-display);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 900ms ease;
+
+  &::after {
+    position: absolute;
+    bottom: -8px;
+    right: 22px;
+    width: 13px;
+    height: 13px;
+    transform: skewY(-38deg);
+    border: solid var(--portfolio-ink);
+    border-width: 0 2px 2px;
+    background: var(--portfolio-paper);
+    content: "";
+  }
+
+  &.is-on {
+    opacity: 0.62;
+    animation: duck-hint-waver 3.6s ease-in-out 900ms infinite alternate;
+  }
+}
+
+@keyframes duck-hint-waver {
+  from { opacity: 0.62; }
+  to { opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .duck-hint,
+  .duck-hint.is-on {
+    animation: none;
+    transition: none;
+  }
+}
+
 @keyframes duck-question-draw {
   from { stroke-dashoffset: 1; }
   to { stroke-dashoffset: 0; }
